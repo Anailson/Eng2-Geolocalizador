@@ -3,4 +3,10 @@ public class tuturu{
        return nome;
    }
 
+   public String atualizar(String nome){
+     return nome;
+
+   }
+}
+
 }
