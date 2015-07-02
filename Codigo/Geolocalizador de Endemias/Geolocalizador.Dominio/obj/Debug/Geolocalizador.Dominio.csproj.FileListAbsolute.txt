@@ -1,4 +1,0 @@
-C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Geolocalizador.Dominio\bin\Debug\Geolocalizador.Dominio.dll
-C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Geolocalizador.Dominio\bin\Debug\Geolocalizador.Dominio.pdb
-C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Geolocalizador.Dominio\obj\Debug\Geolocalizador.Dominio.dll
-C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Geolocalizador.Dominio\obj\Debug\Geolocalizador.Dominio.pdb

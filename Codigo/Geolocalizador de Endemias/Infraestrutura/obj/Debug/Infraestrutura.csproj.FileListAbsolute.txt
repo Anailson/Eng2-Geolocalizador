@@ -1,0 +1,11 @@
+C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Infraestrutura\obj\Debug\Infraestrutura.csprojResolveAssemblyReference.cache
+C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Infraestrutura\bin\Debug\Infraestrutura.dll
+C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Infraestrutura\bin\Debug\Infraestrutura.pdb
+C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Infraestrutura\bin\Debug\Dominio.dll
+C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Infraestrutura\bin\Debug\EntityFramework.dll
+C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Infraestrutura\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Infraestrutura\bin\Debug\Dominio.pdb
+C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Infraestrutura\bin\Debug\EntityFramework.xml
+C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Infraestrutura\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Infraestrutura\obj\Debug\Infraestrutura.dll
+C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Infraestrutura\obj\Debug\Infraestrutura.pdb

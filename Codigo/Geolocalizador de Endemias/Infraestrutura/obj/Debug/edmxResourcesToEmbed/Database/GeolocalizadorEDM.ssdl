@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GeolocalizadorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Individuo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="nome" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="numSus" Type="nchar" MaxLength="13" Nullable="false" />
+    <Property Name="apelido" Type="nchar" MaxLength="10" />
+    <Property Name="nisPis" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="sexo" Type="binary" MaxLength="1" Nullable="false" />
+    <Property Name="racaCor" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="nomeDaMae" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="nacionalidade" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="pais" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="telefone" Type="nchar" MaxLength="11" Nullable="false" />
+    <Property Name="municipio" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="uf" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="email" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="nivelEscolar" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="situacaoDeRua" Type="bit" Nullable="false" />
+    <Property Name="situacaoConj" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ocupacao" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="orientacaoSexual" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="GeolocalizadorModelStoreContainer">
+    <EntitySet Name="Individuo" EntityType="Self.Individuo" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeolocalizadorDeEndemias", "GeolocalizadorDeEndemias\GeolocalizadorDeEndemias.csproj", "{87129881-56DE-4110-957C-FE3BE9C2E83F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geolocalizador", "Geolocalizador\Geolocalizador.csproj", "{9E27AA77-7224-432C-9528-CCAAF953DD24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geolocalizador.Dominio", "Geolocalizador.Dominio\Geolocalizador.Dominio.csproj", "{18B4FBB2-E1FF-485E-9C4D-992C85C69637}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{617A3230-BB28-4F58-B823-7E0C3C9F9B16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geolocalizador.Infraestrutura", "Geolocalizador.Infraestrutura\Geolocalizador.Infraestrutura.csproj", "{B7350DFC-3179-433C-85E8-E340515A8E6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestrutura", "Infraestrutura\Infraestrutura.csproj", "{98B972FB-88D2-4CC8-A041-C683DD3948E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{87129881-56DE-4110-957C-FE3BE9C2E83F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87129881-56DE-4110-957C-FE3BE9C2E83F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87129881-56DE-4110-957C-FE3BE9C2E83F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87129881-56DE-4110-957C-FE3BE9C2E83F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{18B4FBB2-E1FF-485E-9C4D-992C85C69637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18B4FBB2-E1FF-485E-9C4D-992C85C69637}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18B4FBB2-E1FF-485E-9C4D-992C85C69637}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{18B4FBB2-E1FF-485E-9C4D-992C85C69637}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7350DFC-3179-433C-85E8-E340515A8E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7350DFC-3179-433C-85E8-E340515A8E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7350DFC-3179-433C-85E8-E340515A8E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7350DFC-3179-433C-85E8-E340515A8E6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E27AA77-7224-432C-9528-CCAAF953DD24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E27AA77-7224-432C-9528-CCAAF953DD24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E27AA77-7224-432C-9528-CCAAF953DD24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E27AA77-7224-432C-9528-CCAAF953DD24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{617A3230-BB28-4F58-B823-7E0C3C9F9B16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{617A3230-BB28-4F58-B823-7E0C3C9F9B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{617A3230-BB28-4F58-B823-7E0C3C9F9B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{617A3230-BB28-4F58-B823-7E0C3C9F9B16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98B972FB-88D2-4CC8-A041-C683DD3948E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98B972FB-88D2-4CC8-A041-C683DD3948E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98B972FB-88D2-4CC8-A041-C683DD3948E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98B972FB-88D2-4CC8-A041-C683DD3948E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
