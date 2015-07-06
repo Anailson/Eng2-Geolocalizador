@@ -1,0 +1,50 @@
+﻿@model Dominio.Classes.Domicilio
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Domicilio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.susProfissional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.susProfissional)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bairro)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edite", "Editar", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

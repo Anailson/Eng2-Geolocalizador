@@ -13,6 +13,5 @@ namespace Dominio.Interfaces
         void RegistrarRemovido(object objeto);
         void Salvar();
         void RemoverContexto(object objeto);
-
     }
 }

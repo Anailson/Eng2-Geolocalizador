@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio.Interfaces
 {
-    public interface IRepositorio{}
+    public interface IRepositorio { }
 
     public interface IRepositorio<T> : IRepositorio where T : class
     {
@@ -14,5 +14,4 @@ namespace Dominio.Interfaces
         bool ContemRegistro();
         int TotalRegistros();
     }
-   
 }

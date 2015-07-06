@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{617A3230-BB28-4F58-B823-7E0C3C9F9B16}</ProjectGuid>
+    <ProjectGuid>{309DDB37-D994-4421-B015-DE74352BFB0B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Dominio</RootNamespace>
@@ -39,20 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\AcompanhamentoCrianca.cs" />
-    <Compile Include="Classes\AcompanhamentoEnfermo.cs" />
-    <Compile Include="Classes\AcompanhamentoGestante.cs" />
-    <Compile Include="Classes\Area.cs" />
-    <Compile Include="Classes\Cronograma.cs" />
     <Compile Include="Classes\Domicilio.cs" />
-    <Compile Include="Classes\Enfermidade.cs" />
-    <Compile Include="Classes\Equipe.cs" />
     <Compile Include="Classes\Individuo.cs" />
-    <Compile Include="Classes\MicroArea.cs" />
-    <Compile Include="Classes\PostoSaude.cs" />
-    <Compile Include="Classes\Visita.cs" />
-    <Compile Include="Interfaces\IAcompanhamentoCriancas.cs" />
-    <Compile Include="Interfaces\IAreas.cs" />
     <Compile Include="Interfaces\IDomicilios.cs" />
     <Compile Include="Interfaces\IIndividuos.cs" />
     <Compile Include="Interfaces\IRepositorio.cs" />

@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9E27AA77-7224-432C-9528-CCAAF953DD24}</ProjectGuid>
+    <ProjectGuid>{D0641596-7163-451D-8A3C-52102D43532A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -38,7 +38,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\..\..\SkyDrive\Documentos\UFS\2015.1\Tecnologias de Desenvolvimento para Internet\Notas de Aula\StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -80,6 +90,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Geolocalizador.mdf" />
+    <Content Include="App_Data\Geolocalizador_log.ldf">
+      <DependentUpon>Geolocalizador.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\css\materialize.css" />
     <Content Include="Content\css\materialize.min.css" />
     <Content Include="Content\font\material-design-icons\LICENSE.txt" />
@@ -91,7 +105,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AppConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DomicilioController.cs" />
     <Compile Include="Controllers\IndividuoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -101,8 +117,8 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Content\font\material-design-icons\Material-Design-Icons.eot" />
     <Content Include="Content\font\material-design-icons\Material-Design-Icons.ttf" />
     <Content Include="Content\font\material-design-icons\Material-Design-Icons.woff" />
@@ -122,6 +138,13 @@
     <Content Include="Content\font\roboto\Roboto-Thin.ttf" />
     <Content Include="Content\font\roboto\Roboto-Thin.woff" />
     <Content Include="Content\font\roboto\Roboto-Thin.woff2" />
+    <Content Include="Views\Domicilio\Index.cshtml" />
+    <Content Include="Views\Domicilio\Inserir.cshtml" />
+    <Content Include="Views\Individuo\Inserir.cshtml" />
+    <Content Include="Views\Domicilio\Editar.cshtml" />
+    <Content Include="Views\Individuo\Index.cshtml" />
+    <Content Include="Views\Domicilio\Remover.cshtml" />
+    <Content Include="Views\Domicilio\Detalhes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -130,19 +153,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Individuo\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dominio\Dominio.csproj">
-      <Project>{617a3230-bb28-4f58-b823-7e0c3c9f9b16}</Project>
+      <Project>{309ddb37-d994-4421-b015-de74352bfb0b}</Project>
       <Name>Dominio</Name>
     </ProjectReference>
     <ProjectReference Include="..\Infraestrutura\Infraestrutura.csproj">
-      <Project>{98b972fb-88d2-4cc8-a041-c683dd3948e7}</Project>
+      <Project>{955172c5-0f06-4f48-ae4d-98ea682fe18e}</Project>
       <Name>Infraestrutura</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -157,9 +181,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>56305</DevelopmentServerPort>
+          <DevelopmentServerPort>64467</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56305/</IISUrl>
+          <IISUrl>http://localhost:60486/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

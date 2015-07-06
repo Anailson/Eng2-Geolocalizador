@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Geolocalizador.App_Start;
 
 namespace Geolocalizador
 {
@@ -13,6 +14,8 @@ namespace Geolocalizador
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            ControllerBuilder.Current.SetControllerFactory(new AppConfig());
         }
     }
 }

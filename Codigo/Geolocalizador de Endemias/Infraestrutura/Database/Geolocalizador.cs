@@ -17,5 +17,6 @@ namespace Infraestrutura.Database
         }
 
         public DbSet<Individuo> Individuos { get; set; }
+        public DbSet<Domicilio> Domicilios { get; set; }
     }
 }

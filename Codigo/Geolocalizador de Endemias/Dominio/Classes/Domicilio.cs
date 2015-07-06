@@ -9,15 +9,12 @@ namespace Dominio.Classes
     public class Domicilio
     {
         public int id { get; set; }
-        public int susProfissional{ set; get; }
-        public string rua { set; get; }
-        public int numero { set; get; }
-        public string bairro { set; get; }
-        public char situacaoMoradia{ set; get; }
-        public char tipoMoradia { set; get; }
-        public int quantComodos { set; get; }
-        public int quantmoradores { set; get; }
-        public Boolean energiaEletrica { set; get; }
-        public char abastecimentoAgua { set; get; }
+        public string susProfissional { get; set; }
+        public string rua { get; set; }
+        public int numero { get; set; }
+        public string bairro { get; set; }
+
+        public virtual ICollection<Individuo> Individuo { get; set; }
+        
     }
 }

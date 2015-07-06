@@ -1,30 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="GeolocalizadorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Domicilio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="susProfissional" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="rua" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="numero" Type="Int32" Nullable="false" />
+    <Property Name="bairro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Individuo" Relationship="Self.FK_Individuo_ToDomicilio" FromRole="Domicilio" ToRole="Individuo" />
+  </EntityType>
   <EntityType Name="Individuo">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="nome" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="numSus" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="apelido" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="nisPis" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="sexo" Type="Binary" MaxLength="1" FixedLength="true" Nullable="false" />
-    <Property Name="racaCor" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="nomeDaMae" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="nacionalidade" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="pais" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="telefone" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="municipio" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="uf" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="email" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="nivelEscolar" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="situacaoDeRua" Type="Boolean" Nullable="false" />
-    <Property Name="situacaoConj" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="ocupacao" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="orientacaoSexual" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idDomicilio" Type="Int32" Nullable="false" />
+    <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="numSus" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="apelido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="municipio" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Domicilio" Relationship="Self.FK_Individuo_ToDomicilio" FromRole="Individuo" ToRole="Domicilio" />
   </EntityType>
-  <EntityContainer Name="GeolocalizadorEntities" annotation:LazyLoadingEnabled="true">
+  <Association Name="FK_Individuo_ToDomicilio">
+    <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="1" />
+    <End Role="Individuo" Type="Self.Individuo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Domicilio">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Individuo">
+        <PropertyRef Name="idDomicilio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GeolocalizadorEntitiesSuper" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Domicilio" EntityType="Self.Domicilio" />
     <EntitySet Name="Individuo" EntityType="Self.Individuo" />
+    <AssociationSet Name="FK_Individuo_ToDomicilio" Association="Self.FK_Individuo_ToDomicilio">
+      <End Role="Domicilio" EntitySet="Domicilio" />
+      <End Role="Individuo" EntitySet="Individuo" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Dominio.Classes.Domicilio>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Inserir")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.susProfissional)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bairro)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.susProfissional)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rua)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bairro)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.id }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.id }) |
+            @Html.ActionLink("Excluir", "Remover", new { id = item.id })
+        </td>
+    </tr>
+}
+
+</table>

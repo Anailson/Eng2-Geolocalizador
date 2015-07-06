@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GeolocalizadorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Domicilio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="susProfissional" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="rua" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="numero" Type="Int32" Nullable="false" />
+    <Property Name="bairro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Individuo" Relationship="GeolocalizadorModel.FK_Individuo_ToDomicilio" FromRole="Domicilio" ToRole="Individuo" />
+  </EntityType>
+  <EntityContainer Name="GeolocalizadorEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Domicilio" EntityType="Self.Domicilio" />
+    <EntitySet Name="Individuo" EntityType="GeolocalizadorModel.Individuo" />
+    <AssociationSet Name="FK_Individuo_ToDomicilio" Association="GeolocalizadorModel.FK_Individuo_ToDomicilio">
+      <End Role="Domicilio" EntitySet="Domicilio" />
+      <End Role="Individuo" EntitySet="Individuo" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Individuo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idDomicilio" Type="Int32" Nullable="false" />
+    <Property Name="nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="numSus" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="apelido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="municipio" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Domicilio" Relationship="GeolocalizadorModel.FK_Individuo_ToDomicilio" FromRole="Individuo" ToRole="Domicilio" />
+  </EntityType>
+  <Association Name="FK_Individuo_ToDomicilio">
+    <End Type="GeolocalizadorModel.Domicilio" Role="Domicilio" Multiplicity="1" />
+    <End Type="GeolocalizadorModel.Individuo" Role="Individuo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Domicilio">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Individuo">
+        <PropertyRef Name="idDomicilio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

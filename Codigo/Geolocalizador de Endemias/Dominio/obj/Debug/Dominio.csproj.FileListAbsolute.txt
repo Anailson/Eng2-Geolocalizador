@@ -1,4 +1,4 @@
-C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Dominio\bin\Debug\Dominio.dll
-C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Dominio\bin\Debug\Dominio.pdb
-C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Dominio\obj\Debug\Dominio.dll
-C:\Users\Luiz Fonseca\SkyDrive\Aplicações\Visual Studio 2013\Geolocalizador de Endemias\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Luiz Fonseca\Documents\Visual Studio 2013\Projects\Geolocalizador de Endemias\Dominio\bin\Debug\Dominio.dll
+C:\Users\Luiz Fonseca\Documents\Visual Studio 2013\Projects\Geolocalizador de Endemias\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Luiz Fonseca\Documents\Visual Studio 2013\Projects\Geolocalizador de Endemias\Dominio\obj\Debug\Dominio.dll
+C:\Users\Luiz Fonseca\Documents\Visual Studio 2013\Projects\Geolocalizador de Endemias\Dominio\obj\Debug\Dominio.pdb

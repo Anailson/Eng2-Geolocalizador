@@ -5,22 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using Dominio.Classes;
 using Dominio.Interfaces;
-using Infraestrutura.Database;
 
 namespace Geolocalizador.Controllers
 {
-    public class IndividuoController :  Controller
+    public class IndividuoController : Controller
     {
-
-        public IGeolocalizador IGeolocalizador { get; set; }
         public IIndividuos individuos { get; set; }
 
         //
-        // GET: /Usuario/
+        // GET: /Domicilio/
         public ActionResult Index()
         {
-           List<Individuo> u = individuos.Listar().ToList<Individuo>();
-            return View(u);
+            List<Individuo> i = individuos.Listar().ToList<Individuo>();
+            return View(i);
         }
 
         public ActionResult Inserir()
@@ -75,7 +72,5 @@ namespace Geolocalizador.Controllers
                 individuos = individuos.Listar().ToList(),
             });
         }
-
-
     }
 }

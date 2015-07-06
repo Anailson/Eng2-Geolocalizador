@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Dominio.Interfaces;
 using System.Data.Entity;
 using System.Data.Entity.Core;
@@ -10,7 +7,7 @@ using System.Data.Entity.Core.Metadata.Edm;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
 
-namespace Infraestrutura.Database
+namespace Infraestrutura
 {
     public class UnidadeTrabalho : DbContext, IUnidadeTrabalho
     {
@@ -85,6 +82,6 @@ namespace Infraestrutura.Database
                 throw ex;
             }
         }
-
+ 
     }
 }

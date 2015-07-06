@@ -1,28 +1,27 @@
-﻿using Dominio.Classes;
-using Dominio.Interfaces;
-using Infraestrutura.Database;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dominio.Classes;
+using Dominio.Interfaces;
+using Infraestrutura.Database;
 
 namespace Infraestrutura.Repositorio
 {
-    public class Individuos : IIndividuos
+    public class Individuos: IIndividuos
     {
-
         private IQueryable<Individuo> individuos;
         private IGeolocalizador unidadeTrabalho;
 
-        private Individuos(IQueryable<Individuo> usuarios, IGeolocalizador unidadeTrabalho)
+        private  Individuos(IQueryable<Individuo> individuos, IGeolocalizador unidadeTrabalho)
         {
-            this.individuos = usuarios;
+            this.individuos = individuos;
             this.unidadeTrabalho = unidadeTrabalho;
         }
 
-        public Individuos(IGeolocalizador iGeolocalizador, IGeolocalizador unidadeTrabalho) :
-            this(iGeolocalizador.Individuos, unidadeTrabalho) { }
+        public Individuos(IGeolocalizador iGeolocalizador, IGeolocalizador unidadeTrabalho) : 
+               this(iGeolocalizador.Individuos, unidadeTrabalho) { }
 
         public void Cadastrar(Individuo individuo)
         {
@@ -49,7 +48,7 @@ namespace Infraestrutura.Repositorio
 
         public ICollection<Individuo> Listar()
         {
-            return individuos.OrderBy(u => u.nome).ToList();
+            return individuos.OrderBy(i => i.nome).ToList();
         }
 
         public bool ContemRegistro()

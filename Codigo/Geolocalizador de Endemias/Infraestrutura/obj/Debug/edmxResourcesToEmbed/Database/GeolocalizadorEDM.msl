@@ -1,28 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="GeolocalizadorModelStoreContainer" CdmEntityContainer="GeolocalizadorEntities">
+  <EntityContainerMapping StorageEntityContainer="GeolocalizadorModelStoreContainer" CdmEntityContainer="GeolocalizadorEntitiesSuper">
+    <EntitySetMapping Name="Domicilio">
+      <EntityTypeMapping TypeName="GeolocalizadorModel.Domicilio">
+        <MappingFragment StoreEntitySet="Domicilio">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="susProfissional" ColumnName="susProfissional" />
+          <ScalarProperty Name="rua" ColumnName="rua" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="bairro" ColumnName="bairro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Individuo">
       <EntityTypeMapping TypeName="GeolocalizadorModel.Individuo">
         <MappingFragment StoreEntitySet="Individuo">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idDomicilio" ColumnName="idDomicilio" />
           <ScalarProperty Name="nome" ColumnName="nome" />
           <ScalarProperty Name="numSus" ColumnName="numSus" />
           <ScalarProperty Name="apelido" ColumnName="apelido" />
-          <ScalarProperty Name="nisPis" ColumnName="nisPis" />
-          <ScalarProperty Name="sexo" ColumnName="sexo" />
-          <ScalarProperty Name="racaCor" ColumnName="racaCor" />
-          <ScalarProperty Name="nomeDaMae" ColumnName="nomeDaMae" />
-          <ScalarProperty Name="nacionalidade" ColumnName="nacionalidade" />
-          <ScalarProperty Name="pais" ColumnName="pais" />
-          <ScalarProperty Name="telefone" ColumnName="telefone" />
           <ScalarProperty Name="municipio" ColumnName="municipio" />
-          <ScalarProperty Name="uf" ColumnName="uf" />
-          <ScalarProperty Name="email" ColumnName="email" />
-          <ScalarProperty Name="nivelEscolar" ColumnName="nivelEscolar" />
-          <ScalarProperty Name="situacaoDeRua" ColumnName="situacaoDeRua" />
-          <ScalarProperty Name="situacaoConj" ColumnName="situacaoConj" />
-          <ScalarProperty Name="ocupacao" ColumnName="ocupacao" />
-          <ScalarProperty Name="orientacaoSexual" ColumnName="orientacaoSexual" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
