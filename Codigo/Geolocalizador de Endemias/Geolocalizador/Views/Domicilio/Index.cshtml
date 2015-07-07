@@ -7,10 +7,14 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Inserir")
+    @Html.ActionLink("Adicionar Novo", "Inserir") |
+    @Html.ActionLink("Individuo","Index","Individuo")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.susProfissional)
         </th>
@@ -28,6 +32,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.susProfissional)
         </td>

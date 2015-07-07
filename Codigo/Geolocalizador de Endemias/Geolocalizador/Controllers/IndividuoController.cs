@@ -5,11 +5,13 @@ using System.Web;
 using System.Web.Mvc;
 using Dominio.Classes;
 using Dominio.Interfaces;
+using Infraestrutura.Database;
 
 namespace Geolocalizador.Controllers
 {
     public class IndividuoController : Controller
     {
+        public IGeolocalizador IGeolocalizador { get; set; }
         public IIndividuos individuos { get; set; }
 
         //
@@ -32,6 +34,12 @@ namespace Geolocalizador.Controllers
         public ActionResult Inserir2()
         {
             return View();
+        }
+
+        public ActionResult Detalhes(int id)
+        {
+            Individuo individuo = individuos.ResultadoUnico(id);
+            return View(individuo);
         }
 
         public ActionResult Editar(int id)

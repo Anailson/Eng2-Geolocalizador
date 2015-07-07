@@ -145,6 +145,9 @@
     <Content Include="Views\Individuo\Index.cshtml" />
     <Content Include="Views\Domicilio\Remover.cshtml" />
     <Content Include="Views\Domicilio\Detalhes.cshtml" />
+    <Content Include="Views\Individuo\Editar.cshtml" />
+    <Content Include="Views\Individuo\Remover.cshtml" />
+    <Content Include="Views\Individuo\Detalhes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

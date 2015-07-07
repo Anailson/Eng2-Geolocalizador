@@ -15,6 +15,6 @@ namespace Dominio.Classes
         public string apelido { get; set; }
         public string municipio { get; set; }
 
-        public Domicilio Domicilio { get; set; }
+        public virtual Domicilio Domicilio { get; set; }
    }
 }

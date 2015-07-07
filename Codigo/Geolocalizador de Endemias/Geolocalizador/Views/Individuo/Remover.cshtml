@@ -1,0 +1,67 @@
+﻿@model Dominio.Classes.Individuo
+
+@{
+    ViewBag.Title = "Remover";
+}
+
+<h2>Remover</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+
+@using (Html.BeginForm("Excluir","Individuo"))
+{
+    @Html.AntiForgeryToken()
+
+    <h4>Individuo</h4>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idDomicilio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idDomicilio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numSus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numSus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apelido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apelido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.municipio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.municipio)
+        </dd>
+
+    </dl>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Apagar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar a Lista", "Index")
+        </div>
+    }
+</div>

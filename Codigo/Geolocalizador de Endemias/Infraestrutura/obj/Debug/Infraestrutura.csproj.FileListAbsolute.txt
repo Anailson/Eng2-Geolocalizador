@@ -10,3 +10,15 @@ C:\Users\Luiz Fonseca\Documents\Visual Studio 2013\Projects\Geolocalizador de En
 C:\Users\Luiz Fonseca\Documents\Visual Studio 2013\Projects\Geolocalizador de Endemias\Infraestrutura\obj\Debug\Infraestrutura.csprojResolveAssemblyReference.cache
 C:\Users\Luiz Fonseca\Documents\Visual Studio 2013\Projects\Geolocalizador de Endemias\Infraestrutura\obj\Debug\Infraestrutura.dll
 C:\Users\Luiz Fonseca\Documents\Visual Studio 2013\Projects\Geolocalizador de Endemias\Infraestrutura\obj\Debug\Infraestrutura.pdb
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\Infraestrutura.dll.config
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\Infraestrutura.dll
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\Infraestrutura.pdb
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\Dominio.dll
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\EntityFramework.dll
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\Dominio.pdb
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\EntityFramework.xml
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\obj\Debug\Infraestrutura.csprojResolveAssemblyReference.cache
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\obj\Debug\Infraestrutura.dll
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\obj\Debug\Infraestrutura.pdb

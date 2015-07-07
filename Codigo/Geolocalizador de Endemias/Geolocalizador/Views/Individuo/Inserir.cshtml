@@ -14,59 +14,59 @@
     <div class="form-horizontal">
         <h4>Individuo</h4>
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.ValidationSummary(true)
+
         <div class="form-group">
-            @Html.LabelFor(model => model.idDomicilio, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.idDomicilio, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.idDomicilio, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.idDomicilio, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.idDomicilio)
+                @Html.ValidationMessageFor(model => model.idDomicilio)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.nome, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.nome, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nome, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.nome)
+                @Html.ValidationMessageFor(model => model.nome)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.numSus, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.numSus, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.numSus, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.numSus, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.numSus)
+                @Html.ValidationMessageFor(model => model.numSus)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.apelido, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.apelido, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.apelido, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.apelido, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.apelido)
+                @Html.ValidationMessageFor(model => model.apelido)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.municipio, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.municipio, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.municipio, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.municipio, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.municipio)
+                @Html.ValidationMessageFor(model => model.municipio)
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar a Lista", "Index")
 </div>
 
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="~/Content/js/materialize.min.js"></script>
