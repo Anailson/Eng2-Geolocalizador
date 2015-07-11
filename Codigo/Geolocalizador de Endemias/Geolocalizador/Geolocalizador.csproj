@@ -107,8 +107,18 @@
   <ItemGroup>
     <Compile Include="App_Start\AppConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AcompanhamentoCriancaController.cs" />
+    <Compile Include="Controllers\AcompanhamentoEnfermoController.cs" />
+    <Compile Include="Controllers\AcompanhamentoGestanteController.cs" />
+    <Compile Include="Controllers\AreaController.cs" />
+    <Compile Include="Controllers\CronogramaController.cs" />
     <Compile Include="Controllers\DomicilioController.cs" />
+    <Compile Include="Controllers\EnfermidadeController.cs" />
+    <Compile Include="Controllers\EquipeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndividuoController.cs" />
+    <Compile Include="Controllers\MicroAreaController.cs" />
+    <Compile Include="Controllers\VisitaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -148,6 +158,9 @@
     <Content Include="Views\Individuo\Editar.cshtml" />
     <Content Include="Views\Individuo\Remover.cshtml" />
     <Content Include="Views\Individuo\Detalhes.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Area\Index.cshtml" />
+    <Content Include="Views\Area\Inserir.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -157,6 +170,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Views\AcompanhamentoCrianca\" />
+    <Folder Include="Views\AcompanhamentoEnfermo\" />
+    <Folder Include="Views\AcompanhamentoGestante\" />
+    <Folder Include="Views\Cronograma\" />
+    <Folder Include="Views\Enfermidade\" />
+    <Folder Include="Views\Equipe\" />
+    <Folder Include="Views\MicroArea\" />
+    <Folder Include="Views\Visita\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dominio\Dominio.csproj">

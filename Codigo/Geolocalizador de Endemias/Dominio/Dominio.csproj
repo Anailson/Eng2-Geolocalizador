@@ -39,12 +39,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\AcompanhamentoCrianca.cs" />
+    <Compile Include="Classes\AcompanhamentoEnfermo.cs" />
+    <Compile Include="Classes\AcompanhamentoGestante.cs" />
+    <Compile Include="Classes\Area.cs" />
+    <Compile Include="Classes\Cronograma.cs" />
     <Compile Include="Classes\Domicilio.cs" />
+    <Compile Include="Classes\Enfermidade.cs" />
+    <Compile Include="Classes\Equipe.cs" />
     <Compile Include="Classes\Individuo.cs" />
+    <Compile Include="Classes\MicroArea.cs" />
+    <Compile Include="Classes\Visita.cs" />
+    <Compile Include="Interfaces\IAcompanhamentoCriancas.cs" />
+    <Compile Include="Interfaces\IAcompanhamentoEnfermos.cs" />
+    <Compile Include="Interfaces\IAcompanhamentoGestantes.cs" />
+    <Compile Include="Interfaces\IAreas.cs" />
+    <Compile Include="Interfaces\ICronogramas.cs" />
     <Compile Include="Interfaces\IDomicilios.cs" />
+    <Compile Include="Interfaces\IEnfermidades.cs" />
+    <Compile Include="Interfaces\IEquipes.cs" />
     <Compile Include="Interfaces\IIndividuos.cs" />
+    <Compile Include="Interfaces\IMicroAreas.cs" />
     <Compile Include="Interfaces\IRepositorio.cs" />
     <Compile Include="Interfaces\IUnidadeTrabalho.cs" />
+    <Compile Include="Interfaces\IVisitas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

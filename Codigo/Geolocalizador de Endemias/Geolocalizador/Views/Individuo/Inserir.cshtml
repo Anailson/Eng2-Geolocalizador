@@ -17,7 +17,7 @@
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.idDomicilio, new { @class = "control-label col-md-2" })
+            @Html.Label("ID", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.idDomicilio)
                 @Html.ValidationMessageFor(model => model.idDomicilio)

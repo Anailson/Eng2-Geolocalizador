@@ -11,8 +11,18 @@ namespace Infraestrutura.Database
 {
     public interface IGeolocalizador : IUnidadeTrabalho
     {
-        DbSet<Individuo> Individuos { get; }
+
+        DbSet<AcompanhamentoCrianca> AcompanhamentoCriancas { get; }
+        DbSet<AcompanhamentoEnfermo> AcompanhamentoEnfermos { get; }
+        DbSet<AcompanhamentoGestante> AcompanhamentoGestantes { get;}
+        DbSet<Area> Areas { get; }
+        DbSet<MicroArea> MicroAreas { get; }
+        DbSet<Cronograma> Cronogramas { get; }
         DbSet<Domicilio> Domicilios { get; }
+        DbSet<Enfermidade> Enfermidades { get; }
+        DbSet<Equipe> Equipes { get; }
+        DbSet<Individuo> Individuos { get; }
+        DbSet<Visita> Visitas { get; }
       
     }
 }

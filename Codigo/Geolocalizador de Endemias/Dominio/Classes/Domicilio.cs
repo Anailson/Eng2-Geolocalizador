@@ -9,12 +9,32 @@ namespace Dominio.Classes
     public class Domicilio
     {
         public int id { get; set; }
-        public string susProfissional { get; set; }
+        public int susProfissional { get; set; }
+        public int codCNES {get; set;}
+        public int codEquipe {get; set;}
+        public int microArea {get; set;}
         public string rua { get; set; }
-        public int numero { get; set; }
+        public string numero { get; set; }
         public string bairro { get; set; }
+        public string situacaoMoradia { set; get; }
+        public string tipoMoradia { set; get; }
+        public int numProntuario {get; set;}
+        public int susResponsavel {get; set;}
+        public DateTime nascimentoResponsavel {get; set;}
+        public int rendaFamiliar {get; set;}
+        public int numMembro {get; set;}
+        public int quantComodos { set; get; }
+        public int quantMoradores { set; get; }
+        public string energiaEletrica { set; get; }
+        public string abastecimentoAgua { set; get; }
 
+        public virtual Equipe Equipe { get; set; }
+        public virtual MicroArea MicroArea { get; set; }
         public virtual ICollection<Individuo> Individuo { get; set; }
+        public virtual ICollection<Cronograma> Cronograma { get; set; }
+        public virtual ICollection<Visita> Visita { get; set; }
+
+
         
     }
 }

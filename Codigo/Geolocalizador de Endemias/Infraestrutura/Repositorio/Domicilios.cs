@@ -49,7 +49,7 @@ namespace Infraestrutura.Repositorio
 
         public ICollection<Domicilio> Listar()
         {
-            return domicilios.OrderBy(d => d.susProfissional).ToList();
+            return domicilios.OrderBy(d => d.id).ToList();
         }
 
         public bool ContemRegistro()

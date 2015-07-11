@@ -68,8 +68,17 @@
     <Compile Include="Database\Geolocalizador.cs" />
     <Compile Include="Database\IGeolocalizador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\AcompanhamentoCriancas.cs" />
+    <Compile Include="Repositorio\AcompanhamentoEnfermos.cs" />
+    <Compile Include="Repositorio\AcompanhamentoGestantes.cs" />
+    <Compile Include="Repositorio\Areas.cs" />
+    <Compile Include="Repositorio\Cronogramas.cs" />
     <Compile Include="Repositorio\Domicilios.cs" />
+    <Compile Include="Repositorio\Enfermidades.cs" />
+    <Compile Include="Repositorio\Equipes.cs" />
     <Compile Include="Repositorio\Individuos.cs" />
+    <Compile Include="Repositorio\MicroAreas.cs" />
+    <Compile Include="Repositorio\Visitas.cs" />
     <Compile Include="UnidadeTrabalho.cs" />
   </ItemGroup>
   <ItemGroup>

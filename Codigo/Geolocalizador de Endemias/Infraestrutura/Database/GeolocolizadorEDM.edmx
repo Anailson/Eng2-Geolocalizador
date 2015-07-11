@@ -5,27 +5,268 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="GeolocalizadorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AcompanhamentoCrianca">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="numSus" Type="int" Nullable="false" />
+          <Property Name="idVisita" Type="int" Nullable="false" />
+          <Property Name="desnutricao" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="pneumonia" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="diarreia" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="vacinacaoEmDia" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="inflamacaoRep" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="alimentacaoPeito" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="peso" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AcompanhamentoEnfermo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="numSus" Type="int" Nullable="false" />
+          <Property Name="idVisita" Type="int" Nullable="false" />
+          <Property Name="idEnfermidade" Type="int" Nullable="false" />
+          <Property Name="acompanhamentoMedico" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="acompanhamentoPsico" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="medicacao" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="procedimentoCirurgico" Type="nvarchar" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AcompanhamentoGestante">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="numSus" Type="int" Nullable="false" />
+          <Property Name="idVisita" Type="int" Nullable="false" />
+          <Property Name="prenatalMensal" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="semanasGestacao" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="endereco" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="numero" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="bairro" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="telefone" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="quantMicroAreas" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cronograma">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="idDomicilio" Type="int" />
+          <Property Name="dataInicio" Type="datetime" Nullable="false" />
+          <Property Name="dataFim" Type="datetime" Nullable="false" />
+          <Property Name="endereco" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Domicilio">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="susProfissional" Type="nvarchar" MaxLength="13" Nullable="false" />
-          <Property Name="rua" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="numero" Type="int" Nullable="false" />
-          <Property Name="bairro" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="susProfissional" Type="int" Nullable="false" />
+          <Property Name="codCNES" Type="int" Nullable="false" />
+          <Property Name="codEquipe" Type="int" Nullable="false" />
+          <Property Name="microArea" Type="int" Nullable="false" />
+          <Property Name="rua" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="numero" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="bairro" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="situacaoMoradia" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="tipoMoradia" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="numProntuario" Type="int" Nullable="false" />
+          <Property Name="susResponsavel" Type="int" Nullable="false" />
+          <Property Name="nascimentoResponsavel" Type="date" Nullable="false" />
+          <Property Name="rendaFamiliar" Type="int" Nullable="false" />
+          <Property Name="numMembro" Type="int" />
+          <Property Name="quantComodos" Type="int" Nullable="false" />
+          <Property Name="quantMoradores" Type="int" Nullable="false" />
+          <Property Name="energiaEletrica" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="abastecimentoAgua" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Equipe">
+          <Key>
+            <PropertyRef Name="numSus" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="idMicroArea" Type="int" />
+          <Property Name="numSus" Type="int" Nullable="false" />
+          <Property Name="funcao" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Individuo">
           <Key>
+            <PropertyRef Name="numSus" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="idDomicilio" Type="int" Nullable="false" />
+          <Property Name="susProfissional" Type="int" Nullable="false" />
+          <Property Name="codCNES" Type="int" Nullable="false" />
+          <Property Name="codEquipe" Type="int" Nullable="false" />
+          <Property Name="microArea" Type="int" Nullable="false" />
+          <Property Name="nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="numSus" Type="int" Nullable="false" />
+          <Property Name="susResponsavel" Type="int" />
+          <Property Name="apelido" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="nisPis" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="sexo" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="racaCor" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="nomeDaMae" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="nacionalidade" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="pais" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="telefone" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="municipio" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="uf" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="nivelEscolar" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="situacaoDeRua" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="situacaoConj" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ocupacao" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="orientacaoSexual" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="dataNascimento" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MicroArea">
+          <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idDomicilio" Type="int" Nullable="false" />
-          <Property Name="nome" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="numSus" Type="nvarchar" MaxLength="13" Nullable="false" />
-          <Property Name="apelido" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="municipio" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="idArea" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Visita">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="idDomicilio" Type="int" Nullable="false" />
+          <Property Name="dataVisita" Type="datetime" Nullable="false" />
+          <Property Name="dataProxVisita" Type="datetime" />
+          <Property Name="resumo" Type="nvarchar" MaxLength="50" />
+          <Property Name="detalhes" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <Association Name="FK_AcompanhamentoCrianca_ToIndividuo">
+          <End Role="Individuo" Type="Self.Individuo" Multiplicity="1" />
+          <End Role="AcompanhamentoCrianca" Type="Self.AcompanhamentoCrianca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Individuo">
+              <PropertyRef Name="numSus" />
+            </Principal>
+            <Dependent Role="AcompanhamentoCrianca">
+              <PropertyRef Name="numSus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AcompanhamentoCrianca_ToVisita">
+          <End Role="Visita" Type="Self.Visita" Multiplicity="1" />
+          <End Role="AcompanhamentoCrianca" Type="Self.AcompanhamentoCrianca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visita">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AcompanhamentoCrianca">
+              <PropertyRef Name="idVisita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AcompanhamentoEnfermo_ToIndividuo">
+          <End Role="Individuo" Type="Self.Individuo" Multiplicity="1" />
+          <End Role="AcompanhamentoEnfermo" Type="Self.AcompanhamentoEnfermo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Individuo">
+              <PropertyRef Name="numSus" />
+            </Principal>
+            <Dependent Role="AcompanhamentoEnfermo">
+              <PropertyRef Name="numSus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AcompanhamentoEnfermo_ToVisita">
+          <End Role="Visita" Type="Self.Visita" Multiplicity="1" />
+          <End Role="AcompanhamentoEnfermo" Type="Self.AcompanhamentoEnfermo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visita">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AcompanhamentoEnfermo">
+              <PropertyRef Name="idVisita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AcompanhamentoGestante_ToIndividuo">
+          <End Role="Individuo" Type="Self.Individuo" Multiplicity="1" />
+          <End Role="AcompanhamentoGestante" Type="Self.AcompanhamentoGestante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Individuo">
+              <PropertyRef Name="numSus" />
+            </Principal>
+            <Dependent Role="AcompanhamentoGestante">
+              <PropertyRef Name="numSus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AcompanhamentoGestante_ToVisita">
+          <End Role="Visita" Type="Self.Visita" Multiplicity="1" />
+          <End Role="AcompanhamentoGestante" Type="Self.AcompanhamentoGestante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visita">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AcompanhamentoGestante">
+              <PropertyRef Name="idVisita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cronograma_ToDomicilio">
+          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="0..1" />
+          <End Role="Cronograma" Type="Self.Cronograma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domicilio">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cronograma">
+              <PropertyRef Name="idDomicilio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Domicilio_ToEquipe">
+          <End Role="Equipe" Type="Self.Equipe" Multiplicity="1" />
+          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipe">
+              <PropertyRef Name="numSus" />
+            </Principal>
+            <Dependent Role="Domicilio">
+              <PropertyRef Name="susProfissional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Domicilio_ToMicroArea">
+          <End Role="MicroArea" Type="Self.MicroArea" Multiplicity="1" />
+          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MicroArea">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Domicilio">
+              <PropertyRef Name="microArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipe_ToTableMicroArea">
+          <End Role="MicroArea" Type="Self.MicroArea" Multiplicity="0..1" />
+          <End Role="Equipe" Type="Self.Equipe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MicroArea">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Equipe">
+              <PropertyRef Name="idMicroArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Individuo_ToDomicilio">
           <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="1" />
           <End Role="Individuo" Type="Self.Individuo" Multiplicity="*" />
@@ -38,49 +279,494 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Individuo_ToEquipe">
+          <End Role="Equipe" Type="Self.Equipe" Multiplicity="1" />
+          <End Role="Individuo" Type="Self.Individuo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipe">
+              <PropertyRef Name="numSus" />
+            </Principal>
+            <Dependent Role="Individuo">
+              <PropertyRef Name="susProfissional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Individuo_ToMicroArea">
+          <End Role="MicroArea" Type="Self.MicroArea" Multiplicity="1" />
+          <End Role="Individuo" Type="Self.Individuo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MicroArea">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Individuo">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MicroArea_ToArea">
+          <End Role="Area" Type="Self.Area" Multiplicity="1" />
+          <End Role="MicroArea" Type="Self.MicroArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MicroArea">
+              <PropertyRef Name="idArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Visita_ToDomicilio">
+          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="1" />
+          <End Role="Visita" Type="Self.Visita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domicilio">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Visita">
+              <PropertyRef Name="idDomicilio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="GeolocalizadorModelStoreContainer">
+          <EntitySet Name="AcompanhamentoCrianca" EntityType="Self.AcompanhamentoCrianca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AcompanhamentoEnfermo" EntityType="Self.AcompanhamentoEnfermo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AcompanhamentoGestante" EntityType="Self.AcompanhamentoGestante" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cronograma" EntityType="Self.Cronograma" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Domicilio" EntityType="Self.Domicilio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Equipe" EntityType="Self.Equipe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Individuo" EntityType="Self.Individuo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MicroArea" EntityType="Self.MicroArea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Visita" EntityType="Self.Visita" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AcompanhamentoCrianca_ToIndividuo" Association="Self.FK_AcompanhamentoCrianca_ToIndividuo">
+            <End Role="Individuo" EntitySet="Individuo" />
+            <End Role="AcompanhamentoCrianca" EntitySet="AcompanhamentoCrianca" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AcompanhamentoCrianca_ToVisita" Association="Self.FK_AcompanhamentoCrianca_ToVisita">
+            <End Role="Visita" EntitySet="Visita" />
+            <End Role="AcompanhamentoCrianca" EntitySet="AcompanhamentoCrianca" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AcompanhamentoEnfermo_ToIndividuo" Association="Self.FK_AcompanhamentoEnfermo_ToIndividuo">
+            <End Role="Individuo" EntitySet="Individuo" />
+            <End Role="AcompanhamentoEnfermo" EntitySet="AcompanhamentoEnfermo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AcompanhamentoEnfermo_ToVisita" Association="Self.FK_AcompanhamentoEnfermo_ToVisita">
+            <End Role="Visita" EntitySet="Visita" />
+            <End Role="AcompanhamentoEnfermo" EntitySet="AcompanhamentoEnfermo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AcompanhamentoGestante_ToIndividuo" Association="Self.FK_AcompanhamentoGestante_ToIndividuo">
+            <End Role="Individuo" EntitySet="Individuo" />
+            <End Role="AcompanhamentoGestante" EntitySet="AcompanhamentoGestante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AcompanhamentoGestante_ToVisita" Association="Self.FK_AcompanhamentoGestante_ToVisita">
+            <End Role="Visita" EntitySet="Visita" />
+            <End Role="AcompanhamentoGestante" EntitySet="AcompanhamentoGestante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cronograma_ToDomicilio" Association="Self.FK_Cronograma_ToDomicilio">
+            <End Role="Domicilio" EntitySet="Domicilio" />
+            <End Role="Cronograma" EntitySet="Cronograma" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Domicilio_ToEquipe" Association="Self.FK_Domicilio_ToEquipe">
+            <End Role="Equipe" EntitySet="Equipe" />
+            <End Role="Domicilio" EntitySet="Domicilio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Domicilio_ToMicroArea" Association="Self.FK_Domicilio_ToMicroArea">
+            <End Role="MicroArea" EntitySet="MicroArea" />
+            <End Role="Domicilio" EntitySet="Domicilio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipe_ToTableMicroArea" Association="Self.FK_Equipe_ToTableMicroArea">
+            <End Role="MicroArea" EntitySet="MicroArea" />
+            <End Role="Equipe" EntitySet="Equipe" />
+          </AssociationSet>
           <AssociationSet Name="FK_Individuo_ToDomicilio" Association="Self.FK_Individuo_ToDomicilio">
             <End Role="Domicilio" EntitySet="Domicilio" />
             <End Role="Individuo" EntitySet="Individuo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Individuo_ToEquipe" Association="Self.FK_Individuo_ToEquipe">
+            <End Role="Equipe" EntitySet="Equipe" />
+            <End Role="Individuo" EntitySet="Individuo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Individuo_ToMicroArea" Association="Self.FK_Individuo_ToMicroArea">
+            <End Role="MicroArea" EntitySet="MicroArea" />
+            <End Role="Individuo" EntitySet="Individuo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MicroArea_ToArea" Association="Self.FK_MicroArea_ToArea">
+            <End Role="Area" EntitySet="Area" />
+            <End Role="MicroArea" EntitySet="MicroArea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Visita_ToDomicilio" Association="Self.FK_Visita_ToDomicilio">
+            <End Role="Domicilio" EntitySet="Domicilio" />
+            <End Role="Visita" EntitySet="Visita" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GeolocalizadorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Domicilio">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="susProfissional" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="rua" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="numero" Type="Int32" Nullable="false" />
-          <Property Name="bairro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Individuo" Relationship="GeolocalizadorModel.FK_Individuo_ToDomicilio" FromRole="Domicilio" ToRole="Individuo" />
-        </EntityType>
         <EntityContainer Name="GeolocalizadorEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Domicilio" EntityType="Self.Domicilio" />
+          <EntitySet Name="AcompanhamentoCrianca" EntityType="GeolocalizadorModel.AcompanhamentoCrianca" />
+          <EntitySet Name="AcompanhamentoEnfermo" EntityType="GeolocalizadorModel.AcompanhamentoEnfermo" />
+          <EntitySet Name="AcompanhamentoGestante" EntityType="GeolocalizadorModel.AcompanhamentoGestante" />
+          <EntitySet Name="Area" EntityType="GeolocalizadorModel.Area" />
+          <EntitySet Name="Cronograma" EntityType="GeolocalizadorModel.Cronograma" />
+          <EntitySet Name="Domicilio" EntityType="GeolocalizadorModel.Domicilio" />
+          <EntitySet Name="Equipe" EntityType="GeolocalizadorModel.Equipe" />
           <EntitySet Name="Individuo" EntityType="GeolocalizadorModel.Individuo" />
+          <EntitySet Name="MicroArea" EntityType="GeolocalizadorModel.MicroArea" />
+          <EntitySet Name="Visita" EntityType="GeolocalizadorModel.Visita" />
+          <AssociationSet Name="FK_AcompanhamentoCrianca_ToIndividuo" Association="GeolocalizadorModel.FK_AcompanhamentoCrianca_ToIndividuo">
+            <End Role="Individuo" EntitySet="Individuo" />
+            <End Role="AcompanhamentoCrianca" EntitySet="AcompanhamentoCrianca" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AcompanhamentoCrianca_ToVisita" Association="GeolocalizadorModel.FK_AcompanhamentoCrianca_ToVisita">
+            <End Role="Visita" EntitySet="Visita" />
+            <End Role="AcompanhamentoCrianca" EntitySet="AcompanhamentoCrianca" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AcompanhamentoEnfermo_ToIndividuo" Association="GeolocalizadorModel.FK_AcompanhamentoEnfermo_ToIndividuo">
+            <End Role="Individuo" EntitySet="Individuo" />
+            <End Role="AcompanhamentoEnfermo" EntitySet="AcompanhamentoEnfermo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AcompanhamentoEnfermo_ToVisita" Association="GeolocalizadorModel.FK_AcompanhamentoEnfermo_ToVisita">
+            <End Role="Visita" EntitySet="Visita" />
+            <End Role="AcompanhamentoEnfermo" EntitySet="AcompanhamentoEnfermo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AcompanhamentoGestante_ToIndividuo" Association="GeolocalizadorModel.FK_AcompanhamentoGestante_ToIndividuo">
+            <End Role="Individuo" EntitySet="Individuo" />
+            <End Role="AcompanhamentoGestante" EntitySet="AcompanhamentoGestante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AcompanhamentoGestante_ToVisita" Association="GeolocalizadorModel.FK_AcompanhamentoGestante_ToVisita">
+            <End Role="Visita" EntitySet="Visita" />
+            <End Role="AcompanhamentoGestante" EntitySet="AcompanhamentoGestante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MicroArea_ToArea" Association="GeolocalizadorModel.FK_MicroArea_ToArea">
+            <End Role="Area" EntitySet="Area" />
+            <End Role="MicroArea" EntitySet="MicroArea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cronograma_ToDomicilio" Association="GeolocalizadorModel.FK_Cronograma_ToDomicilio">
+            <End Role="Domicilio" EntitySet="Domicilio" />
+            <End Role="Cronograma" EntitySet="Cronograma" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Domicilio_ToEquipe" Association="GeolocalizadorModel.FK_Domicilio_ToEquipe">
+            <End Role="Equipe" EntitySet="Equipe" />
+            <End Role="Domicilio" EntitySet="Domicilio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Domicilio_ToMicroArea" Association="GeolocalizadorModel.FK_Domicilio_ToMicroArea">
+            <End Role="MicroArea" EntitySet="MicroArea" />
+            <End Role="Domicilio" EntitySet="Domicilio" />
+          </AssociationSet>
           <AssociationSet Name="FK_Individuo_ToDomicilio" Association="GeolocalizadorModel.FK_Individuo_ToDomicilio">
             <End Role="Domicilio" EntitySet="Domicilio" />
             <End Role="Individuo" EntitySet="Individuo" />
           </AssociationSet>
+          <AssociationSet Name="FK_Visita_ToDomicilio" Association="GeolocalizadorModel.FK_Visita_ToDomicilio">
+            <End Role="Domicilio" EntitySet="Domicilio" />
+            <End Role="Visita" EntitySet="Visita" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipe_ToTableMicroArea" Association="GeolocalizadorModel.FK_Equipe_ToTableMicroArea">
+            <End Role="MicroArea" EntitySet="MicroArea" />
+            <End Role="Equipe" EntitySet="Equipe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Individuo_ToEquipe" Association="GeolocalizadorModel.FK_Individuo_ToEquipe">
+            <End Role="Equipe" EntitySet="Equipe" />
+            <End Role="Individuo" EntitySet="Individuo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Individuo_ToMicroArea" Association="GeolocalizadorModel.FK_Individuo_ToMicroArea">
+            <End Role="MicroArea" EntitySet="MicroArea" />
+            <End Role="Individuo" EntitySet="Individuo" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Individuo">
+        <EntityType Name="AcompanhamentoCrianca">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idDomicilio" Type="Int32" Nullable="false" />
-          <Property Name="nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="numSus" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
-          <Property Name="apelido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="municipio" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Domicilio" Relationship="GeolocalizadorModel.FK_Individuo_ToDomicilio" FromRole="Individuo" ToRole="Domicilio" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="numSus" Type="Int32" Nullable="false" />
+          <Property Name="idVisita" Type="Int32" Nullable="false" />
+          <Property Name="desnutricao" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="pneumonia" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="diarreia" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="vacinacaoEmDia" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="inflamacaoRep" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="alimentacaoPeito" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="peso" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Individuo" Relationship="GeolocalizadorModel.FK_AcompanhamentoCrianca_ToIndividuo" FromRole="AcompanhamentoCrianca" ToRole="Individuo" />
+          <NavigationProperty Name="Visita" Relationship="GeolocalizadorModel.FK_AcompanhamentoCrianca_ToVisita" FromRole="AcompanhamentoCrianca" ToRole="Visita" />
         </EntityType>
+        <EntityType Name="AcompanhamentoEnfermo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="numSus" Type="Int32" Nullable="false" />
+          <Property Name="idVisita" Type="Int32" Nullable="false" />
+          <Property Name="idEnfermidade" Type="Int32" Nullable="false" />
+          <Property Name="acompanhamentoMedico" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="acompanhamentoPsico" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="medicacao" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="procedimentoCirurgico" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Individuo" Relationship="GeolocalizadorModel.FK_AcompanhamentoEnfermo_ToIndividuo" FromRole="AcompanhamentoEnfermo" ToRole="Individuo" />
+          <NavigationProperty Name="Visita" Relationship="GeolocalizadorModel.FK_AcompanhamentoEnfermo_ToVisita" FromRole="AcompanhamentoEnfermo" ToRole="Visita" />
+        </EntityType>
+        <EntityType Name="AcompanhamentoGestante">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="numSus" Type="Int32" Nullable="false" />
+          <Property Name="idVisita" Type="Int32" Nullable="false" />
+          <Property Name="prenatalMensal" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="semanasGestacao" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Individuo" Relationship="GeolocalizadorModel.FK_AcompanhamentoGestante_ToIndividuo" FromRole="AcompanhamentoGestante" ToRole="Individuo" />
+          <NavigationProperty Name="Visita" Relationship="GeolocalizadorModel.FK_AcompanhamentoGestante_ToVisita" FromRole="AcompanhamentoGestante" ToRole="Visita" />
+        </EntityType>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="endereco" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="numero" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="bairro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="telefone" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="quantMicroAreas" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MicroArea" Relationship="GeolocalizadorModel.FK_MicroArea_ToArea" FromRole="Area" ToRole="MicroArea" />
+        </EntityType>
+        <EntityType Name="Cronograma">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="idDomicilio" Type="Int32" />
+          <Property Name="dataInicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dataFim" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="endereco" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Domicilio" Relationship="GeolocalizadorModel.FK_Cronograma_ToDomicilio" FromRole="Cronograma" ToRole="Domicilio" />
+        </EntityType>
+        <EntityType Name="Domicilio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="susProfissional" Type="Int32" Nullable="false" />
+          <Property Name="codCNES" Type="Int32" Nullable="false" />
+          <Property Name="codEquipe" Type="Int32" Nullable="false" />
+          <Property Name="microArea" Type="Int32" Nullable="false" />
+          <Property Name="rua" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="numero" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="bairro" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="situacaoMoradia" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tipoMoradia" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="numProntuario" Type="Int32" Nullable="false" />
+          <Property Name="susResponsavel" Type="Int32" Nullable="false" />
+          <Property Name="nascimentoResponsavel" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="rendaFamiliar" Type="Int32" Nullable="false" />
+          <Property Name="numMembro" Type="Int32" />
+          <Property Name="quantComodos" Type="Int32" Nullable="false" />
+          <Property Name="quantMoradores" Type="Int32" Nullable="false" />
+          <Property Name="energiaEletrica" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="abastecimentoAgua" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cronograma" Relationship="GeolocalizadorModel.FK_Cronograma_ToDomicilio" FromRole="Domicilio" ToRole="Cronograma" />
+          <NavigationProperty Name="Equipe" Relationship="GeolocalizadorModel.FK_Domicilio_ToEquipe" FromRole="Domicilio" ToRole="Equipe" />
+          <NavigationProperty Name="MicroArea" Relationship="GeolocalizadorModel.FK_Domicilio_ToMicroArea" FromRole="Domicilio" ToRole="MicroArea" />
+          <NavigationProperty Name="Individuo" Relationship="GeolocalizadorModel.FK_Individuo_ToDomicilio" FromRole="Domicilio" ToRole="Individuo" />
+          <NavigationProperty Name="Visita" Relationship="GeolocalizadorModel.FK_Visita_ToDomicilio" FromRole="Domicilio" ToRole="Visita" />
+        </EntityType>
+        <EntityType Name="Equipe">
+          <Key>
+            <PropertyRef Name="numSus" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="idMicroArea" Type="Int32" />
+          <Property Name="numSus" Type="Int32" Nullable="false" />
+          <Property Name="funcao" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Domicilio" Relationship="GeolocalizadorModel.FK_Domicilio_ToEquipe" FromRole="Equipe" ToRole="Domicilio" />
+          <NavigationProperty Name="MicroArea" Relationship="GeolocalizadorModel.FK_Equipe_ToTableMicroArea" FromRole="Equipe" ToRole="MicroArea" />
+          <NavigationProperty Name="Individuo" Relationship="GeolocalizadorModel.FK_Individuo_ToEquipe" FromRole="Equipe" ToRole="Individuo" />
+        </EntityType>
+        <EntityType Name="Individuo">
+          <Key>
+            <PropertyRef Name="numSus" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="idDomicilio" Type="Int32" Nullable="false" />
+          <Property Name="susProfissional" Type="Int32" Nullable="false" />
+          <Property Name="codCNES" Type="Int32" Nullable="false" />
+          <Property Name="codEquipe" Type="Int32" Nullable="false" />
+          <Property Name="microArea" Type="Int32" Nullable="false" />
+          <Property Name="nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="numSus" Type="Int32" Nullable="false" />
+          <Property Name="susResponsavel" Type="Int32" />
+          <Property Name="apelido" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="nisPis" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="racaCor" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="nomeDaMae" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nacionalidade" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="pais" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="telefone" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="municipio" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="uf" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nivelEscolar" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="situacaoDeRua" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="situacaoConj" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ocupacao" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="orientacaoSexual" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="dataNascimento" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="AcompanhamentoCrianca" Relationship="GeolocalizadorModel.FK_AcompanhamentoCrianca_ToIndividuo" FromRole="Individuo" ToRole="AcompanhamentoCrianca" />
+          <NavigationProperty Name="AcompanhamentoEnfermo" Relationship="GeolocalizadorModel.FK_AcompanhamentoEnfermo_ToIndividuo" FromRole="Individuo" ToRole="AcompanhamentoEnfermo" />
+          <NavigationProperty Name="AcompanhamentoGestante" Relationship="GeolocalizadorModel.FK_AcompanhamentoGestante_ToIndividuo" FromRole="Individuo" ToRole="AcompanhamentoGestante" />
+          <NavigationProperty Name="Domicilio" Relationship="GeolocalizadorModel.FK_Individuo_ToDomicilio" FromRole="Individuo" ToRole="Domicilio" />
+          <NavigationProperty Name="Equipe" Relationship="GeolocalizadorModel.FK_Individuo_ToEquipe" FromRole="Individuo" ToRole="Equipe" />
+          <NavigationProperty Name="MicroArea" Relationship="GeolocalizadorModel.FK_Individuo_ToMicroArea" FromRole="Individuo" ToRole="MicroArea" />
+        </EntityType>
+        <EntityType Name="MicroArea">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="idArea" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Area" Relationship="GeolocalizadorModel.FK_MicroArea_ToArea" FromRole="MicroArea" ToRole="Area" />
+          <NavigationProperty Name="Domicilio" Relationship="GeolocalizadorModel.FK_Domicilio_ToMicroArea" FromRole="MicroArea" ToRole="Domicilio" />
+          <NavigationProperty Name="Equipe" Relationship="GeolocalizadorModel.FK_Equipe_ToTableMicroArea" FromRole="MicroArea" ToRole="Equipe" />
+          <NavigationProperty Name="Individuo" Relationship="GeolocalizadorModel.FK_Individuo_ToMicroArea" FromRole="MicroArea" ToRole="Individuo" />
+        </EntityType>
+        <EntityType Name="Visita">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="idDomicilio" Type="Int32" Nullable="false" />
+          <Property Name="dataVisita" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dataProxVisita" Type="DateTime" Precision="3" />
+          <Property Name="resumo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="detalhes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AcompanhamentoCrianca" Relationship="GeolocalizadorModel.FK_AcompanhamentoCrianca_ToVisita" FromRole="Visita" ToRole="AcompanhamentoCrianca" />
+          <NavigationProperty Name="AcompanhamentoEnfermo" Relationship="GeolocalizadorModel.FK_AcompanhamentoEnfermo_ToVisita" FromRole="Visita" ToRole="AcompanhamentoEnfermo" />
+          <NavigationProperty Name="AcompanhamentoGestante" Relationship="GeolocalizadorModel.FK_AcompanhamentoGestante_ToVisita" FromRole="Visita" ToRole="AcompanhamentoGestante" />
+          <NavigationProperty Name="Domicilio" Relationship="GeolocalizadorModel.FK_Visita_ToDomicilio" FromRole="Visita" ToRole="Domicilio" />
+        </EntityType>
+        <Association Name="FK_AcompanhamentoCrianca_ToIndividuo">
+          <End Type="GeolocalizadorModel.Individuo" Role="Individuo" Multiplicity="1" />
+          <End Type="GeolocalizadorModel.AcompanhamentoCrianca" Role="AcompanhamentoCrianca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Individuo">
+              <PropertyRef Name="numSus" />
+            </Principal>
+            <Dependent Role="AcompanhamentoCrianca">
+              <PropertyRef Name="numSus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AcompanhamentoCrianca_ToVisita">
+          <End Type="GeolocalizadorModel.Visita" Role="Visita" Multiplicity="1" />
+          <End Type="GeolocalizadorModel.AcompanhamentoCrianca" Role="AcompanhamentoCrianca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visita">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AcompanhamentoCrianca">
+              <PropertyRef Name="idVisita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AcompanhamentoEnfermo_ToIndividuo">
+          <End Type="GeolocalizadorModel.Individuo" Role="Individuo" Multiplicity="1" />
+          <End Type="GeolocalizadorModel.AcompanhamentoEnfermo" Role="AcompanhamentoEnfermo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Individuo">
+              <PropertyRef Name="numSus" />
+            </Principal>
+            <Dependent Role="AcompanhamentoEnfermo">
+              <PropertyRef Name="numSus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AcompanhamentoEnfermo_ToVisita">
+          <End Type="GeolocalizadorModel.Visita" Role="Visita" Multiplicity="1" />
+          <End Type="GeolocalizadorModel.AcompanhamentoEnfermo" Role="AcompanhamentoEnfermo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visita">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AcompanhamentoEnfermo">
+              <PropertyRef Name="idVisita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AcompanhamentoGestante_ToIndividuo">
+          <End Type="GeolocalizadorModel.Individuo" Role="Individuo" Multiplicity="1" />
+          <End Type="GeolocalizadorModel.AcompanhamentoGestante" Role="AcompanhamentoGestante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Individuo">
+              <PropertyRef Name="numSus" />
+            </Principal>
+            <Dependent Role="AcompanhamentoGestante">
+              <PropertyRef Name="numSus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AcompanhamentoGestante_ToVisita">
+          <End Type="GeolocalizadorModel.Visita" Role="Visita" Multiplicity="1" />
+          <End Type="GeolocalizadorModel.AcompanhamentoGestante" Role="AcompanhamentoGestante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visita">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AcompanhamentoGestante">
+              <PropertyRef Name="idVisita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MicroArea_ToArea">
+          <End Type="GeolocalizadorModel.Area" Role="Area" Multiplicity="1" />
+          <End Type="GeolocalizadorModel.MicroArea" Role="MicroArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MicroArea">
+              <PropertyRef Name="idArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cronograma_ToDomicilio">
+          <End Type="GeolocalizadorModel.Domicilio" Role="Domicilio" Multiplicity="0..1" />
+          <End Type="GeolocalizadorModel.Cronograma" Role="Cronograma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domicilio">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cronograma">
+              <PropertyRef Name="idDomicilio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Domicilio_ToEquipe">
+          <End Type="GeolocalizadorModel.Equipe" Role="Equipe" Multiplicity="1" />
+          <End Type="GeolocalizadorModel.Domicilio" Role="Domicilio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipe">
+              <PropertyRef Name="numSus" />
+            </Principal>
+            <Dependent Role="Domicilio">
+              <PropertyRef Name="susProfissional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Domicilio_ToMicroArea">
+          <End Type="GeolocalizadorModel.MicroArea" Role="MicroArea" Multiplicity="1" />
+          <End Type="GeolocalizadorModel.Domicilio" Role="Domicilio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MicroArea">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Domicilio">
+              <PropertyRef Name="microArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Individuo_ToDomicilio">
           <End Type="GeolocalizadorModel.Domicilio" Role="Domicilio" Multiplicity="1" />
           <End Type="GeolocalizadorModel.Individuo" Role="Individuo" Multiplicity="*" />
@@ -93,30 +779,207 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <Association Name="FK_Visita_ToDomicilio">
+          <End Type="GeolocalizadorModel.Domicilio" Role="Domicilio" Multiplicity="1" />
+          <End Type="GeolocalizadorModel.Visita" Role="Visita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domicilio">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Visita">
+              <PropertyRef Name="idDomicilio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipe_ToTableMicroArea">
+          <End Type="GeolocalizadorModel.MicroArea" Role="MicroArea" Multiplicity="0..1" />
+          <End Type="GeolocalizadorModel.Equipe" Role="Equipe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MicroArea">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Equipe">
+              <PropertyRef Name="idMicroArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Individuo_ToEquipe">
+          <End Type="GeolocalizadorModel.Equipe" Role="Equipe" Multiplicity="1" />
+          <End Type="GeolocalizadorModel.Individuo" Role="Individuo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipe">
+              <PropertyRef Name="numSus" />
+            </Principal>
+            <Dependent Role="Individuo">
+              <PropertyRef Name="susProfissional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Individuo_ToMicroArea">
+          <End Type="GeolocalizadorModel.MicroArea" Role="MicroArea" Multiplicity="1" />
+          <End Type="GeolocalizadorModel.Individuo" Role="Individuo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MicroArea">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Individuo">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="GeolocalizadorModelStoreContainer" CdmEntityContainer="GeolocalizadorEntities">
+          <EntitySetMapping Name="AcompanhamentoCrianca">
+            <EntityTypeMapping TypeName="GeolocalizadorModel.AcompanhamentoCrianca">
+              <MappingFragment StoreEntitySet="AcompanhamentoCrianca">
+                <ScalarProperty Name="peso" ColumnName="peso" />
+                <ScalarProperty Name="alimentacaoPeito" ColumnName="alimentacaoPeito" />
+                <ScalarProperty Name="inflamacaoRep" ColumnName="inflamacaoRep" />
+                <ScalarProperty Name="vacinacaoEmDia" ColumnName="vacinacaoEmDia" />
+                <ScalarProperty Name="diarreia" ColumnName="diarreia" />
+                <ScalarProperty Name="pneumonia" ColumnName="pneumonia" />
+                <ScalarProperty Name="desnutricao" ColumnName="desnutricao" />
+                <ScalarProperty Name="idVisita" ColumnName="idVisita" />
+                <ScalarProperty Name="numSus" ColumnName="numSus" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AcompanhamentoEnfermo">
+            <EntityTypeMapping TypeName="GeolocalizadorModel.AcompanhamentoEnfermo">
+              <MappingFragment StoreEntitySet="AcompanhamentoEnfermo">
+                <ScalarProperty Name="procedimentoCirurgico" ColumnName="procedimentoCirurgico" />
+                <ScalarProperty Name="medicacao" ColumnName="medicacao" />
+                <ScalarProperty Name="acompanhamentoPsico" ColumnName="acompanhamentoPsico" />
+                <ScalarProperty Name="acompanhamentoMedico" ColumnName="acompanhamentoMedico" />
+                <ScalarProperty Name="idEnfermidade" ColumnName="idEnfermidade" />
+                <ScalarProperty Name="idVisita" ColumnName="idVisita" />
+                <ScalarProperty Name="numSus" ColumnName="numSus" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AcompanhamentoGestante">
+            <EntityTypeMapping TypeName="GeolocalizadorModel.AcompanhamentoGestante">
+              <MappingFragment StoreEntitySet="AcompanhamentoGestante">
+                <ScalarProperty Name="semanasGestacao" ColumnName="semanasGestacao" />
+                <ScalarProperty Name="prenatalMensal" ColumnName="prenatalMensal" />
+                <ScalarProperty Name="idVisita" ColumnName="idVisita" />
+                <ScalarProperty Name="numSus" ColumnName="numSus" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Area">
+            <EntityTypeMapping TypeName="GeolocalizadorModel.Area">
+              <MappingFragment StoreEntitySet="Area">
+                <ScalarProperty Name="quantMicroAreas" ColumnName="quantMicroAreas" />
+                <ScalarProperty Name="telefone" ColumnName="telefone" />
+                <ScalarProperty Name="bairro" ColumnName="bairro" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="endereco" ColumnName="endereco" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cronograma">
+            <EntityTypeMapping TypeName="GeolocalizadorModel.Cronograma">
+              <MappingFragment StoreEntitySet="Cronograma">
+                <ScalarProperty Name="endereco" ColumnName="endereco" />
+                <ScalarProperty Name="dataFim" ColumnName="dataFim" />
+                <ScalarProperty Name="dataInicio" ColumnName="dataInicio" />
+                <ScalarProperty Name="idDomicilio" ColumnName="idDomicilio" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Domicilio">
             <EntityTypeMapping TypeName="GeolocalizadorModel.Domicilio">
               <MappingFragment StoreEntitySet="Domicilio">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="susProfissional" ColumnName="susProfissional" />
-                <ScalarProperty Name="rua" ColumnName="rua" />
-                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="abastecimentoAgua" ColumnName="abastecimentoAgua" />
+                <ScalarProperty Name="energiaEletrica" ColumnName="energiaEletrica" />
+                <ScalarProperty Name="quantMoradores" ColumnName="quantMoradores" />
+                <ScalarProperty Name="quantComodos" ColumnName="quantComodos" />
+                <ScalarProperty Name="numMembro" ColumnName="numMembro" />
+                <ScalarProperty Name="rendaFamiliar" ColumnName="rendaFamiliar" />
+                <ScalarProperty Name="nascimentoResponsavel" ColumnName="nascimentoResponsavel" />
+                <ScalarProperty Name="susResponsavel" ColumnName="susResponsavel" />
+                <ScalarProperty Name="numProntuario" ColumnName="numProntuario" />
+                <ScalarProperty Name="tipoMoradia" ColumnName="tipoMoradia" />
+                <ScalarProperty Name="situacaoMoradia" ColumnName="situacaoMoradia" />
                 <ScalarProperty Name="bairro" ColumnName="bairro" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="rua" ColumnName="rua" />
+                <ScalarProperty Name="microArea" ColumnName="microArea" />
+                <ScalarProperty Name="codEquipe" ColumnName="codEquipe" />
+                <ScalarProperty Name="codCNES" ColumnName="codCNES" />
+                <ScalarProperty Name="susProfissional" ColumnName="susProfissional" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipe">
+            <EntityTypeMapping TypeName="GeolocalizadorModel.Equipe">
+              <MappingFragment StoreEntitySet="Equipe">
+                <ScalarProperty Name="funcao" ColumnName="funcao" />
+                <ScalarProperty Name="numSus" ColumnName="numSus" />
+                <ScalarProperty Name="idMicroArea" ColumnName="idMicroArea" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Individuo">
             <EntityTypeMapping TypeName="GeolocalizadorModel.Individuo">
               <MappingFragment StoreEntitySet="Individuo">
+                <ScalarProperty Name="dataNascimento" ColumnName="dataNascimento" />
+                <ScalarProperty Name="orientacaoSexual" ColumnName="orientacaoSexual" />
+                <ScalarProperty Name="ocupacao" ColumnName="ocupacao" />
+                <ScalarProperty Name="situacaoConj" ColumnName="situacaoConj" />
+                <ScalarProperty Name="situacaoDeRua" ColumnName="situacaoDeRua" />
+                <ScalarProperty Name="nivelEscolar" ColumnName="nivelEscolar" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="uf" ColumnName="uf" />
                 <ScalarProperty Name="municipio" ColumnName="municipio" />
+                <ScalarProperty Name="telefone" ColumnName="telefone" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+                <ScalarProperty Name="nacionalidade" ColumnName="nacionalidade" />
+                <ScalarProperty Name="nomeDaMae" ColumnName="nomeDaMae" />
+                <ScalarProperty Name="racaCor" ColumnName="racaCor" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="nisPis" ColumnName="nisPis" />
                 <ScalarProperty Name="apelido" ColumnName="apelido" />
+                <ScalarProperty Name="susResponsavel" ColumnName="susResponsavel" />
                 <ScalarProperty Name="numSus" ColumnName="numSus" />
                 <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="microArea" ColumnName="microArea" />
+                <ScalarProperty Name="codEquipe" ColumnName="codEquipe" />
+                <ScalarProperty Name="codCNES" ColumnName="codCNES" />
+                <ScalarProperty Name="susProfissional" ColumnName="susProfissional" />
+                <ScalarProperty Name="idDomicilio" ColumnName="idDomicilio" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MicroArea">
+            <EntityTypeMapping TypeName="GeolocalizadorModel.MicroArea">
+              <MappingFragment StoreEntitySet="MicroArea">
+                <ScalarProperty Name="idArea" ColumnName="idArea" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Visita">
+            <EntityTypeMapping TypeName="GeolocalizadorModel.Visita">
+              <MappingFragment StoreEntitySet="Visita">
+                <ScalarProperty Name="detalhes" ColumnName="detalhes" />
+                <ScalarProperty Name="resumo" ColumnName="resumo" />
+                <ScalarProperty Name="dataProxVisita" ColumnName="dataProxVisita" />
+                <ScalarProperty Name="dataVisita" ColumnName="dataVisita" />
                 <ScalarProperty Name="idDomicilio" ColumnName="idDomicilio" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
