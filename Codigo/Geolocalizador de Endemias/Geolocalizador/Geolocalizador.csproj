@@ -161,6 +161,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Area\Index.cshtml" />
     <Content Include="Views\Area\Inserir.cshtml" />
+    <Content Include="Views\Area\Editar.cshtml" />
+    <Content Include="Views\Area\Remover.cshtml" />
+    <Content Include="Views\Area\Detalhes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
