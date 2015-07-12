@@ -9,7 +9,8 @@ namespace Dominio.Classes
     public class MicroArea
     {
         public int id { get; set; }
-        public int idArea { get; set; }
+        public int codigo {get; set;}
+        public int codArea { get; set; }
 
         public virtual Area Area { get; set; }
         public virtual ICollection<Domicilio> Domicilio { get; set; }

@@ -10,7 +10,7 @@ namespace Dominio.Classes
     {
         public int id { set; get;}
         public int numSus { set; get;}
-        public int idVisita {get; set;}
+        public int codVisita {get; set;}
         public string desnutricao { set; get; }
         public string pneumonia { set; get; }
         public string diarreia { set; get; }

@@ -7,13 +7,25 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Adicionar Novo", "Create") |
-    @Html.ActionLink("Domicilio", "Index", "Domicilio")
-
+    @Html.ActionLink("Adicionar Novo", "Inserir")
 </p>
 <table class="table">
     <tr>
-       
+        <th>
+            @Html.DisplayNameFor(model => model.codDomicilio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.susProfissional)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.codCNES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.codEquipe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.microArea)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.nome)
         </th>
@@ -21,10 +33,58 @@
             @Html.DisplayNameFor(model => model.numSus)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.susResponsavel)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.apelido)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.nisPis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataNascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.racaCor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeDaMae)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nacionalidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefone)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.municipio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.uf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nivelEscolar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.situacaoDeRua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.situacaoConj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ocupacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orientacaoSexual)
         </th>
         <th></th>
     </tr>
@@ -32,16 +92,79 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.codDomicilio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.susProfissional)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codCNES)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codEquipe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.microArea)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.nome)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.numSus)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.susResponsavel)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.apelido)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.nisPis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataNascimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.racaCor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeDaMae)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nacionalidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefone)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.municipio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.uf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nivelEscolar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.situacaoDeRua)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.situacaoConj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ocupacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orientacaoSexual)
         </td>
         <td>
             @Html.ActionLink("Editar", "Editar", new { id=item.id }) |

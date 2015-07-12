@@ -4,9 +4,9 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="numSus" Type="int" Nullable="false" />
-    <Property Name="idVisita" Type="int" Nullable="false" />
+    <Property Name="codVisita" Type="int" Nullable="false" />
     <Property Name="desnutricao" Type="nvarchar" MaxLength="4" Nullable="false" />
     <Property Name="pneumonia" Type="nvarchar" MaxLength="4" Nullable="false" />
     <Property Name="diarreia" Type="nvarchar" MaxLength="4" Nullable="false" />
@@ -19,9 +19,9 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="numSus" Type="int" Nullable="false" />
-    <Property Name="idVisita" Type="int" Nullable="false" />
+    <Property Name="codVisita" Type="int" Nullable="false" />
     <Property Name="idEnfermidade" Type="int" Nullable="false" />
     <Property Name="acompanhamentoMedico" Type="nvarchar" MaxLength="4" Nullable="false" />
     <Property Name="acompanhamentoPsico" Type="nvarchar" MaxLength="4" Nullable="false" />
@@ -32,17 +32,18 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="numSus" Type="int" Nullable="false" />
-    <Property Name="idVisita" Type="int" Nullable="false" />
+    <Property Name="codVisita" Type="int" Nullable="false" />
     <Property Name="prenatalMensal" Type="nvarchar" MaxLength="4" Nullable="false" />
     <Property Name="semanasGestacao" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Area">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="codigo" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
     <Property Name="nome" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="endereco" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="numero" Type="nvarchar" MaxLength="4" Nullable="false" />
@@ -54,17 +55,17 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="idDomicilio" Type="int" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codDomicilio" Type="int" />
     <Property Name="dataInicio" Type="datetime" Nullable="false" />
     <Property Name="dataFim" Type="datetime" Nullable="false" />
     <Property Name="endereco" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Domicilio">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="codigo" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="susProfissional" Type="int" Nullable="false" />
     <Property Name="codCNES" Type="int" Nullable="false" />
     <Property Name="codEquipe" Type="int" Nullable="false" />
@@ -83,13 +84,15 @@
     <Property Name="quantMoradores" Type="int" Nullable="false" />
     <Property Name="energiaEletrica" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="abastecimentoAgua" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Equipe">
     <Key>
       <PropertyRef Name="numSus" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="idMicroArea" Type="int" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="codMicroArea" Type="int" />
     <Property Name="numSus" Type="int" Nullable="false" />
     <Property Name="funcao" Type="nvarchar" MaxLength="10" Nullable="false" />
   </EntityType>
@@ -97,8 +100,8 @@
     <Key>
       <PropertyRef Name="numSus" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="idDomicilio" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codDomicilio" Type="int" Nullable="false" />
     <Property Name="susProfissional" Type="int" Nullable="false" />
     <Property Name="codCNES" Type="int" Nullable="false" />
     <Property Name="codEquipe" Type="int" Nullable="false" />
@@ -126,21 +129,23 @@
   </EntityType>
   <EntityType Name="MicroArea">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="codigo" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="idArea" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="codArea" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Visita">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="codigo" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="idDomicilio" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codDomicilio" Type="int" Nullable="false" />
     <Property Name="dataVisita" Type="datetime" Nullable="false" />
     <Property Name="dataProxVisita" Type="datetime" />
     <Property Name="resumo" Type="nvarchar" MaxLength="50" />
     <Property Name="detalhes" Type="nvarchar" MaxLength="500" />
+    <Property Name="codigo" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_AcompanhamentoCrianca_ToIndividuo">
     <End Role="Individuo" Type="Self.Individuo" Multiplicity="1" />
@@ -159,10 +164,10 @@
     <End Role="AcompanhamentoCrianca" Type="Self.AcompanhamentoCrianca" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Visita">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="AcompanhamentoCrianca">
-        <PropertyRef Name="idVisita" />
+        <PropertyRef Name="codVisita" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -183,10 +188,10 @@
     <End Role="AcompanhamentoEnfermo" Type="Self.AcompanhamentoEnfermo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Visita">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="AcompanhamentoEnfermo">
-        <PropertyRef Name="idVisita" />
+        <PropertyRef Name="codVisita" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -207,10 +212,10 @@
     <End Role="AcompanhamentoGestante" Type="Self.AcompanhamentoGestante" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Visita">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="AcompanhamentoGestante">
-        <PropertyRef Name="idVisita" />
+        <PropertyRef Name="codVisita" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -219,10 +224,10 @@
     <End Role="Cronograma" Type="Self.Cronograma" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Domicilio">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="Cronograma">
-        <PropertyRef Name="idDomicilio" />
+        <PropertyRef Name="codDomicilio" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -243,22 +248,22 @@
     <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MicroArea">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="Domicilio">
         <PropertyRef Name="microArea" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Equipe_ToTableMicroArea">
+  <Association Name="FK_Equipe_ToMicroArea">
     <End Role="MicroArea" Type="Self.MicroArea" Multiplicity="0..1" />
     <End Role="Equipe" Type="Self.Equipe" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MicroArea">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="Equipe">
-        <PropertyRef Name="idMicroArea" />
+        <PropertyRef Name="codMicroArea" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -267,10 +272,10 @@
     <End Role="Individuo" Type="Self.Individuo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Domicilio">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="Individuo">
-        <PropertyRef Name="idDomicilio" />
+        <PropertyRef Name="codDomicilio" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -291,10 +296,10 @@
     <End Role="Individuo" Type="Self.Individuo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MicroArea">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="Individuo">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="microArea" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -303,10 +308,10 @@
     <End Role="MicroArea" Type="Self.MicroArea" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Area">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="MicroArea">
-        <PropertyRef Name="idArea" />
+        <PropertyRef Name="codArea" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -315,10 +320,10 @@
     <End Role="Visita" Type="Self.Visita" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Domicilio">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="Visita">
-        <PropertyRef Name="idDomicilio" />
+        <PropertyRef Name="codDomicilio" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -369,7 +374,7 @@
       <End Role="MicroArea" EntitySet="MicroArea" />
       <End Role="Domicilio" EntitySet="Domicilio" />
     </AssociationSet>
-    <AssociationSet Name="FK_Equipe_ToTableMicroArea" Association="Self.FK_Equipe_ToTableMicroArea">
+    <AssociationSet Name="FK_Equipe_ToMicroArea" Association="Self.FK_Equipe_ToMicroArea">
       <End Role="MicroArea" EntitySet="MicroArea" />
       <End Role="Equipe" EntitySet="Equipe" />
     </AssociationSet>

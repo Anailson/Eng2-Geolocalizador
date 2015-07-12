@@ -9,6 +9,7 @@ namespace Dominio.Classes
     public class Area
     {
         public int id { get; set; }
+        public int codigo { get; set; }
         public string nome { get; set; }
         public string endereco { get; set; }
         public string numero { get; set; }

@@ -6,3 +6,4 @@ C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\G
 C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Dominio\bin\Debug\Dominio.pdb
 C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Dominio\obj\Debug\Dominio.dll
 C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache

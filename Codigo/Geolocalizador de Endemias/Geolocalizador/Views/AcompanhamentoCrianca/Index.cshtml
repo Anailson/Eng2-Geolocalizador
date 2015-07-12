@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Dominio.Classes.AcompanhamentoCrianca>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Adicionar Novo", "Inserir")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.numSus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.codVisita)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.desnutricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pneumonia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.diarreia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vacinacaoEmDia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.inflamacaoRep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.alimentacaoPeito)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.peso)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.numSus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codVisita)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.desnutricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pneumonia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.diarreia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vacinacaoEmDia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.inflamacaoRep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.alimentacaoPeito)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.peso)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.id }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.id }) |
+            @Html.ActionLink("Remover", "Remover", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

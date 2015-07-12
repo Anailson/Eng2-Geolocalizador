@@ -11,11 +11,43 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codigo)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.susProfissional)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.susProfissional)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codCNES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codCNES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codEquipe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codEquipe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.microArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.microArea)
         </dd>
 
         <dt>
@@ -42,9 +74,97 @@
             @Html.DisplayFor(model => model.bairro)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.situacaoMoradia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.situacaoMoradia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoMoradia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoMoradia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numProntuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numProntuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.susResponsavel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.susResponsavel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nascimentoResponsavel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nascimentoResponsavel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rendaFamiliar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rendaFamiliar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numMembro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numMembro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantComodos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantComodos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantMoradores)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantMoradores)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.energiaEletrica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.energiaEletrica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.abastecimentoAgua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.abastecimentoAgua)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Editar", new { id = Model.id }) |
-    @Html.ActionLink("Voltar a Lista", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

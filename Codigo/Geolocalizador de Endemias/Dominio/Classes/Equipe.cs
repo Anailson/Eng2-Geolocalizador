@@ -9,8 +9,9 @@ namespace Dominio.Classes
     public class Equipe
     {
         public int id { get; set; }
+        public int codigo {get; set;}
         public int numSus {get; set;}
-        public int idMicroArea { get; set; }
+        public int codMicroArea { get; set; }
         public string funcao { get; set; }
 
         public virtual ICollection<Domicilio> Domicilio { get; set; }

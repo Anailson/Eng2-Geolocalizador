@@ -9,7 +9,7 @@ namespace Dominio.Classes
     public class Individuo
     {
         public int id { get; set; }
-        public int idDomicilio { get; set;}
+        public int codDomicilio { get; set;}
         public int susProfissional { get; set; }
         public int codCNES {get; set;}
         public int codEquipe {get; set;}

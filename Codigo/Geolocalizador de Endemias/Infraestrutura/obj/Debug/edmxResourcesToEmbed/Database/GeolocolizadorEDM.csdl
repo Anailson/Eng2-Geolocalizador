@@ -59,7 +59,7 @@
       <End Role="Domicilio" EntitySet="Domicilio" />
       <End Role="Visita" EntitySet="Visita" />
     </AssociationSet>
-    <AssociationSet Name="FK_Equipe_ToTableMicroArea" Association="GeolocalizadorModel.FK_Equipe_ToTableMicroArea">
+    <AssociationSet Name="FK_Equipe_ToMicroArea" Association="GeolocalizadorModel.FK_Equipe_ToMicroArea">
       <End Role="MicroArea" EntitySet="MicroArea" />
       <End Role="Equipe" EntitySet="Equipe" />
     </AssociationSet>
@@ -76,9 +76,9 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="numSus" Type="Int32" Nullable="false" />
-    <Property Name="idVisita" Type="Int32" Nullable="false" />
+    <Property Name="codVisita" Type="Int32" Nullable="false" />
     <Property Name="desnutricao" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
     <Property Name="pneumonia" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
     <Property Name="diarreia" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
@@ -93,9 +93,9 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="numSus" Type="Int32" Nullable="false" />
-    <Property Name="idVisita" Type="Int32" Nullable="false" />
+    <Property Name="codVisita" Type="Int32" Nullable="false" />
     <Property Name="idEnfermidade" Type="Int32" Nullable="false" />
     <Property Name="acompanhamentoMedico" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
     <Property Name="acompanhamentoPsico" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
@@ -108,9 +108,9 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="numSus" Type="Int32" Nullable="false" />
-    <Property Name="idVisita" Type="Int32" Nullable="false" />
+    <Property Name="codVisita" Type="Int32" Nullable="false" />
     <Property Name="prenatalMensal" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
     <Property Name="semanasGestacao" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Individuo" Relationship="GeolocalizadorModel.FK_AcompanhamentoGestante_ToIndividuo" FromRole="AcompanhamentoGestante" ToRole="Individuo" />
@@ -118,9 +118,10 @@
   </EntityType>
   <EntityType Name="Area">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="codigo" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigo" Type="Int32" Nullable="false" />
     <Property Name="nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="endereco" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="numero" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
@@ -133,8 +134,8 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="idDomicilio" Type="Int32" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codDomicilio" Type="Int32" />
     <Property Name="dataInicio" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="dataFim" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="endereco" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -142,9 +143,9 @@
   </EntityType>
   <EntityType Name="Domicilio">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="codigo" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="susProfissional" Type="Int32" Nullable="false" />
     <Property Name="codCNES" Type="Int32" Nullable="false" />
     <Property Name="codEquipe" Type="Int32" Nullable="false" />
@@ -163,6 +164,7 @@
     <Property Name="quantMoradores" Type="Int32" Nullable="false" />
     <Property Name="energiaEletrica" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="abastecimentoAgua" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="codigo" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Cronograma" Relationship="GeolocalizadorModel.FK_Cronograma_ToDomicilio" FromRole="Domicilio" ToRole="Cronograma" />
     <NavigationProperty Name="Equipe" Relationship="GeolocalizadorModel.FK_Domicilio_ToEquipe" FromRole="Domicilio" ToRole="Equipe" />
     <NavigationProperty Name="MicroArea" Relationship="GeolocalizadorModel.FK_Domicilio_ToMicroArea" FromRole="Domicilio" ToRole="MicroArea" />
@@ -173,20 +175,21 @@
     <Key>
       <PropertyRef Name="numSus" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="idMicroArea" Type="Int32" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigo" Type="Int32" Nullable="false" />
+    <Property Name="codMicroArea" Type="Int32" />
     <Property Name="numSus" Type="Int32" Nullable="false" />
     <Property Name="funcao" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Domicilio" Relationship="GeolocalizadorModel.FK_Domicilio_ToEquipe" FromRole="Equipe" ToRole="Domicilio" />
-    <NavigationProperty Name="MicroArea" Relationship="GeolocalizadorModel.FK_Equipe_ToTableMicroArea" FromRole="Equipe" ToRole="MicroArea" />
+    <NavigationProperty Name="MicroArea" Relationship="GeolocalizadorModel.FK_Equipe_ToMicroArea" FromRole="Equipe" ToRole="MicroArea" />
     <NavigationProperty Name="Individuo" Relationship="GeolocalizadorModel.FK_Individuo_ToEquipe" FromRole="Equipe" ToRole="Individuo" />
   </EntityType>
   <EntityType Name="Individuo">
     <Key>
       <PropertyRef Name="numSus" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="idDomicilio" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codDomicilio" Type="Int32" Nullable="false" />
     <Property Name="susProfissional" Type="Int32" Nullable="false" />
     <Property Name="codCNES" Type="Int32" Nullable="false" />
     <Property Name="codEquipe" Type="Int32" Nullable="false" />
@@ -220,25 +223,27 @@
   </EntityType>
   <EntityType Name="MicroArea">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="codigo" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="idArea" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigo" Type="Int32" Nullable="false" />
+    <Property Name="codArea" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Area" Relationship="GeolocalizadorModel.FK_MicroArea_ToArea" FromRole="MicroArea" ToRole="Area" />
     <NavigationProperty Name="Domicilio" Relationship="GeolocalizadorModel.FK_Domicilio_ToMicroArea" FromRole="MicroArea" ToRole="Domicilio" />
-    <NavigationProperty Name="Equipe" Relationship="GeolocalizadorModel.FK_Equipe_ToTableMicroArea" FromRole="MicroArea" ToRole="Equipe" />
+    <NavigationProperty Name="Equipe" Relationship="GeolocalizadorModel.FK_Equipe_ToMicroArea" FromRole="MicroArea" ToRole="Equipe" />
     <NavigationProperty Name="Individuo" Relationship="GeolocalizadorModel.FK_Individuo_ToMicroArea" FromRole="MicroArea" ToRole="Individuo" />
   </EntityType>
   <EntityType Name="Visita">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="codigo" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="idDomicilio" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codDomicilio" Type="Int32" Nullable="false" />
     <Property Name="dataVisita" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="dataProxVisita" Type="DateTime" Precision="3" />
     <Property Name="resumo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="detalhes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="codigo" Type="Int32" Nullable="false" />
     <NavigationProperty Name="AcompanhamentoCrianca" Relationship="GeolocalizadorModel.FK_AcompanhamentoCrianca_ToVisita" FromRole="Visita" ToRole="AcompanhamentoCrianca" />
     <NavigationProperty Name="AcompanhamentoEnfermo" Relationship="GeolocalizadorModel.FK_AcompanhamentoEnfermo_ToVisita" FromRole="Visita" ToRole="AcompanhamentoEnfermo" />
     <NavigationProperty Name="AcompanhamentoGestante" Relationship="GeolocalizadorModel.FK_AcompanhamentoGestante_ToVisita" FromRole="Visita" ToRole="AcompanhamentoGestante" />
@@ -261,10 +266,10 @@
     <End Type="GeolocalizadorModel.AcompanhamentoCrianca" Role="AcompanhamentoCrianca" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Visita">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="AcompanhamentoCrianca">
-        <PropertyRef Name="idVisita" />
+        <PropertyRef Name="codVisita" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -285,10 +290,10 @@
     <End Type="GeolocalizadorModel.AcompanhamentoEnfermo" Role="AcompanhamentoEnfermo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Visita">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="AcompanhamentoEnfermo">
-        <PropertyRef Name="idVisita" />
+        <PropertyRef Name="codVisita" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -309,10 +314,10 @@
     <End Type="GeolocalizadorModel.AcompanhamentoGestante" Role="AcompanhamentoGestante" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Visita">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="AcompanhamentoGestante">
-        <PropertyRef Name="idVisita" />
+        <PropertyRef Name="codVisita" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -321,10 +326,10 @@
     <End Type="GeolocalizadorModel.MicroArea" Role="MicroArea" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Area">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="MicroArea">
-        <PropertyRef Name="idArea" />
+        <PropertyRef Name="codArea" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -333,10 +338,10 @@
     <End Type="GeolocalizadorModel.Cronograma" Role="Cronograma" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Domicilio">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="Cronograma">
-        <PropertyRef Name="idDomicilio" />
+        <PropertyRef Name="codDomicilio" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -357,7 +362,7 @@
     <End Type="GeolocalizadorModel.Domicilio" Role="Domicilio" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MicroArea">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="Domicilio">
         <PropertyRef Name="microArea" />
@@ -369,10 +374,10 @@
     <End Type="GeolocalizadorModel.Individuo" Role="Individuo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Domicilio">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="Individuo">
-        <PropertyRef Name="idDomicilio" />
+        <PropertyRef Name="codDomicilio" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -381,22 +386,22 @@
     <End Type="GeolocalizadorModel.Visita" Role="Visita" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Domicilio">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="Visita">
-        <PropertyRef Name="idDomicilio" />
+        <PropertyRef Name="codDomicilio" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Equipe_ToTableMicroArea">
+  <Association Name="FK_Equipe_ToMicroArea">
     <End Type="GeolocalizadorModel.MicroArea" Role="MicroArea" Multiplicity="0..1" />
     <End Type="GeolocalizadorModel.Equipe" Role="Equipe" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MicroArea">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="Equipe">
-        <PropertyRef Name="idMicroArea" />
+        <PropertyRef Name="codMicroArea" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -417,10 +422,10 @@
     <End Type="GeolocalizadorModel.Individuo" Role="Individuo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MicroArea">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="codigo" />
       </Principal>
       <Dependent Role="Individuo">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="microArea" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

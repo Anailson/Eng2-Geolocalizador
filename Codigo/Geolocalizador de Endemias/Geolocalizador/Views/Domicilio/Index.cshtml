@@ -7,16 +7,24 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Adicionar Novo", "Inserir") |
-    @Html.ActionLink("Individuo","Index","Individuo")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.id)
+            @Html.DisplayNameFor(model => model.codigo)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.susProfissional)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.codCNES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.codEquipe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.microArea)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.rua)
@@ -27,16 +35,58 @@
         <th>
             @Html.DisplayNameFor(model => model.bairro)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.situacaoMoradia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipoMoradia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numProntuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.susResponsavel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nascimentoResponsavel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rendaFamiliar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numMembro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantComodos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantMoradores)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.energiaEletrica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.abastecimentoAgua)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.id)
+            @Html.DisplayFor(modelItem => item.codigo)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.susProfissional)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codCNES)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codEquipe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.microArea)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.rua)
@@ -48,9 +98,42 @@
             @Html.DisplayFor(modelItem => item.bairro)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Editar", new { id=item.id }) |
-            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.id }) |
-            @Html.ActionLink("Excluir", "Remover", new { id = item.id })
+            @Html.DisplayFor(modelItem => item.situacaoMoradia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipoMoradia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numProntuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.susResponsavel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nascimentoResponsavel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rendaFamiliar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numMembro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantComodos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantMoradores)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.energiaEletrica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.abastecimentoAgua)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
     </tr>
 }

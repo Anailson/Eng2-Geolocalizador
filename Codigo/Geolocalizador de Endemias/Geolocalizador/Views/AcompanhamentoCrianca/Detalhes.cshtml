@@ -1,0 +1,90 @@
+﻿@model Dominio.Classes.AcompanhamentoCrianca
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>AcompanhamentoCrianca</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.numSus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numSus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codVisita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codVisita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.desnutricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.desnutricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pneumonia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pneumonia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.diarreia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diarreia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vacinacaoEmDia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vacinacaoEmDia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.inflamacaoRep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inflamacaoRep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.alimentacaoPeito)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alimentacaoPeito)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.peso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.peso)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id = Model.id }) |
+    @Html.ActionLink("Voltar a Lista", "Index")
+</p>

@@ -1,0 +1,50 @@
+﻿@model Dominio.Classes.Cronograma
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Cronograma</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.codDomicilio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codDomicilio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataFim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataFim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.endereco)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

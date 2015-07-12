@@ -1,0 +1,50 @@
+﻿@model Dominio.Classes.AcompanhamentoGestante
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>AcompanhamentoGestante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.numSus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numSus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codVisita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codVisita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prenatalMensal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prenatalMensal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.semanasGestacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.semanasGestacao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

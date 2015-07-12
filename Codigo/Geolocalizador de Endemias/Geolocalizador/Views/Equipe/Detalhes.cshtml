@@ -11,11 +11,11 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.id)
+            @Html.DisplayNameFor(model => model.codigo)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.id)
+            @Html.DisplayFor(model => model.codigo)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.numSus)
@@ -26,11 +26,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.idMicroArea)
+            @Html.DisplayNameFor(model => model.codMicroArea)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.idMicroArea)
+            @Html.DisplayFor(model => model.codMicroArea)
         </dd>
 
         <dt>
@@ -45,5 +45,5 @@
 </div>
 <p>
     @Html.ActionLink("Editar", "Editar", new { numSus = Model.numSus }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar a Lista", "Index")
 </p>

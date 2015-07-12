@@ -1,0 +1,66 @@
+﻿@model Dominio.Classes.Visita
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Visita</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codDomicilio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codDomicilio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataVisita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataVisita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataProxVisita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataProxVisita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.resumo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.resumo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.detalhes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.detalhes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

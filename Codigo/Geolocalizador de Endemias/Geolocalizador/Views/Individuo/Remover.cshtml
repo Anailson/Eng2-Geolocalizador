@@ -8,21 +8,51 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-
 @using (Html.BeginForm("Excluir","Individuo"))
 {
     @Html.AntiForgeryToken()
 
     <h4>Individuo</h4>
     <hr />
-
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.idDomicilio)
+            @Html.DisplayNameFor(model => model.codDomicilio)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.idDomicilio)
+            @Html.DisplayFor(model => model.codDomicilio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.susProfissional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.susProfissional)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codCNES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codCNES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codEquipe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codEquipe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.microArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.microArea)
         </dd>
 
         <dt>
@@ -42,11 +72,83 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.susResponsavel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.susResponsavel)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.apelido)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.apelido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nisPis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nisPis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataNascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataNascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.racaCor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.racaCor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeDaMae)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeDaMae)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nacionalidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nacionalidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone)
         </dd>
 
         <dt>
@@ -57,10 +159,66 @@
             @Html.DisplayFor(model => model.municipio)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.uf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nivelEscolar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nivelEscolar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.situacaoDeRua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.situacaoDeRua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.situacaoConj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.situacaoConj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ocupacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ocupacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.orientacaoSexual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orientacaoSexual)
+        </dd>
+
     </dl>
 
         <div class="form-actions no-color">
-            <input type="submit" value="Apagar" class="btn btn-default" /> |
+            <input type="submit" value="Remover" class="btn btn-default" /> |
             @Html.ActionLink("Voltar a Lista", "Index")
         </div>
     }

@@ -9,6 +9,7 @@ namespace Dominio.Classes
     public class Domicilio
     {
         public int id { get; set; }
+        public int codigo {get; set;}
         public int susProfissional { get; set; }
         public int codCNES {get; set;}
         public int codEquipe {get; set;}

@@ -1,0 +1,74 @@
+﻿@model Dominio.Classes.AcompanhamentoEnfermo
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>AcompanhamentoEnfermo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.numSus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numSus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codVisita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codVisita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idEnfermidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idEnfermidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.acompanhamentoMedico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.acompanhamentoMedico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.acompanhamentoPsico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.acompanhamentoPsico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.medicacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.medicacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.procedimentoCirurgico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.procedimentoCirurgico)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id = Model.id }) |
+    @Html.ActionLink("Voltar a Lista", "Index")
+</p>

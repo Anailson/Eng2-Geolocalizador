@@ -9,7 +9,8 @@ namespace Dominio.Classes
     public class Visita
     {
         public int id { get; set; }
-        public int idDomicilio { get; set; }
+        public int codigo {get; set;}
+        public int codDomicilio { get; set; }
         public DateTime dataVisita { get; set;}
         public DateTime dataProxVisita { get; set;}
         public string resumo { get; set;}
