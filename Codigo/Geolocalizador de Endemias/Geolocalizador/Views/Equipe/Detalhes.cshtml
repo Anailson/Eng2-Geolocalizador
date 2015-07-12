@@ -1,0 +1,49 @@
+﻿@model Dominio.Classes.Equipe
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Equipe</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.numSus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numSus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idMicroArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idMicroArea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.funcao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.funcao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { numSus = Model.numSus }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

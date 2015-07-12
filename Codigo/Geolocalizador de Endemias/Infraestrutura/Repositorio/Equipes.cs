@@ -44,7 +44,7 @@ namespace Infraestrutura.Repositorio
 
         public Equipe ResultadoUnico(int idEquipe)
         {
-            return equipes.SingleOrDefault(equipe => equipe.id == idEquipe);
+            return equipes.SingleOrDefault(equipe => equipe.numSus == idEquipe);
         }
 
         public ICollection<Equipe> Listar()

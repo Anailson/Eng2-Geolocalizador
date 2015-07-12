@@ -169,6 +169,11 @@
     <Content Include="Views\MicroArea\Editar.cshtml" />
     <Content Include="Views\MicroArea\Remover.cshtml" />
     <Content Include="Views\MicroArea\Detalhes.cshtml" />
+    <Content Include="Views\Equipe\Index.cshtml" />
+    <Content Include="Views\Equipe\Inserir.cshtml" />
+    <Content Include="Views\Equipe\Editar.cshtml" />
+    <Content Include="Views\Equipe\Remover.cshtml" />
+    <Content Include="Views\Equipe\Detalhes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -183,7 +188,6 @@
     <Folder Include="Views\AcompanhamentoGestante\" />
     <Folder Include="Views\Cronograma\" />
     <Folder Include="Views\Enfermidade\" />
-    <Folder Include="Views\Equipe\" />
     <Folder Include="Views\Visita\" />
   </ItemGroup>
   <ItemGroup>
