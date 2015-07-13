@@ -1,12 +1,28 @@
 ﻿
-@{
-    ViewBag.Title = "Index";
-}
+<nav>
+    <div class="nav-wrapper">
+        <a class="brand-logo right">[LOGO]</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a class="dropdown-button" href="#" data-activates="dropdown-pessoa">Pessoa<i class="material-icons right">arrow_drop_down</i></a>
+                <ul id="dropdown-pessoa" class="dropdown-content">
+                    <li>@Html.ActionLink("Individuo", "Index", "Individuo")</li>
+                    <li>@Html.ActionLink("Domicilio", "Index", "Domicilio")</li>
+                </ul>
+            </li>
+            <li>@Html.ActionLink("Area", "Index", "Area")</li>
+            <li>@Html.ActionLink("Equipe", "Index", "Equipe")</li>
+            <li><a class="dropdown-button" href="#" data-activates="dropdown-visita">Visita Domiciliar<i class="material-icons right">arrow_drop_down</i></a>
+                <ul id="dropdown-visita" class="dropdown-content">
+                    <li>@Html.ActionLink("Acompanhamento infantil", "Index", "AcompanhamentoCrianca")</li>
+                    <li>@Html.ActionLink("Acompanhamento de enfermos", "Index", "AcompanhamentoEnfermo")</li>
+                    <li>@Html.ActionLink("Acompanhamento de gestantes", "Index", "AcompanhamentoGestante")</li>
+                    <li class="divider"></li>
+                    <li>@Html.ActionLink("Elaborar cronograma", "Index", "Cronograma")</li>
+                </ul>
 
-<h2>Index</h2>
-<p>
-    @Html.ActionLink("Individuo", "Index","Individuo") |
-    @Html.ActionLink("Domicilio", "Index", "Domicilio") |
-    @Html.ActionLink("Area", "Index", "Area")
-</p>
-
+            </li>
+            <li style="padding-left:20px; padding-right:20px;">[RELATÓRIOS]</li>
+            <li style="padding-left:20px; padding-right:20px;">[LOGIN]</li>
+        </ul>
+    </div>
+</nav>

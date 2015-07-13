@@ -1659,7 +1659,8 @@ html {
  * Remove default margin.
  */
 body {
-  margin: 0; }
+  margin: 0; 
+}
 
 /* HTML5 display definitions
    ========================================================================== */
@@ -1959,7 +1960,8 @@ optgroup {
  */
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0; 
+}
 
 td, th {
   padding: 0; }
@@ -5246,18 +5248,22 @@ span.badge {
 
 nav {
   color: #fff;
-  background-color: #ee6e73;
+  background-color: #0089ec;
   width: 100%;
-  height: 56px;
-  line-height: 56px; }
+  height: 100px;
+  line-height: 100px; 
+}
   nav a {
-    color: #fff; }
+    color: #fff; 
+  }
   nav .nav-wrapper {
     position: relative;
-    height: 100%; }
+    height: 100%;
+  }
     nav .nav-wrapper i {
       display: block;
-      font-size: 2rem; }
+      font-size: 2rem;
+    }
   @media only screen and (min-width : 993px) {
     nav a.button-collapse {
       display: none; } }
@@ -5296,7 +5302,8 @@ nav {
       right: 0.5rem;
       padding: 0; }
   nav ul {
-    margin: 0; }
+    margin: 0; 
+  }
     nav ul li {
       -webkit-transition: background-color .3s;
       -moz-transition: background-color .3s;
@@ -5304,14 +5311,19 @@ nav {
       -ms-transition: background-color .3s;
       transition: background-color .3s;
       float: left;
-      padding: 0; }
+      padding: 0px; 
+    }
       nav ul li:hover, nav ul li.active {
-        background-color: rgba(0, 0, 0, 0.1); }
+        background-color: rgba(0, 0, 0, 0.1); 
+      }
     nav ul a {
-      font-size: 1rem;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      text-decoration: solid;
       color: #fff;
       display: block;
-      padding: 0 15px; }
+      padding: 10px; 
+    }
     nav ul.left {
       float: left; }
   nav .input-field {
@@ -5872,34 +5884,41 @@ button.btn-floating {
   display: block; }
 
 .dropdown-content {
+  font-size: 1em;
+  text-transform: capitalize;
   background-color: #fff;
-  margin: 0;
+  margin-top: 60px;
   display: none;
-  min-width: 100px;
+  min-width: 170px;
   max-height: 650px;
   overflow-y: auto;
   opacity: 0;
   position: absolute;
   z-index: 999;
-  will-change: width, height; }
+  will-change: width, height; 
+}
   .dropdown-content li {
     clear: both;
     color: rgba(0, 0, 0, 0.87);
     cursor: pointer;
-    line-height: 1.5rem;
+    line-height: 1.3rem;
     width: 100%;
     text-align: left;
-    text-transform: none; }
+    text-transform: none; 
+  }
     .dropdown-content li:hover, .dropdown-content li.active {
-      background-color: #eee; }
+      background-color: #eee
+    }
     .dropdown-content li > a, .dropdown-content li > span {
-      font-size: 1.2rem;
-      color: #26a69a;
+      font-size: 1rem;
+      color: #0089ec;
       display: block;
-      padding: 1rem 1rem; }
+      padding: 1rem 1rem; 
+    }
     .dropdown-content li > a > i {
       height: inherit;
-      line-height: inherit; }
+      line-height: inherit
+    }
 
 /*!
  * Waves v0.6.0

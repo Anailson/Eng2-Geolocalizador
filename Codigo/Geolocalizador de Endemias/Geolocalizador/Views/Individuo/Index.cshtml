@@ -1,177 +1,65 @@
 ﻿@model IEnumerable<Dominio.Classes.Individuo>
 
-@{
-    ViewBag.Title = "Index";
-}
+<nav>
+    <span class="card-title">Lista de indivíduos cadastrados</span>
+</nav>
 
-<h2>Index</h2>
+<div class="row">
+    <form class="col s12">
+        <p>
+            <div class="row">
+                <!-- Radio Button -->
+                <div class="input-field col s3">
+                    <input name="group1" class="with-gap" type="radio" id="sus" checked/>
+                    <label for="sus">N° do SUS</label>
 
-<p>
-    @Html.ActionLink("Adicionar Novo", "Inserir")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.codDomicilio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.susProfissional)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.codCNES)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.codEquipe)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.microArea)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.numSus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.susResponsavel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.apelido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nisPis)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dataNascimento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sexo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.racaCor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nomeDaMae)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nacionalidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.pais)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.telefone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.municipio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.uf)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nivelEscolar)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.situacaoDeRua)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.situacaoConj)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ocupacao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.orientacaoSexual)
-        </th>
-        <th></th>
-    </tr>
+                    <input name="group1" class="with-gap" type="radio" id="nome" />
+                    <label for="nome">Nome</label>
+                </div>
+                <!-- Caixa de texto -->
+                <div class="input-field col s3">
+                    <i class="material-icons prefix">search</i>
+                    <input id="pesquisa" type="text" placeholder="Pesquisar" />
+                </div>
+                <!-- Botão Novo -->
+                <div class="input-field col s3">
+                    <label for="pesquisa">@Html.ActionLink("Adicionar Novo", "Inserir")</label>
+                </div>
+            </div>
+        </p>
+    </form>
+</div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.codDomicilio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.susProfissional)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.codCNES)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.codEquipe)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.microArea)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.numSus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.susResponsavel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.apelido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nisPis)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dataNascimento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.sexo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.racaCor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nomeDaMae)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nacionalidade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.pais)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.telefone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.municipio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.uf)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nivelEscolar)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.situacaoDeRua)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.situacaoConj)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ocupacao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.orientacaoSexual)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Editar", new { id=item.id }) |
-            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.id }) |
-            @Html.ActionLink("Remover", "Remover", new { id=item.id })
-        </td>
-    </tr>
-}
+
+<table class="striped hoverable " >
+    <thead>
+        <tr>
+            <th data-field="sus">
+                @Html.DisplayNameFor(model => model.susResponsavel)
+            </th>
+            <th data-field="nome">
+                @Html.DisplayNameFor(model => model.nome)
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.susResponsavel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nome)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.id }) |
+                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.id }) |
+                    @Html.ActionLink("Remover", "Remover", new { id = item.id })
+                </td>
+            </tr>
+        </tbody>
+    }
 
 </table>
