@@ -46,6 +46,13 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\MicosoftReportViewerWebForms_v11.1.0.1\lib\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="ReportViewerForMvc">
+      <HintPath>..\packages\ReportViewerForMvc.1.0.1\lib\net45\ReportViewerForMvc.dll</HintPath>
+    </Reference>
     <Reference Include="StructureMap">
       <HintPath>..\..\..\..\..\SkyDrive\Documentos\UFS\2015.1\Tecnologias de Desenvolvimento para Internet\Notas de Aula\StructureMap.dll</HintPath>
     </Reference>
@@ -102,6 +109,7 @@
     <Content Include="Content\js\materialize.js" />
     <Content Include="Content\js\materialize.min.js" />
     <Content Include="Global.asax" />
+    <Content Include="ReportViewerWebForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -118,7 +126,13 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndividuoController.cs" />
     <Compile Include="Controllers\MicroAreaController.cs" />
+    <Compile Include="Controllers\RelatoriosController.cs" />
     <Compile Include="Controllers\VisitaController.cs" />
+    <Compile Include="GeolocalizadorDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeolocalizadorDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -199,6 +213,18 @@
     <Content Include="Views\AcompanhamentoGestante\Detalhes.cshtml" />
     <Content Include="Views\AcompanhamentoGestante\Editar.cshtml" />
     <Content Include="Views\AcompanhamentoGestante\Remover.cshtml" />
+    <Content Include="GeolocalizadorDataSet.xsc">
+      <DependentUpon>GeolocalizadorDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="GeolocalizadorDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GeolocalizadorDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="GeolocalizadorDataSet.xss">
+      <DependentUpon>GeolocalizadorDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="Views\Relatorios\relatorioVisita.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -222,6 +248,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Relatorios\RelatorioVisita.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

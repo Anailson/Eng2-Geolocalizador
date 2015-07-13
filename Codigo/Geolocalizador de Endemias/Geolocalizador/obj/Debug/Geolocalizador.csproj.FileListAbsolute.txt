@@ -51,3 +51,7 @@ C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\G
 C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\obj\Debug\Geolocalizador.csprojResolveAssemblyReference.cache
 C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\obj\Debug\Geolocalizador.dll
 C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\obj\Debug\Geolocalizador.pdb
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\ReportViewerForMvc.dll
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\obj\Debug\RdlCompile.cache
+C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\obj\Debug\RdlCompile.compiled
