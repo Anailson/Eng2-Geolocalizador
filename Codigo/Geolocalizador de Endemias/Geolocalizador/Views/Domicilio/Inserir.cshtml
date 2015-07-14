@@ -1,183 +1,579 @@
 ﻿@model Dominio.Classes.Domicilio
 
-@{
-    ViewBag.Title = "Inserir";
-}
+<nav>
+    <span class="card-title">Cadastrar domicílio</span>
+</nav>
 
-<h2>Inserir</h2>
-
-
-@using (Html.BeginForm("Cadastrar","Domicilio")) 
+@using (Html.BeginForm("Cadastrar", "Domicilio"))
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Domicilio</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.codigo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.codigo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.codigo, "", new { @class = "text-danger" })
+
+    <br /><br />
+    <div class="row">
+        <div class="col s12">
+            <!--Declaração dos títulos das abas -->
+            <ul class="tabs">
+                <li class="tab col s3"><a href="#cadastro-domicilio">Cadastro domiciliar</a></li>
+                <li class="tab col s3"><a href="#informacoes-domicilio" class="active">Condições de moradia</a></li>
+                <li class="tab col s3"><a href="#backup">Backup [APAGAR]</a></li>
+            </ul>
+        </div><!--Fim da declaração dos títulos das abas -->
+
+        <div id="cadastro-domicilio" class="col s12">
+            <!-- Aba referente ao cadastro domiciliar-->
+            <form>
+                <br /><br />
+                <div class="row">
+                    <fieldset>
+                        <div class="input-field col s3">
+
+                            @Html.LabelFor(model => model.susProfissional, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.susProfissional)
+                            @Html.ValidationMessageFor(model => model.susProfissional)
+                            <!--<input placeholder="N° do SUS do profissional" id="sus-profissional" type="number" class="validate">
+                            <label data-error="Campo digitado incorretamente"></label>-->
+                        </div>
+                        <div class="input-field col s3">
+                            @Html.LabelFor(model => model.codCNES, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.codCNES)
+                            @Html.ValidationMessageFor(model => model.codCNES)
+                            <!--input placeholder="Cod. CNES da unidade" id="cod-cnes" type="number" class="validate">
+                            <label data-error="Campo digitado incorretamente"></label>-->
+                        </div>
+
+                        <div class="input-field col s3">
+                            @Html.LabelFor(model => model.codEquipe, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.codEquipe)
+                            @Html.ValidationMessageFor(model => model.codEquipe)
+                            <!--<input placeholder="Cod. da equipe" id="cod-equipe" type="number" class="validate">
+                            <label data-error="Campo digitado incorretamente"></label>-->
+                        </div>
+
+                        <div class="input-field col s3">
+                            @Html.LabelFor(model => model.microArea, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.microArea)
+                            @Html.ValidationMessageFor(model => model.microArea)
+                            <!--<input placeholder="Micro área" id="microarea" type="number" class="validate">
+                            <label data-error="Campo digitado incorretamente"></label>-->
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="row">
+                    <fieldset>
+                        <legend>Endereço / Local de permanência</legend>
+                        <div class="row">
+                            <div class="input-field col s7">
+                                @Html.LabelFor(model => model.rua, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.rua, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.rua, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="input-field col s1">
+                                @Html.LabelFor(model => model.numero, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.numero, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.numero, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="input-field col s4">
+                                @Html.LabelFor(model => model.bairro, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.bairro, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.bairro, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="row col s12">
+                    <fieldset>
+                        <legend>Telefone para contato</legend>
+
+                    </fieldset>
+                </div>
+
+                <div class="row col s12">
+                    <fieldset>
+                        <legend>Animais no domicílio</legend>
+
+                    </fieldset>
+                </div>
+                <table class="striped">
+                    <thead>
+                        <tr>
+                            <th data-field="num-prontuario">
+                                @Html.DisplayNameFor(model => model.numProntuario)
+                            </th>
+                            <th data-field="sus-responsavel">
+                                @Html.DisplayNameFor(model => model.susResponsavel)
+                            </th>
+                            <th data-field="data-nascimento">
+                                @Html.DisplayNameFor(model => model.nascimentoResponsavel)
+                            </th>
+                            <th data-field="renda-familiar">
+                                @Html.DisplayNameFor(model => model.rendaFamiliar)
+                            </th>
+                            <th data-field="num-membros">
+                                @Html.DisplayNameFor(model => model.numMembro)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr></tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+
+        <div id="informacoes-domicilio" class="col s12">
+            <!-- Aba referente as informações de moradia-->
+            <div class="row col s12">
+                <fieldset>
+                    <legend>Situação de moradia / Posse de terra</legend>
+                    <div class="input-field col s4">
+                        <div class="row">
+                            <input name="situacao-moradia" class="with-gap" type="radio" id="situacao-moradia-propria" />
+                            <label for="situacao-moradia-propria">Própria</label>
+                        </div>
+                        <div class="row">
+                            <input name="situacao-moradia" class="with-gap" type="radio" id="situacao-moradia-cedida" />
+                            <label for="situacao-moradia-cedida">Cedida</label>
+                        </div>
+                        <div class="row">
+                            <input name="situacao-moradia" class="with-gap" type="radio" id="situacao-moradia-alugada" />
+                            <label for="situacao-moradia-alugada">Alugada</label>
+                        </div>
+                        <div class="row">
+                            <input name="situacao-moradia" class="with-gap" type="radio" id="situacao-moradia-arrendoado" />
+                            <label for="situacao-moradia-arrendoado">Arrendoado</label>
+                        </div>
+                    </div>
+                    <div class="input-field col s4">
+                        <div class="row">
+                            <input name="situacao-moradia" class="with-gap" type="radio" id="situacao-moradia-financiado" />
+                            <label for="situacao-moradia-financiado">Financiado</label>
+                        </div>
+                        <div class="row">
+                            <input name="situacao-moradia" class="with-gap" type="radio" id="situacao-moradia-ocupacao" />
+                            <label for="situacao-moradia-ocupacao">Ocupação</label>
+                        </div>
+                        <div class="row">
+                            <input name="situacao-moradia" class="with-gap" type="radio" id="situacao-moradia-situacao-rua" />
+                            <label for="situacao-moradia-situacao-rua">Situação de rua</label>
+                        </div>
+                        <div class="row">
+                            <input name="situacao-moradia" class="with-gap" type="radio" id="situacao-moradia-outro" />
+                            <label for="situacao-moradia-outro">Outro</label>
+                        </div>
+                    </div>
+                    <div class="input-field col s4">
+                        <fieldset>
+                            <legend>Localização</legend>
+                            <div class="row">
+                                <input name="localizacao" class="with-gap" type="radio" id="localizacao-rural" />
+                                <label for="localizacao-rural">Rural</label>
+                            </div>
+                            <div class="row">
+                                <input name="localizacao" class="with-gap" type="radio" id="localizacao-urbana" />
+                                <label for="localizacao-urbana">Urbana</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="row col s12">
+                <div class="input-field col s4">
+                    <fieldset>
+                        <legend>Tipo de domicílio</legend>
+
+                        <div class="row">
+                            <input name="domicilio" class="with-gap" type="radio" id="domicilio-casa" />
+                            <label for="domicilio-casa">Casa</label>
+                        </div>
+                        <div class="row">
+                            <input name="domicilio" class="with-gap" type="radio" id="domicilio-apartamento" />
+                            <label for="domicilio-apartamento">Apartamento</label>
+                        </div>
+                        <div class="row">
+                            <input name="domicilio" class="with-gap" type="radio" id="domicilio-comodo" />
+                            <label for="domicilio-comodo">Cômodo</label>
+                        </div>
+                        <div class="row">
+                            <input name="domicilio" class="with-gap" type="radio" id="domicilio-comodo" />
+                            <label for="domicilio-comodo">Cômodo</label>
+                        </div>
+                        <div class="row">
+                            <input name="domicilio" class="with-gap" type="radio" id="domicilio-outro" />
+                            <label for="domicilio-outro">Outro</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="input-field col s8">
+                    <fieldset>
+                        <legend>Em caso de zona rural, condição de posse da terra</legend>
+                        <div class="input-field col s4">
+                            <div class="row">
+                                <input name="condicao" class="with-gap" type="radio" id="condicao-proprietario" />
+                                <label for="condicao-proprietario">Proprietário (a)</label>
+                            </div>
+                            <div class="row">
+                                <input name="condicao" class="with-gap" type="radio" id="condicao-assentado" />
+                                <label for="condicao-assentado">Assentado (a)</label>
+                            </div>
+                            <div class="row">
+                                <input name="condicao" class="with-gap" type="radio" id="condicao-parceiro" />
+                                <label for="condicao-parceiro">Parceiro (a) / Meeiro (a)</label>
+                            </div>
+                            <div class="row">
+                                <input name="condicao" class="with-gap" type="radio" id="condicao-beneficiario" />
+                                <label for="condicao-beneficiario">Beneficiário (a) do Banco da Terra</label>
+                            </div>
+                        </div>
+                        <div class="input-field col s4">
+
+                            <div class="row">
+                                <input name="condicao" class="with-gap" type="radio" id="condicao-arredatario" />
+                                <label for="condicao-arredatario">Arredatário (a)</label>
+                            </div>
+                            <div class="row">
+                                <input name="condicao" class="with-gap" type="radio" id="condicao-posseiro" />
+                                <label for="condicao-posseiro">Posseiro (a)</label>
+                            </div>
+                            <div class="row">
+                                <input name="condicao" class="with-gap" type="radio" id="condicao-comodatario" />
+                                <label for="condicao-comodatario">Comodatário (a)</label>
+                            </div>
+                            <div class="row">
+                                <input name="condicao" class="with-gap" type="radio" id="condicao-outro" />
+                                <label for="condicao-outro">Não se aplica</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s2">
+                    @Html.LabelFor(model => model.quantComodos, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.quantComodos, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.quantComodos, "", new { @class = "text-danger" })
+                </div>
+                <div class="input-field col s2">
+                    @Html.LabelFor(model => model.quantMoradores, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.quantMoradores, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.quantMoradores, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="input-field col s8">
+                    <fieldset>
+                        <legend>Tipo de acesso ao domicilio</legend>
+                        <div class="row">
+                            <input name="acesso" class="with-gap" type="radio" id="acesso-asfalto" />
+                            <label for="acesso-asfalto">Asfalto</label>
+                            <input name="acesso" class="with-gap" type="radio" id="acesso-chao" />
+                            <label for="acesso-chao">Chão batido</label>
+                            <input name="acesso" class="with-gap" type="radio" id="acesso-fluvial" />
+                            <label for="acesso-fluvial">Fluvial</label>
+                            <input name="acesso" class="with-gap" type="radio" id="acesso-outro" />
+                            <label for="acesso-outro">Outro</label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row col s12">
+                <fieldset>
+                    <legend>Material predominante na construção das paredes externas</legend>
+                    <div class="input-field col s3">
+                        <fieldset>
+                            <legend>Alvenaria / Tijolo</legend>
+                            <div class="row">
+                                <input name="material" class="with-gap" type="radio" id="material-tijolo-sim" />
+                                <label for="material-tijolo-sim">Com revestimento</label>
+                            </div>
+                            <div class="row">
+                                <input name="material" class="with-gap" type="radio" id="material-tijolo-nao" />
+                                <label for="material-tijolo-nao">Sem revestimento</label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="input-field col s3">
+                        <fieldset>
+                            <legend>Taipa</legend>
+                            <div class="row">
+                                <input name="material" class="with-gap" type="radio" id="material-taipa-sim" />
+                                <label for="material-taipa-sim">Com revestimento</label>
+                            </div>
+                            <div class="row">
+                                <input name="material" class="with-gap" type="radio" id="material-taipa-nao" />
+                                <label for="material-taipa-nao">Sem revestimento</label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <fieldset>
+                            <legend>Outros</legend>
+                            <div class="input-field col s6">
+                                <div class="row">
+                                    <input name="material" class="with-gap" type="radio" id="material-palha" />
+                                    <label for="material-palha">Palha</label>
+                                </div>
+                                <div class="row">
+                                    <input name="material" class="with-gap" type="radio" id="material-outro" />
+                                    <label for="material-outro">Outros</label>
+                                </div>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <div class="row">
+                                    <input name="material" class="with-gap" type="radio" id="material-aproveitado" />
+                                    <label for="material-aproveitado">Material aproveitado</label>
+                                </div>
+                                <div class="row">
+                                    <input name="material" class="with-gap" type="radio" id="material-madeira" />
+                                    <label for="material-madeira">Madeira aparelhada</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="row col s12">
+                <h6>Disponibilidade de energia elétrica?</h6>
+                <input name="energia-eletrica" class="with-gap" type="radio" id="energia-eletrica-sim" />
+                <label for="energia-eletrica">Sim</label>
+                <input name="energia-eletrica" class="with-gap" type="radio" id="energia-eletrica-nao" />
+                <label for="energia-eletrica">Não</label>
+            </div>
+            <div class="row col s12">
+
+                <div class="row col s6">
+                    <fieldset>
+                        <legend>Abastecimento de água</legend>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input name="agua" class="with-gap" type="radio" id="agua-rede-encanada" />
+                                <label for="agua-rede-encanada">Rede encanada até o domicílio</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input name="agua" class="with-gap" type="radio" id="agua-poco-nascente" />
+                                <label for="agua-poco-nascente">Poço / Nascente no domicílio</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input name="agua" class="with-gap" type="radio" id="agua-outro" />
+                                <label for="agua-outro">Outro</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input name="agua" class="with-gap" type="radio" id="agua-cisterna" />
+                                <label for="agua-cisterna">Cisterna</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input name="agua" class="with-gap" type="radio" id="agua-carro-pipa" />
+                                <label for="agua-carro-pipa">Carro-pipa</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="row col s6">
+
+                    <fieldset>
+                        <legend>Tratamento de água no domicílio</legend>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="row col s12">
+
+                <div class="row col s6">
+                    <fieldset>
+                        <legend>Escoamento do banheiro sanitário</legend>
+                    </fieldset>
+                </div>
+                <div class="row col s6">
+
+                    <fieldset>
+                        <legend>Destino do lixo</legend>
+                    </fieldset>
+                </div>
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.susProfissional, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.susProfissional, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.susProfissional, "", new { @class = "text-danger" })
+        <div id="backup" class="col s12">
+            <!-- Aba de bakup [APAGAR]-->
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.codigo, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.codigo, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.codigo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.susProfissional, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.susProfissional, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.susProfissional, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.codCNES, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.codCNES, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.codCNES, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.codEquipe, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.codEquipe, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.codEquipe, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.microArea, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.microArea, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.microArea, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.rua, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.rua, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.rua, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.numero, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.numero, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.numero, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.bairro, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.bairro, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.bairro, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.situacaoMoradia, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.situacaoMoradia, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.situacaoMoradia, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.tipoMoradia, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.tipoMoradia, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.tipoMoradia, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.numProntuario, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.numProntuario, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.numProntuario, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.susResponsavel, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.susResponsavel, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.susResponsavel, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.nascimentoResponsavel, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nascimentoResponsavel, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nascimentoResponsavel, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.rendaFamiliar, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.rendaFamiliar, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.rendaFamiliar, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.numMembro, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.numMembro, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.numMembro, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.quantComodos, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.quantComodos, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.quantComodos, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.quantMoradores, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.quantMoradores, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.quantMoradores, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.energiaEletrica, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.energiaEletrica, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.energiaEletrica, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.abastecimentoAgua, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.abastecimentoAgua, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.abastecimentoAgua, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Cadastrar" class="btn btn-default" />
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.codCNES, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.codCNES, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.codCNES, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.codEquipe, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.codEquipe, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.codEquipe, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.microArea, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.microArea, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.microArea, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.rua, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.rua, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.rua, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.numero, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.numero, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.numero, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.bairro, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.bairro, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.bairro, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.situacaoMoradia, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.situacaoMoradia, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.situacaoMoradia, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.tipoMoradia, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.tipoMoradia, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.tipoMoradia, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.numProntuario, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.numProntuario, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.numProntuario, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.susResponsavel, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.susResponsavel, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.susResponsavel, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.nascimentoResponsavel, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nascimentoResponsavel, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nascimentoResponsavel, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.rendaFamiliar, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.rendaFamiliar, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.rendaFamiliar, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.numMembro, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.numMembro, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.numMembro, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.quantComodos, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.quantComodos, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.quantComodos, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.quantMoradores, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.quantMoradores, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.quantMoradores, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.energiaEletrica, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.energiaEletrica, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.energiaEletrica, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.abastecimentoAgua, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.abastecimentoAgua, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.abastecimentoAgua, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cadastrar" class="btn btn-default" />
-            </div>
-        </div>
     </div>
+    <br /><br />
+    <form class="col s12">
+        <div class="form-group center">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar" class="btn btn-default" />
+                <input type="submit" value="Voltar" class="btn btn-default" />
+            </div>
+        </div>
+        @Html.ActionLink("Voltar a Lista", "Index")
+    </form>
 }
-
-<div>
-    @Html.ActionLink("Voltar a Lista", "Index")
-</div>
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>

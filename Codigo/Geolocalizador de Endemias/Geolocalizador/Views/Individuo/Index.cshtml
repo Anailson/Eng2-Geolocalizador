@@ -10,10 +10,10 @@
             <div class="row">
                 <!-- Radio Button -->
                 <div class="input-field col s3">
-                    <input name="group1" class="with-gap" type="radio" id="sus" checked/>
+                    <input name="pesquisa-individuo" class="with-gap" type="radio" id="sus" checked />
                     <label for="sus">N° do SUS</label>
 
-                    <input name="group1" class="with-gap" type="radio" id="nome" />
+                    <input name="pesquisa-individuo" class="with-gap" type="radio" id="nome" />
                     <label for="nome">Nome</label>
                 </div>
                 <!-- Caixa de texto -->
@@ -31,7 +31,7 @@
 </div>
 
 
-<table class="striped hoverable " >
+<table class="striped">
     <thead>
         <tr>
             <th data-field="sus">
@@ -40,6 +40,7 @@
             <th data-field="nome">
                 @Html.DisplayNameFor(model => model.nome)
             </th>
+            <th></th>
         </tr>
     </thead>
 

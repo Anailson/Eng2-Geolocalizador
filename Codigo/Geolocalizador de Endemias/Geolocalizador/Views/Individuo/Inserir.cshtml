@@ -1,233 +1,894 @@
 ﻿@model Dominio.Classes.Individuo
 
-@{
-    ViewBag.Title = "Inserir";
-}
+<nav>
+    <span class="card-title">Cadastrar indivíduo</span>
+</nav>
 
-<h2>Inserir</h2>
-
-
-@using (Html.BeginForm("Cadastrar","Individuo")) 
+@using (Html.BeginForm("Cadastrar", "Individuo"))
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Individuo</h4>
-        <hr />
-        @Html.ValidationSummary(true)
-        <div class="form-group">
-            @Html.LabelFor(model => model.codDomicilio, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.codDomicilio)
-                @Html.ValidationMessageFor(model => model.codDomicilio)
-            </div>
+
+    <br /><br />
+    <div class="row">
+        <!--Declaração dos títulos das abas -->
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s3"><a href="#cadastro-individuo">Cadastro individual</a></li>
+                <li class="tab col s3"><a href="#informacoes-individuo">Informações sócio demográficas</a></li>
+                <li class="tab col s3"><a href="#backup">Backup [APAGAR]</a></li>
+                <li class="tab col s3"><a href="#icones">Ícones [APAGAR]</a></li>
+            </ul>
+        </div><!--Fim da declaração dos títulos das abas -->
+        <div id="cadastro-individuo" class="col s12">
+            <!-- Aba referente ao cadastro individual-->
+            <form class="col s12">
+                <br /><br />
+                <div class="row">
+                    <!-- Informações da equipe/área-->
+                    <fieldset>
+                        <div class="input-field col s3">
+
+                            @Html.LabelFor(model => model.susProfissional, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.susProfissional)
+                            @Html.ValidationMessageFor(model => model.susProfissional)
+                            <!--<input placeholder="N° do SUS do profissional" id="sus-profissional" type="number" class="validate">
+                            <label data-error="Campo digitado incorretamente"></label>-->
+                        </div>
+                        <div class="input-field col s3">
+                            @Html.LabelFor(model => model.codCNES, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.codCNES)
+                            @Html.ValidationMessageFor(model => model.codCNES)
+                            <!--input placeholder="Cod. CNES da unidade" id="cod-cnes" type="number" class="validate">
+                            <label data-error="Campo digitado incorretamente"></label>-->
+                        </div>
+
+                        <div class="input-field col s3">
+                            @Html.LabelFor(model => model.codEquipe, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.codEquipe)
+                            @Html.ValidationMessageFor(model => model.codEquipe)
+                            <!--<input placeholder="Cod. da equipe" id="cod-equipe" type="number" class="validate">
+                            <label data-error="Campo digitado incorretamente"></label>-->
+                        </div>
+
+                        <div class="input-field col s3">
+                            @Html.LabelFor(model => model.microArea, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.microArea)
+                            @Html.ValidationMessageFor(model => model.microArea)
+                            <!--<input placeholder="Micro área" id="microarea" type="number" class="validate">
+                            <label data-error="Campo digitado incorretamente"></label>-->
+                        </div>
+                    </fieldset>
+                </div><!-- Informações do indivíduo-->
+                <br /><br />
+                <fieldset>
+                    <legend>Identificação do usuário / cidadão</legend>
+                    <div class="row">
+                        <div class="input-field col s3">
+                            <input placeholder="Cartão do SUS do indivíduo" id="sus-individuo" type="number" class="validate">
+                            <label data-error="Campo digitado incorretamente"></label>
+                        </div>
+                        <fieldset>
+                            <legend>Responsável familiar?</legend>
+                            <div class="input-field col s3">
+                                <input name="responsavel-familar" class="with-gap" type="radio" id="responsavel-sim" />
+                                <label for="responsavel-sim">Sim</label>
+
+                                <input name="responsavel-familar" class="with-gap" type="radio" id="responsavel-nao" />
+                                <label for="responsavel-nao">Não</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <input placeholder="Cartão do SUS" id="sus-responsavel" type="number" class="validate">
+                                <label data-error="Campo digitado incorretamente"></label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input placeholder="Nome completo" id="nome" type="text" class="validate">
+                        </div>
+
+                        <div class="input-field col s3">
+                            <input placeholder="Apelido / Nome social" id="apelido" type="text" class="validate">
+                        </div>
+
+                        <div class="input-field col s3">
+                            <input placeholder="Data de nascimento" type="date">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s3">
+                            <h6>Sexo:</h6>
+                            <input name="sexo" class="with-gap" type="radio" id="sexo-m" />
+                            <label for="sexo-m">Masculino</label>
+                            <input name="sexo" class="with-gap" type="radio" id="sexo-f" />
+                            <label for="sexo-f">Feminino</label>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <h6>Raça / Cor:</h6>
+                            <input name="raca" class="with-gap" type="radio" id="raca-branca" />
+                            <label for="raca-branca">Branca</label>
+                            <input name="raca" class="with-gap" type="radio" id="raca-parda" />
+                            <label for="raca-parda">Parda</label>
+                            <input name="raca" class="with-gap" type="radio" id="raca-amarela" />
+                            <label for="raca-amarela">Amarela</label>
+                            <input name="raca" class="with-gap" type="radio" id="raca-indigena" />
+                            <label for="raca-indigena">Indígena</label>
+                            <input name="raca" class="with-gap" type="radio" id="raca-preta" />
+                            <label for="raca-preta">Preta</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input placeholder="NIS (PIS / PASEP)" id="nome" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s5">
+                            <input placeholder="Nome completo da mãe" id="nome-mae" type="text">
+                        </div>
+                        <div class="input-field col s5">
+                            <input placeholder="E-mail" id="email" type="email" class="validate">
+                        </div>
+                        <div class="input-field col s2">
+                            <input placeholder="E-mail" id="telefone" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <h6>Nacionalidade:</h6>
+                            <input name="nacionalidade" class="with-gap" type="radio" id="brasileiro" />
+                            <label for="brasileiro">Brasileira</label>
+                            <input name="nacionalidade" class="with-gap" type="radio" id="naturalizado" />
+                            <label for="naturalizado">Naturalizado</label>
+                            <input name="nacionalidade" class="with-gap" type="radio" id="extrangeiro" />
+                            <label for="extrangeiro">Extrangeiro</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input placeholder="País de nascimento" id="pais-nascimento" type="text">
+                        </div>
+                        <div class="input-field col s4">
+                            <input placeholder="Município e UF de nascimento" id="municipio-uf-nascimento" type="text">
+                        </div>
+                    </div>
+                </fieldset>
+                <br /><br />
+                <fieldset>
+                    <legend>Situação de rua</legend>
+                    <div class="row">
+                        <div class="input-field col s3">
+                            <h6>Está em situação de rua?</h6>
+                            <input name="situacao-rua" class="with-gap" type="radio" id="situacao-rua-sim" />
+                            <label for="situacao-rua-sim">Sim</label>
+                            <input name="situacao-rua" class="with-gap" type="radio" id="situacao-rua-nao" />
+                            <label for="situacao-rua-nao">Não</label>
+                        </div>
+                        <div class="input-field col s8">
+                            <h6>Tempo em situacao de rua:</h6>
+                            <input name="tempo-situacao-rua" class="with-gap" type="radio" id="6-meses" />
+                            <label for="6-meses">Menos de 6 meses</label>
+                            <input name="tempo-situacao-rua" class="with-gap" type="radio" id="6-12-meses" />
+                            <label for="6-12-meses">Entre 6 meses e 1 ano</label>
+                            <input name="tempo-situacao-rua" class="with-gap" type="radio" id="12-60-meses" />
+                            <label for="12-60-meses">Entre 1 ano e 5 anos</label>
+                            <input name="tempo-situacao-rua" class="with-gap" type="radio" id="60-meses" />
+                            <label for="60-meses">Mais de 5 anos</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s3">
+                            <h6>É acompanhado por outra instituição?</h6>
+                            <input name="acompanhamento-instituicao" class="with-gap" type="radio" id="acompanhamento-sim" />
+                            <label for="acompanhamento-sim">Sim</label>
+                            <input name="acompanhamento-instituicao" class="with-gap" type="radio" id="acompanhamento-nao" />
+                            <label for="acompanhamento-nao">Não</label>
+                        </div>
+                        <div class="input-field col s9">
+                            <h6>Sim sim, qual?</h6>
+                            <input placeholder="Cite a(s) instituição(ões)" id="instituicao" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s3">
+                            <h6>Recebe algum benefício?</h6>
+                            <input name="beneficio" class="with-gap" type="radio" id="beneficio-sim" />
+                            <label for="beneficio-sim">Sim</label>
+                            <input name="beneficio" class="with-gap" type="radio" id="beneficio-nao" />
+                            <label for="beneficio-nao">Não</label>
+                        </div>
+                        <div class="input-field col s3">
+
+                            <h6>Possui referência familiar?</h6>
+                            <input name="referencia-familiar" class="with-gap" type="radio" id="referencia-familiar-sim" />
+                            <label for="referencia-familiar-sim">Sim</label>
+                            <input name="referencia-familiar" class="with-gap" type="radio" id="referencia-familiar-nao" />
+                            <label for="referencia-familiar-nao">Não</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s3">
+                            <h6>Visita algum familiar com frequência?</h6>
+                            <input name="visita-familiar" class="with-gap" type="radio" id="visita-familiar-sim" />
+                            <label for="visita-familiar-sim">Sim</label>
+                            <input name="visita-familiar" class="with-gap" type="radio" id="visita-familiar-nao" />
+                            <label for="visita-familiar-nao">Não</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <h6>Sim sim, qual o parentesco?</h6>
+                            <input placeholder="Cite o nível de parentesco" id="nivel-parentesco" type="text">
+                        </div>
+                    </div>
+                </fieldset>
+                <br /><br />
+            </form>
+        </div><!-- Fim da aba referente ao cadastro individual-->
+
+        <div id="informacoes-individuo" class="col s12">
+            <form class="col s12">
+                <br /><br />
+                <div class="row">
+
+                    <fieldset>
+                        <legend>Situação conjugal</legend>
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <input class="with-gap" name="situacao-conjugal" type="radio" id="situacao-solteiro" />
+                                <label for="situacao-solteiro">Solteiro(a)</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input class="with-gap" name="situacao-conjugal" type="radio" id="situacao-divorciado" />
+                                <label for="situacao-divorciado">Divorciado(a)</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input class="with-gap" name="situacao-conjugal" type="radio" id="situacao-viuvo" />
+                                <label for="situacao-viuvo">Viúvo(a)</label>
+                            </div>
+                            <div class="input-field col s4">
+                                <input class="with-gap" name="situacao-conjugal" type="radio" id="situacao-casado" />
+                                <label for="situacao-casado">Casado(a) / Convívio com parceiro (a)</label>
+                            </div>
+                            <div class="input-field col s1">
+                                <input class="with-gap" name="situacao-conjugal" type="radio" id="situacao-outro" />
+                                <label for="situacao-outro">Outra</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                @Html.LabelFor(model => model.ocupacao, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.ocupacao)
+                                @Html.ValidationMessageFor(model => model.ocupacao)
+                            </div>
+                        </div>
+
+                    </fieldset><br />
+                    <fieldset>
+                        <legend>Qual o curso mais elevado que frequenta ou já frequentou?</legend>
+                        <div class="row col s12">
+                            <div class="intput-field col s3">
+                                <input class="with-gap" name="maior-curso" type="radio" id="curso-creche" />
+                                <label for="curso-creche">Creche</label>
+                            </div>
+                            <div class="intput-field col s3">
+                                <input class="with-gap" name="maior-curso" type="radio" id="curso-pre-escola" />
+                                <label for="curso-pre-escola">Pré escola (exceto CA)</label>
+                            </div>
+                            <div class="intput-field col s3">
+                                <input class="with-gap" name="maior-curso" type="radio" id="curso-classe" />
+                                <label for="curso-classe">Classe Alfabetizada (CA)</label>
+                            </div>
+                            <div class="intput-field col s3">
+                                <input class="with-gap" name="maior-curso" type="radio" id="curso-fundamental-a" />
+                                <label for="curso-fundamental-a">Ensino Fundamental: 1° a 4° série</label>
+                            </div>
+                        </div>
+                        <div class="row col s12">
+                            <div class="intput-field col s3">
+                                <input class="with-gap" name="maior-curso" type="radio" id="curso-fundamental-b" />
+                                <label for="curso-fundamental-b">Ensino Fundamental: 5° a 8 série</label>
+                            </div>
+                            <div class="intput-field col s3">
+                                <input class="with-gap" name="maior-curso" type="radio" id="curso-fundamental-c" />
+                                <label for="curso-fundamental-c">Ensino Fundamental Completo</label>
+                            </div>
+                            <div class="intput-field col s3">
+                                <input class="with-gap" name="maior-curso" type="radio" id="curso-fundamental-d" />
+                                <label for="curso-fundamental-d">Ensino Fundamental Especial</label>
+                            </div>
+                            <div class="intput-field col s3">
+                                <input class="with-gap" name="maior-curso" type="radio" id="curso-fundamental-e" />
+                                <label for="curso-fundamental-e">Ensino Fundamental EJA: 1° a 4° série</label>
+                            </div>
+                        </div>
+
+                        <div class="row col s12">
+                            <div class="intput-field col s3">
+                                <input class="with-gap" name="maior-curso" type="radio" id="curso-fundamental-f" />
+                                <label for="curso-fundamental-f">Ensino Fundamental EJA: 5° a 8 série</label>
+                            </div>
+                            <div class="intput-field col s3">
+                                <input class="with-gap" name="maior-curso" type="radio" id="curso-media-a" />
+                                <label for="curso-media-a">Ensino Médio 2° cíclo (centítifico, técnico etc)</label>
+                            </div>
+                            <div class="intput-field col s3">
+                                <input class="with-gap" name="maior-curso" type="radio" id="curso-medio-b" />
+                                <label for="curso-medio-b">Ensino Médio Especial</label>
+                            </div>
+                            <div class="intput-field col s3">
+                                <input class="with-gap" name="maior-curso" type="radio" id="curso-medio-c" />
+                                <label for="curso-medio-c">Ensino Médio EJA (supletivo)</label>
+                            </div>
+                        </div>
+                        <div class="row col s12">
+                            <div class="intput-field col s3">
+                                <input class="with-gap" name="maior-curso" type="radio" id="curso-superior" />
+                                <label for="curso-superior">Suerior, Aperfeiçoamento, Especialização, Mestrado, Doutorado</label>
+                            </div>
+                            <div class="intput-field col s3">
+                                <input class="with-gap" name="maior-curso" type="radio" id="curso-alfabetizacao" />
+                                <label for="curso-alfabetizacao">Alfabetização para adultos (mobral etc)</label>
+                            </div>
+                            <div class="intput-field col s3">
+                                <input class="with-gap" name="maior-curso" type="radio" id="curso-nenhum" />
+                                <label for="curso-nenhum">Nenhum</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br />
+                    <fieldset>
+                        <div class="row col s12">
+                            <h6>Crianças de 0  a 6 anos, com quem ficam?</h6>
+                            <div class="intput-field col s2">
+                                <input class="with-gap" name="criancas" type="radio" id="criancas-adulto" />
+                                <label for="criancas-adulto">Adulto responsável</label>
+                            </div>
+                            <div class="intput-field col s2">
+                                <input class="with-gap" name="criancas" type="radio" id="criancas-adolescente" />
+                                <label for="criancas-adolescente">Adolescente</label>
+                            </div>
+                            <div class="intput-field col s2">
+                                <input class="with-gap" name="criancas" type="radio" id="criancas-criancas" />
+                                <label for="criancas-criancas">Outra(s) criança(as)</label>
+                            </div>
+                            <div class="intput-field col s2">
+                                <input class="with-gap" name="criancas" type="radio" id="criancas-sozinha" />
+                                <label for="criancas-sozinha">Sozinha</label>
+                            </div>
+                            <div class="intput-field col s2">
+                                <input class="with-gap" name="criancas" type="radio" id="criancas-creche" />
+                                <label for="criancas-creche">Creche</label>
+                            </div>
+                            <div class="intput-field col s2">
+                                <input class="with-gap" name="criancas" type="radio" id="criancas-outro" />
+                                <label for="criancas-outro">Outro</label>
+                            </div>
+
+                        </div>
+                        <div class="row col s12">
+                            <div class="intput-field col s4">
+                                <h6>Frequenta curandeiro(a) / benzendeiro(a)?</h6>
+                                <input class="with-gap" name="curandeiro" type="radio" id="curandeiro-sim" />
+                                <label for="curandeiro-sim">Sim</label>
+                                <input class="with-gap" name="curandeiro" type="radio" id="curandeiro-nao" />
+                                <label for="curandeiro-nao">Não</label>
+                            </div>
+                            <div class="intput-field col s4">
+                                <h6>Participa de algum grupo comunitário?</h6>
+                                <input class="with-gap" name="grupo" type="radio" id="grupo-sim" />
+                                <label for="grupo-sim">Sim</label>
+                                <input class="with-gap" name="grupo" type="radio" id="grupo-nao" />
+                                <label for="grupo-nao">Não</label>
+                            </div>
+                            <div class="intput-field col s4">
+                                <h6>Possui plano de saúde privado?</h6>
+                                <input class="with-gap" name="plano-saude" type="radio" id="plano-saude-sim" />
+                                <label for="plano-saude-sim">Sim</label>
+                                <input class="with-gap" name="plano-saude" type="radio" id="plano-saude-nao" />
+                                <label for="plano-saude-nao">Não</label>
+                            </div>
+                        </div>
+                        <div class="row col s12">
+
+                            <div class="intput-field col s4">
+                                <h6>É membro de povo ou comunidade tradicional?</h6>
+                                <input class="with-gap" name="povo-tradicional" type="radio" id="povo-tradicional-sim" />
+                                <label for="povo-tradicional-sim">Sim</label>
+                                <input class="with-gap" name="povo-tradicional" type="radio" id="povo-tradicional-nao" />
+                                <label for="povo-tradicional-nao">Não</label>
+                            </div>
+                            <div class="intput-field col s6">
+                                <input placeholder="Se sim, cite qual povo/comunidade" type="text" id="povo-tradicional" />
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br />
+                    <fieldset>
+                        <legend>Orientação sexual</legend>
+                        <div class="row col s12">
+                            <div class="intput-field col s6">
+                                <h6>Deseja informar sua orientação sexual / identidade de gênero?</h6>
+                                <input class="with-gap" name="orientacao" type="radio" id="orientacao-sim" />
+                                <label for="orientacao-sim">Sim</label>
+                                <input class="with-gap" name="orientacao" type="radio" id="orientacao-nao" />
+                                <label for="orientacao-nao">Não</label>
+                            </div>
+                        </div>
+                        <div class="row col s12">
+                            <h6>Se sim, qual?</h6>
+                            <div class="intput-field col s2">
+                                <input class="with-gap" name="orientacao-sim" type="radio" id="orientacao-hetero" />
+                                <label for="orientacao-hetero">Heterosexual</label>
+                            </div>
+                            <div class="intput-field col s1">
+                                <input class="with-gap" name="orientacao-sim" type="radio" id="orientacao-lesbica" />
+                                <label for="orientacao-lesbica">Lésbica</label>
+                            </div><div class="intput-field col s1">
+                                <input class="with-gap" name="orientacao-sim" type="radio" id="orientacao-travesti" />
+                                <label for="orientacao-travesti">Travesti</label>
+                            </div>
+                            <div class="intput-field col s1">
+                                <input class="with-gap" name="orientacao-sim" type="radio" id="orientacao-gay" />
+                                <label for="orientacao-gay">Gay</label>
+                            </div>
+                            <div class="intput-field col s1">
+                                <input class="with-gap" name="orientacao-sim" type="radio" id="orientacao-bi" />
+                                <label for="orientacao-bi">Bissexual</label>
+                            </div>
+                            <div class="intput-field col s2">
+                                <input class="with-gap" name="orientacao-sim" type="radio" id="orientacao-trans" />
+                                <label for="orientacao-trans">Transsexual</label>
+                            </div>
+                            <div class="intput-field col s1">
+                                <input class="with-gap" name="orientacao-sim" type="radio" id="orientacao-outro" />
+                                <label for="orientacao-outro">Outro</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <br /><br />
+            </form>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.susProfissional, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.susProfissional)
-                @Html.ValidationMessageFor(model => model.susProfissional)
-            </div>
-        </div>
+        <div id="backup" class="col s12">
+            <!-- Aba referente as informações sócio econômicas-->
+            <div class="form-horizontal">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.codCNES, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.codCNES)
-                @Html.ValidationMessageFor(model => model.codCNES)
-            </div>
-        </div>
+                @Html.ValidationSummary(true)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.codDomicilio, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.codDomicilio)
+                        @Html.ValidationMessageFor(model => model.codDomicilio)
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.codEquipe, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.codEquipe)
-                @Html.ValidationMessageFor(model => model.codEquipe)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.nome, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nome)
+                        @Html.ValidationMessageFor(model => model.nome)
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.microArea, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.microArea)
-                @Html.ValidationMessageFor(model => model.microArea)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.numSus, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.numSus)
+                        @Html.ValidationMessageFor(model => model.numSus)
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.nome, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nome)
-                @Html.ValidationMessageFor(model => model.nome)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.susResponsavel, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.susResponsavel)
+                        @Html.ValidationMessageFor(model => model.susResponsavel)
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.numSus, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.numSus)
-                @Html.ValidationMessageFor(model => model.numSus)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.apelido, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.apelido)
+                        @Html.ValidationMessageFor(model => model.apelido)
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.susResponsavel, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.susResponsavel)
-                @Html.ValidationMessageFor(model => model.susResponsavel)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.nisPis, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nisPis)
+                        @Html.ValidationMessageFor(model => model.nisPis)
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.apelido, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.apelido)
-                @Html.ValidationMessageFor(model => model.apelido)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.dataNascimento, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.dataNascimento)
+                        @Html.ValidationMessageFor(model => model.dataNascimento)
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.nisPis, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nisPis)
-                @Html.ValidationMessageFor(model => model.nisPis)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.sexo, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.sexo)
+                        @Html.ValidationMessageFor(model => model.sexo)
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.dataNascimento, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.dataNascimento)
-                @Html.ValidationMessageFor(model => model.dataNascimento)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.racaCor, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.racaCor)
+                        @Html.ValidationMessageFor(model => model.racaCor)
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.sexo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.sexo)
-                @Html.ValidationMessageFor(model => model.sexo)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.nomeDaMae, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nomeDaMae)
+                        @Html.ValidationMessageFor(model => model.nomeDaMae)
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.racaCor, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.racaCor)
-                @Html.ValidationMessageFor(model => model.racaCor)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.nacionalidade, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nacionalidade)
+                        @Html.ValidationMessageFor(model => model.nacionalidade)
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.nomeDaMae, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nomeDaMae)
-                @Html.ValidationMessageFor(model => model.nomeDaMae)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.pais, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.pais)
+                        @Html.ValidationMessageFor(model => model.pais)
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.nacionalidade, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nacionalidade)
-                @Html.ValidationMessageFor(model => model.nacionalidade)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.telefone, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.telefone)
+                        @Html.ValidationMessageFor(model => model.telefone)
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.pais, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.pais)
-                @Html.ValidationMessageFor(model => model.pais)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.municipio, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.municipio, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.municipio, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.telefone, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.telefone)
-                @Html.ValidationMessageFor(model => model.telefone)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.uf, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.uf, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.uf, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.municipio, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.municipio)
-                @Html.ValidationMessageFor(model => model.municipio)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.uf, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.uf)
-                @Html.ValidationMessageFor(model => model.uf)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.nivelEscolar, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nivelEscolar, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nivelEscolar, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.email)
-                @Html.ValidationMessageFor(model => model.email)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.situacaoDeRua, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.situacaoDeRua, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.situacaoDeRua, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.nivelEscolar, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nivelEscolar)
-                @Html.ValidationMessageFor(model => model.nivelEscolar)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.situacaoConj, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.situacaoConj, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.situacaoConj, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.situacaoDeRua, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.situacaoDeRua)
-                @Html.ValidationMessageFor(model => model.situacaoDeRua)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ocupacao, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ocupacao, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ocupacao, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.situacaoConj, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.situacaoConj)
-                @Html.ValidationMessageFor(model => model.situacaoConj)
-            </div>
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.orientacaoSexual, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.orientacaoSexual, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.orientacaoSexual, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ocupacao, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ocupacao)
-                @Html.ValidationMessageFor(model => model.ocupacao)
             </div>
-        </div>
+        </div><!-- Fim da aba referente as informações sócio econômicas-->
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.orientacaoSexual, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.orientacaoSexual)
-                @Html.ValidationMessageFor(model => model.orientacaoSexual)
-            </div>
-        </div>
+        <div id="icones" class="col s12">
+            <!-- Aba referente aos icones-->
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">info_outline</i><span>info_outline</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">input</i><span>input</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">invert_colors</i><span>invert_colors</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">label</i><span>label</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">label_outline</i><span>label_outline</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">language</i><span>language</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">query_builder</i><span>query_builder</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">perm_identity</i><span>perm_identity</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">perm_media</i><span>perm_media</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">perm_phone_msg</i><span>perm_phone_msg</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">perm_scan_wifi</i><span>perm_scan_wifi</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">picture_in_picture</i><span>picture_in_picture</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">play_for_work</i><span>play_for_work</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">polymer</i><span>polymer</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">power_settings_new</i><span>power_settings_new</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">print</i><span>print</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">thumb_down</i><span>thumb_down</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">thumb_up</i><span>thumb_up</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">thumbs_up_down</i><span>thumbs_up_down</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">email</i><span>email</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">dialpad</i><span>dialpad</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">dialer_sip</i><span>dialer_sip</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">contacts</i><span>contacts</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">forward_5</i><span>forward_5</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">stay_current_portrait</i><span>stay_current_portrait</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">stay_primary_landscape</i><span>stay_primary_landscape</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">stay_primary_portrait</i><span>stay_primary_portrait</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">swap_calls</i><span>swap_calls</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">textsms</i><span>textsms</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">voicemail</i><span>voicemail</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">vpn_key</i><span>vpn_key</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">group_work</i><span>group_work</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">grade</i><span>grade</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">clear_all</i><span>clear_all</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">chat_bubble_outline</i><span>chat_bubble_outline</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">chat_bubble</i><span>chat_bubble</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">repeat</i><span>repeat</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">repeat_one</i><span>repeat_one</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">replay</i><span>replay</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">replay_10</i><span>replay_10</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">replay_30</i><span>replay_30</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">replay_5</i><span>replay_5</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">shuffle</i><span>shuffle</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">skip_next</i><span>skip_next</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">skip_previous</i><span>skip_previous</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">contact_phone</i><span>contact_phone</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">comment</i><span>comment</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">recent_actors</i><span>recent_actors</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">snooze</i><span>snooze</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">sort_by_alpha</i><span>sort_by_alpha</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">stop</i><span>stop</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">subtitles</i><span>subtitles</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">surround_sound</i><span>surround_sound</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">web</i><span>web</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">volume_up</i><span>volume_up</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">volume_off</i><span>volume_off</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">volume_mute</i><span>volume_mute</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">toc</i><span>toc</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">today</i><span>today</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">toll</i><span>toll</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">track_changes</i><span>track_changes</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">translate</i><span>translate</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">trending_down</i><span>trending_down</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">question_answer</i><span>question_answer</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">receipt</i><span>receipt</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">done</i><span>done</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">tab</i><span>tab</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">tab_unselected</i><span>tab_unselected</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">theaters</i><span>theaters</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">hd</i><span>hd</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">games</i><span>games</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">hearing</i><span>hearing</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">view_module</i><span>view_module</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">view_list</i><span>view_list</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings_remote</i><span>settings_remote</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings_voice</i><span>settings_voice</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">search</i><span>search</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings</i><span>settings</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings_applications</i><span>settings_applications</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings_backup_restore</i><span>settings_backup_restore</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings_bluetooth</i><span>settings_bluetooth</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings_brightness</i><span>settings_brightness</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings_cell</i><span>settings_cell</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings_ethernet</i><span>settings_ethernet</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings_input_antenna</i><span>settings_input_antenna</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">trending_flat</i><span>trending_flat</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">trending_up</i><span>trending_up</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">work</i><span>work</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">youtube_searched_for</i><span>youtube_searched_for</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">zoom_in</i><span>zoom_in</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">my_location</i><span>my_location</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">visibility_off</i><span>visibility_off</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">visibility</i><span>visibility</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">view_week</i><span>view_week</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">view_stream</i><span>view_stream</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">view_quilt</i><span>view_quilt</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">video_library</i><span>video_library</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">videocam</i><span>videocam</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">videocam_off</i><span>videocam_off</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">volume_down</i><span>volume_down</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings_overscan</i><span>settings_overscan</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings_input_svideo</i><span>settings_input_svideo</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings_input_hdmi</i><span>settings_input_hdmi</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings_input_composite</i><span>settings_input_composite</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings_input_component</i><span>settings_input_component</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">launch</i><span>launch</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">perm_device_information</i><span>perm_device_information</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">perm_data_setting</i><span>perm_data_setting</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">zoom_out</i><span>zoom_out</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">alarm_on</i><span>alarm_on</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">dns</i><span>dns</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">redeem</i><span>redeem</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">reorder</i><span>reorder</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">report_problem</i><span>report_problem</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">restore</i><span>restore</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">room</i><span>room</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">schedule</i><span>schedule</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">movie</i><span>movie</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">android</i><span>android</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">announcement</i><span>announcement</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">mic_off</i><span>mic_off</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">mic_none</i><span>mic_none</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">swap_horiz</i><span>swap_horiz</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">swap_vert</i><span>swap_vert</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">swap_vertical_circle</i><span>swap_vertical_circle</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">system_update_alt</i><span>system_update_alt</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">subtitles</i><span>subtitles</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">present_to_all</i><span>present_to_all</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">portable_wifi_off</i><span>portable_wifi_off</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">phonelink_setup</i><span>phonelink_setup</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">phonelink_ring</i><span>phonelink_ring</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">phonelink_lock</i><span>phonelink_lock</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">phonelink_erase</i><span>phonelink_erase</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">person_pin</i><span>person_pin</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">navigation</i><span>navigation</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">new_releases</i><span>new_releases</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">not_interested</i><span>not_interested</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">pause</i><span>pause</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">pause_circle_filled</i><span>pause_circle_filled</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">pause_circle_outline</i><span>pause_circle_outline</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">play_arrow</i><span>play_arrow</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">play_circle_filled</i><span>play_circle_filled</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">play_circle_outline</i><span>play_circle_outline</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">playlist_add</i><span>playlist_add</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">queue</i><span>queue</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">queue_music</i><span>queue_music</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">radio</i><span>radio</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">class</i><span>class</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">code</i><span>code</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">credit_card</i><span>credit_card</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">dashboard</i><span>dashboard</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">delete</i><span>delete</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">description</i><span>description</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">open_with</i><span>open_with</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">pageview</i><span>pageview</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">payment</i><span>payment</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">perm_camera_mic</i><span>perm_camera_mic</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">perm_contact_calendar</i><span>perm_contact_calendar</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">airplay</i><span>airplay</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">done_all</i><span>done_all</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">phone</i><span>phone</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">no_sim</i><span>no_sim</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">invert_colors_off</i><span>invert_colors_off</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">chat</i><span>chat</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">call_split</i><span>call_split</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">call_received</i><span>call_received</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">call_missed</i><span>call_missed</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">call_merge</i><span>call_merge</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">call_made</i><span>call_made</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">call_end</i><span>call_end</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">call</i><span>call</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">business</i><span>business</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">stop</i><span>stop</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">sort_by_alpha</i><span>sort_by_alpha</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">snooze</i><span>snooze</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">comment</i><span>comment</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">clear_all</i><span>clear_all</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">chat_bubble_outline</i><span>chat_bubble_outline</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">chat_bubble</i><span>chat_bubble</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">alarm_off</i><span>alarm_off</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">message</i><span>message</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">location_on</i><span>location_on</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">location_off</i><span>location_off</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">live_help</i><span>live_help</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">album</i><span>album</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">av_timer</i><span>av_timer</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">closed_caption</i><span>closed_caption</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">equalizer</i><span>equalizer</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">turned_in_not</i><span>turned_in_not</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">verified_user</i><span>verified_user</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">view_agenda</i><span>view_agenda</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">view_array</i><span>view_array</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">view_carousel</i><span>view_carousel</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">view_column</i><span>view_column</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">subject</i><span>subject</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">supervisor_account</i><span>supervisor_account</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings_power</i><span>settings_power</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">shop</i><span>shop</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">shop_two</i><span>shop_two</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">shopping_basket</i><span>shopping_basket</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">shopping_cart</i><span>shopping_cart</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">speaker_notes</i><span>speaker_notes</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">spellcheck</i><span>spellcheck</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">star_rate</i><span>star_rate</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">stars</i><span>stars</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">store</i><span>store</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">ring_volume</i><span>ring_volume</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">speaker_phone</i><span>speaker_phone</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">stay_current_landscape</i><span>stay_current_landscape</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">forum</i><span>forum</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">import_export</i><span>import_export</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">open_in_browser</i><span>open_in_browser</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">open_in_new</i><span>open_in_new</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">forward_30</i><span>forward_30</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">turned_in</i><span>turned_in</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">view_headline</i><span>view_headline</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">view_day</i><span>view_day</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">warning</i><span>warning</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">error_outline</i><span>error_outline</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">error</i><span>error</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">add_alert</i><span>add_alert</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">settings_phone</i><span>settings_phone</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">forward_10</i><span>forward_10</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">fast_rewind</i><span>fast_rewind</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">fast_forward</i><span>fast_forward</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">explicit</i><span>explicit</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">list</i><span>list</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">lock</i><span>lock</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">lock_open</i><span>lock_open</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">lock_outline</i><span>lock_outline</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">loyalty</i><span>loyalty</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">markunread_mailbox</i><span>markunread_mailbox</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">note_add</i><span>note_add</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">offline_pin</i><span>offline_pin</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">http</i><span>http</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">mic</i><span>mic</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">loop</i><span>loop</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">library_music</i><span>library_music</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">library_books</i><span>library_books</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">library_add</i><span>library_add</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">high_quality</i><span>high_quality</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">surround_sound</i><span>surround_sound</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">info</i><span>info</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">https</i><span>https</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">aspect_ratio</i><span>aspect_ratio</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">assessment</i><span>assessment</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">assignment</i><span>assignment</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">assignment_ind</i><span>assignment_ind</span></div>
+            <div class="icon-preview col s6 m3"><i class="material-icons dp48">assignment_late</i><span>assignment_late</span></div>
+        </div> <!-- Fim da aba referente aos icones-->
 
-        <div class="form-group">
+    </div><!--Fim da declaração dos títulos das abas -->
+    <br /><br />
+    <form class="col s12">
+        <div class="form-group center">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cadastrar" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-default" />
+                <input type="submit" value="Voltar" class="btn btn-default" />
             </div>
         </div>
-    </div>
+        @Html.ActionLink("Voltar a Lista", "Index")
+    </form>
 }
 
-<div>
-    @Html.ActionLink("Voltar a Lista", "Index")
-</div>
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="~/Content/js/materialize.min.js"></script>
-
-
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

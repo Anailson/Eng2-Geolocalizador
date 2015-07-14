@@ -1926,7 +1926,7 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid rgba(0, 0, 0, 0.26);
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em; }
 
@@ -5705,6 +5705,7 @@ small {
     display: block;
     float: left;
     text-align: center;
+
     line-height: 48px;
     height: 48px;
     padding: 0 20px;
@@ -5713,7 +5714,7 @@ small {
     letter-spacing: .8px;
     width: 15%; }
     .tabs .tab a {
-      color: #ee6e73;
+      color: #0089ec;
       display: block;
       width: 100%;
       height: 100%;
@@ -5723,7 +5724,7 @@ small {
       -ms-transition: color .28s ease;
       transition: color .28s ease; }
       .tabs .tab a:hover {
-        color: #f9c9cb; }
+        color: #b1dcfb; }
     .tabs .tab.disabled a {
       color: #f9c9cb;
       cursor: default; }
@@ -5731,7 +5732,7 @@ small {
     position: absolute;
     bottom: 0;
     height: 2px;
-    background-color: #f6b2b5;
+    background-color: #0089ec;
     will-change: left, right; }
 
 .tabs .tab {
@@ -6226,7 +6227,7 @@ label {
 input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #9e9e9e;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.26);
   border-radius: 0;
   outline: none;
   height: 3rem;

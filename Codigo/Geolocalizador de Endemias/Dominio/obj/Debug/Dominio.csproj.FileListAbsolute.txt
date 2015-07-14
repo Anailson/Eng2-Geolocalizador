@@ -6,3 +6,8 @@ C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\G
 C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Dominio\bin\Debug\Dominio.pdb
 C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Dominio\obj\Debug\Dominio.dll
 C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Dominio\obj\Debug\Dominio.pdb
+D:\Dropbox\UFS\2015.1_ENGII\EngII-Geolocalizador\Codigo\Geolocalizador de Endemias\Dominio\bin\Debug\Dominio.dll
+D:\Dropbox\UFS\2015.1_ENGII\EngII-Geolocalizador\Codigo\Geolocalizador de Endemias\Dominio\bin\Debug\Dominio.pdb
+D:\Dropbox\UFS\2015.1_ENGII\EngII-Geolocalizador\Codigo\Geolocalizador de Endemias\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
+D:\Dropbox\UFS\2015.1_ENGII\EngII-Geolocalizador\Codigo\Geolocalizador de Endemias\Dominio\obj\Debug\Dominio.dll
+D:\Dropbox\UFS\2015.1_ENGII\EngII-Geolocalizador\Codigo\Geolocalizador de Endemias\Dominio\obj\Debug\Dominio.pdb
