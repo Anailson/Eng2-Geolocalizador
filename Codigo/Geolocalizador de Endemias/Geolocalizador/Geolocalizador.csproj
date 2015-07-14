@@ -105,6 +105,7 @@
     <Content Include="Content\css\materialize.min.css" />
     <Content Include="Content\font\material-design-icons\LICENSE.txt" />
     <Content Include="Content\font\material-design-icons\Material-Design-Icons.svg" />
+    <Content Include="Content\js\jquery-2.1.4.js" />
     <Content Include="Content\js\jquery-2.1.4.min.js" />
     <Content Include="Content\js\materialize.js" />
     <Content Include="Content\js\materialize.min.js" />
@@ -216,6 +217,7 @@
     <Content Include="GeolocalizadorDataSet.xsc">
       <DependentUpon>GeolocalizadorDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="Content\js\jquery-2.1.4.min.map" />
     <None Include="GeolocalizadorDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GeolocalizadorDataSet.Designer.cs</LastGenOutput>
