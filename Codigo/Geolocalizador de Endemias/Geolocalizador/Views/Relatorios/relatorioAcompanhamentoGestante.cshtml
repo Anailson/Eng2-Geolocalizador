@@ -1,0 +1,16 @@
+﻿@using ReportViewerForMvc
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device=width" />
+    <title> Relatorio de Acompanhamento de Gestante</title>
+</head>
+<body>
+    @Html.ReportViewer(ViewBag.ReporterViewer as Microsoft.Reporting.WebForms.ReportViewer,
+    new { width = "100%", height = "500" })
+</body>
+</html>

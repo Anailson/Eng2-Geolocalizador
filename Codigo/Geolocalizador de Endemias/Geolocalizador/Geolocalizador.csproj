@@ -227,6 +227,9 @@
       <DependentUpon>GeolocalizadorDataSet.xsd</DependentUpon>
     </Content>
     <Content Include="Views\Relatorios\relatorioVisita.cshtml" />
+    <Content Include="Views\Relatorios\relatorioAcompanhamentoCrianca.cshtml" />
+    <Content Include="Views\Relatorios\relatorioAcompanhamentoGestante.cshtml" />
+    <Content Include="Views\Relatorios\relatorioAcompanhamentoEnfermo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -252,6 +255,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Views\Relatorios\relatorioAcompanhamentoCrianca.rdlc" />
+    <EmbeddedResource Include="Views\Relatorios\relatorioAcompanhamentoEnfermo.rdlc" />
+    <EmbeddedResource Include="Views\Relatorios\relatorioAcompanhamentoGestante.rdlc" />
     <EmbeddedResource Include="Views\Relatorios\RelatorioVisita.rdlc" />
   </ItemGroup>
   <PropertyGroup>

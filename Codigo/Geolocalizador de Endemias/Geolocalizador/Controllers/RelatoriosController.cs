@@ -12,6 +12,9 @@ namespace Geolocalizador.Controllers
     public class RelatoriosController : Controller
     {
         public IVisitas visitas { get; set; }
+        public IAcompanhamentoCriancas acompanhamentoCriancas { get; set; }
+        public IAcompanhamentoGestantes acompanhamentoGestantes { get; set; }
+        public IAcompanhamentoGestantes acompanhamentoEnfermos { get; set; }
 
         // GET: Relatorios
         public ActionResult Index()
@@ -35,5 +38,52 @@ namespace Geolocalizador.Controllers
             return View();
         }
 
+        public ActionResult relatorioAcompanhamentoCrianca()
+        {
+            ReportViewer reporter = new ReportViewer();
+            reporter.ProcessingMode = ProcessingMode.Local;
+
+            reporter.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"Views\Relatorios\RelatorioAcompanhamentoCrianca.rdlc";
+
+            reporter.LocalReport.DataSources
+                .Add(new ReportDataSource("DataSetGeolocalizador", acompanhamentoCriancas.Listar()));
+
+            reporter.AsyncRendering = false;
+            reporter.SizeToReportContent = true;
+            ViewBag.ReporterViewer = reporter;
+            return View();
+        }
+
+        public ActionResult relatorioAcompanhamentoGestante()
+        {
+            ReportViewer reporter = new ReportViewer();
+            reporter.ProcessingMode = ProcessingMode.Local;
+
+            reporter.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"Views\Relatorios\RelatorioAcompanhamentoGestante.rdlc";
+
+            reporter.LocalReport.DataSources
+                .Add(new ReportDataSource("DataSetGeolocalizador", acompanhamentoGestantes.Listar()));
+
+            reporter.AsyncRendering = false;
+            reporter.SizeToReportContent = true;
+            ViewBag.ReporterViewer = reporter;
+            return View();
+        }
+
+        public ActionResult relatorioAcompanhamentoEnfermo()
+        {
+            ReportViewer reporter = new ReportViewer();
+            reporter.ProcessingMode = ProcessingMode.Local;
+
+            reporter.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"Views\Relatorios\RelatorioAcompanhamentoEnfermo.rdlc";
+
+            reporter.LocalReport.DataSources
+                .Add(new ReportDataSource("DataSetGeolocalizador", acompanhamentoEnfermos.Listar()));
+
+            reporter.AsyncRendering = false;
+            reporter.SizeToReportContent = true;
+            ViewBag.ReporterViewer = reporter;
+            return View();
+        }
     }
 }
