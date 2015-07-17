@@ -1,18 +1,17 @@
 ﻿@model IEnumerable<Dominio.Classes.Individuo>
-
 <nav>
     <span class="card-title">Lista de indivíduos cadastrados</span>
 </nav>
 
 <div class="row">
-    <form class="col s12">
+    <form>
         <p>
             <div class="row">
                 <!-- Radio Button -->
                 <div class="input-field col s3">
+
                     <input name="pesquisa-individuo" class="with-gap" type="radio" id="sus" checked />
                     <label for="sus">N° do SUS</label>
-
                     <input name="pesquisa-individuo" class="with-gap" type="radio" id="nome" />
                     <label for="nome">Nome</label>
                 </div>
@@ -30,37 +29,40 @@
     </form>
 </div>
 
+<div class="row">
+    <div class="input-field col s8">
+        <table class="striped">
+                <thead>
+                    <tr>
+                        <th data-field="sus">
+                            @Html.DisplayNameFor(model => model.susResponsavel)
+                        </th>
+                        <th data-field="nome">
+                            @Html.DisplayNameFor(model => model.nome)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
 
-<table class="striped">
-    <thead>
-        <tr>
-            <th data-field="sus">
-                @Html.DisplayNameFor(model => model.susResponsavel)
-            </th>
-            <th data-field="nome">
-                @Html.DisplayNameFor(model => model.nome)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
+                @foreach (var item in Model)
+                {
+                    <tbody>
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.susResponsavel)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nome)
+                            </td>
+                            <td>
 
-    @foreach (var item in Model)
-    {
-        <tbody>
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.susResponsavel)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.nome)
-                </td>
-                <td>
-                    @Html.ActionLink("Editar", "Editar", new { id = item.id }) |
-                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.id }) |
-                    @Html.ActionLink("Remover", "Remover", new { id = item.id })
-                </td>
-            </tr>
-        </tbody>
-    }
-
+                                @Html.ActionLink("Editar", "Editar", new { id = item.id }) |
+                                @Html.ActionLink("Detalhes", "Detalhes", new { id = item.id }) |
+                                @Html.ActionLink("Remover", "Remover", new { id = item.id })
+                            </td>
+                        </tr>
+                    </tbody>
+                }
 </table>
+    </div>
+</div>

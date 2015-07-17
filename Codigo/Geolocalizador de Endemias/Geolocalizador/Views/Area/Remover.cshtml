@@ -1,80 +1,95 @@
 ﻿@model Dominio.Classes.Area
+<nav>
+    <span class="card-title">Excluir área</span>
+</nav>
 
-@{
-    ViewBag.Title = "Remover";
-}
+<div class="row">
+    <br /><br />
+    @Html.ActionLink("Voltar a Lista", "Index")
+</div>
+<p>
+    <h5>Você tem certeza que deseja excluir esse registro?</h5>
+</p>
 
-<h2>Remover</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
 @using (Html.BeginForm("Excluir", "Area"))
 {
     @Html.AntiForgeryToken()
-    <h4>Area</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.codigo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.codigo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.endereco)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.endereco)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.numero)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.numero)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.bairro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.bairro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.telefone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.telefone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.quantMicroAreas)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.quantMicroAreas)
-        </dd>
-
-    </dl>
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Remover" class="btn btn-default" /> |
-            @Html.ActionLink("Voltar a Lista", "Index")
+    
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab"><a href="#remover">Excluir área</a></li>
+                <li class="tab disabled"></li>
+            </ul>
         </div>
-    }
-</div>
+        <form>
+            <div class="row">
+                
+                <div id="remover" class="col s12">
+                    <div class="row">
+                        <br /><br />
+                        <div class="input-field col s12">
+                            @Html.DisplayNameFor(model => model.codigo)
+                            @Html.DisplayFor(model => model.codigo)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <fieldset>
+                                <legend>Posto de saúde</legend>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        @Html.DisplayNameFor(model => model.nome)
+                                    </div>
+                                    <div class="input-field col s4">
+                                        @Html.DisplayNameFor(model => model.telefone)
+                                    </div>
+                                    <div class="input-field col s6">
+                                        @Html.DisplayFor(model => model.nome)
+                                    </div>
+                                    <div class="input-field col s4">
+                                        @Html.DisplayFor(model => model.telefone)
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        @Html.DisplayNameFor(model => model.endereco)
+                                    </div>
+
+                                    <div class="input-field col s3">
+                                        @Html.DisplayNameFor(model => model.bairro)
+                                    </div>
+                                    <div class="input-field col s1">
+                                        @Html.DisplayNameFor(model => model.numero)
+                                    </div>
+                                    <div class="input-field col s2">
+                                        @Html.DisplayNameFor(model => model.quantMicroAreas)
+                                    </div>
+                                    <div class="input-field col s6">
+                                        @Html.DisplayFor(model => model.endereco)
+                                    </div>
+
+                                    <div class="input-field col s3">
+                                        @Html.DisplayFor(model => model.bairro)
+                                    </div>
+                                    <div class="input-field col s1">
+                                        @Html.DisplayFor(model => model.numero)
+                                    </div>
+                                    <div class="input-field col s2">
+                                        @Html.DisplayFor(model => model.quantMicroAreas)
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row center">
+                <input type="submit" value="Excluir" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+}

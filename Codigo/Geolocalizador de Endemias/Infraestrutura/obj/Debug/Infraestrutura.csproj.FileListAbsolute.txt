@@ -34,3 +34,15 @@ D:\Dropbox\UFS\2015.1_ENGII\EngII-Geolocalizador\Codigo\Geolocalizador de Endemi
 D:\Dropbox\UFS\2015.1_ENGII\EngII-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\obj\Debug\Infraestrutura.csprojResolveAssemblyReference.cache
 D:\Dropbox\UFS\2015.1_ENGII\EngII-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\obj\Debug\Infraestrutura.dll
 D:\Dropbox\UFS\2015.1_ENGII\EngII-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\obj\Debug\Infraestrutura.pdb
+D:\Dropbox\UFS\2015.1_ENGII\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\Infraestrutura.dll.config
+D:\Dropbox\UFS\2015.1_ENGII\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\Infraestrutura.dll
+D:\Dropbox\UFS\2015.1_ENGII\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\Infraestrutura.pdb
+D:\Dropbox\UFS\2015.1_ENGII\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\Dominio.dll
+D:\Dropbox\UFS\2015.1_ENGII\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\EntityFramework.dll
+D:\Dropbox\UFS\2015.1_ENGII\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dropbox\UFS\2015.1_ENGII\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\Dominio.pdb
+D:\Dropbox\UFS\2015.1_ENGII\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\EntityFramework.xml
+D:\Dropbox\UFS\2015.1_ENGII\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dropbox\UFS\2015.1_ENGII\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\obj\Debug\Infraestrutura.csprojResolveAssemblyReference.cache
+D:\Dropbox\UFS\2015.1_ENGII\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\obj\Debug\Infraestrutura.dll
+D:\Dropbox\UFS\2015.1_ENGII\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Infraestrutura\obj\Debug\Infraestrutura.pdb

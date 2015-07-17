@@ -1,79 +1,84 @@
 ﻿@model Dominio.Classes.Visita
+<nav>
+    <span class="card-title">Cadastrar indivíduo</span>
+</nav>
 
-@{
-    ViewBag.Title = "Inserir";
-}
-
-<h2>Inserir</h2>
-
-
-@using (Html.BeginForm("Cadastrar","Visita")) 
+@using (Html.BeginForm("Cadastrar", "Visita"))
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Visita</h4>
-        <hr />
-        @Html.ValidationSummary(true)
-        <div class="form-group">
-            @Html.LabelFor(model => model.codigo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.codigo)
-                @Html.ValidationMessageFor(model => model.codigo)
-            </div>
+
+    <div>
+        <br /><br />
+        @Html.ActionLink("Voltar a Lista", "Index")
+        <br /><br />
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab"><a href="#cadastro-visita">Cadastrar visita domiciliar</a></li>
+                <li class="tab disabled"></li>
+            </ul>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.codDomicilio, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.codDomicilio)
-                @Html.ValidationMessageFor(model => model.codDomicilio)
-            </div>
-        </div>
+        <div id="cadastro-visita" class="col s12">
+            <form>
+                <br /><br />
+                @Html.ValidationSummary(true)
+                <div class="row">
+                    <fieldset>
+                        <legend>Horário da visita</legend>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.dataVisita, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.dataVisita)
-                @Html.ValidationMessageFor(model => model.dataVisita)
-            </div>
-        </div>
+                        <div class="input-field col s3">
+                            @Html.LabelFor(model => model.codDomicilio, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.codDomicilio)
+                            @Html.ValidationMessageFor(model => model.codDomicilio)
+                        </div>
+                        <div class="input-field col s3">
+                            @Html.LabelFor(model => model.dataVisita, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.dataVisita)
+                            @Html.ValidationMessageFor(model => model.dataVisita)
+                        </div>
+                        <div class="input-field col s3">
+                            @Html.LabelFor(model => model.dataProxVisita, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.dataProxVisita)
+                            @Html.ValidationMessageFor(model => model.dataProxVisita)
+                        </div>
+                        <div class="input-field col s3">
+                            @Html.LabelFor(model => model.melhorHorario, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.melhorHorario)
+                            @Html.ValidationMessageFor(model => model.melhorHorario)
+                        </div>
+                    </fieldset>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.dataProxVisita, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.dataProxVisita)
-                @Html.ValidationMessageFor(model => model.dataProxVisita)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.resumo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.resumo)
-                @Html.ValidationMessageFor(model => model.resumo)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.detalhes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.detalhes)
-                @Html.ValidationMessageFor(model => model.detalhes)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cadastrar" class="btn btn-default" />
-            </div>
+                <div class="row">
+                    <fieldset>
+                        <legend>Observações</legend>
+                        <div class="row">
+                            <div class="input-field col s9">
+                                @Html.LabelFor(model => model.resumo, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.resumo)
+                                @Html.ValidationMessageFor(model => model.resumo)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s9">
+                                @Html.LabelFor(model => model.detalhes, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.TextAreaFor(model => model.detalhes, new { @rows = 10 })
+                                @Html.ValidationMessageFor(model => model.detalhes)
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-md-offset-2 col-md-10 center">
+                    <input type="submit" value="Cadastrar" class="btn btn-default" />
+                    <br />
+                </div>
+            </form>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Voltar a Lista", "Index")
-</div>
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>

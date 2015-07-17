@@ -1,40 +1,61 @@
 ﻿@model IEnumerable<Dominio.Classes.Area>
+<nav>
+    <span class="card-title">Lista de áreas cadastradas</span>
+</nav>
 
-@{
-    ViewBag.Title = "Index";
-}
+<div class="row">
+    <form class="col s12">
+        <p>
+            <div class="row">
+                <!-- Radio Button -->
+                <div class="input-field col s2">
+                    <input name="pesquisa-area" class="with-gap" type="radio" id="area" checked />
+                    <label for="area">N° da área</label>
+                </div>
+                <!-- Caixa de texto -->
+                <div class="input-field col s3">
+                    <i class="material-icons prefix">search</i>
+                    <input id="pesquisa" type="text" placeholder="Pesquisar" />
+                </div>
+                <!-- Botão Novo -->
+                <div class="input-field col s3">
+                    <label for="pesquisa">@Html.ActionLink("Adicionar Novo", "Inserir")</label>
+                </div>
+            </div>
+        </p>
+    </form>
+</div>
 
-<h2>Index</h2>
+<table class="bordered striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.codigo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.endereco)
+            </th>
 
-<p>
-    @Html.ActionLink("Adicionar Novo", "Inserir")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.codigo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.endereco)
-        </th>
-       
-        <th></th>
-    </tr>
+            <th></th>
+        </tr>
+    </thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.codigo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.endereco)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Editar", new { id=item.id }) |
-            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.id }) |
-            @Html.ActionLink("Excluir", "Remover", new { id=item.id })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.endereco)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.id }) |
+                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.id }) |
+                    @Html.ActionLink("Excluir", "Remover", new { id = item.id })
+                </td>
+            </tr>
+        </tbody>
+    }
 </table>
