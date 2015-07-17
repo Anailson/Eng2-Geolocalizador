@@ -12,6 +12,7 @@
 {
     @Html.AntiForgeryToken()
     <h4>Domicilio</h4>
+    @Html.HiddenFor(model => model.codigo)
     <hr />
     <dl class="dl-horizontal">
         <dt>
