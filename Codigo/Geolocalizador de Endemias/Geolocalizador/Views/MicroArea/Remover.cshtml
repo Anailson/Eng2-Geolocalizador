@@ -13,6 +13,7 @@
     @Html.AntiForgeryToken()
     <h4>MicroArea</h4>
     <hr />
+    @Html.HiddenFor(model => model.codigo)
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.codigo)
