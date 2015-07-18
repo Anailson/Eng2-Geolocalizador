@@ -1,48 +1,63 @@
 ﻿@model Dominio.Classes.MicroArea
-
-@{
-    ViewBag.Title = "Editar";
-}
-
-<h2>Editar</h2>
-
+<nav>
+    <span class="card-title">Editar dados da micro área</span>
+</nav>
 
 @using (Html.BeginForm("Atualizar", "MicroArea"))
 {
     @Html.AntiForgeryToken()
+    <div class="row">
+        <br /><br />
+        @Html.ActionLink("Voltar a Lista", "Index")
+    </div>
     
-    <div class="form-horizontal">
-        <h4>MicroArea</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.codigo)
-
-        <div class="form-group">
-            @Html.DisplayNameFor(model => model.codigo)
-            @Html.DisplayFor(model => model.codigo)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.codArea, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.codArea, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.codArea, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Salvar" class="btn btn-default" />
-            </div>
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab"><a href="#editar">Editar dados da micro área</a></li>
+                <li class="tab disabled"></li>
+            </ul>
         </div>
     </div>
+    <br /><br />
+    <form>
+        <div class="row">
+            <div id="editar" class="col s12">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.codigo)
+
+
+                <fieldset>
+                    <legend>Micro área</legend>
+                    <div class="row">
+                        <div id="editar" class="col s2">
+                            @Html.DisplayNameFor(model => model.codigo)
+                        </div>
+                        <div id="editar" class="col s2"></div>
+                        <div id="editar" class="col s2">
+                            @Html.LabelFor(model => model.codArea, htmlAttributes: new { @class = "control-label col-md-2" })
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="editar" class="col s2">
+                            @Html.DisplayFor(model => model.codigo)
+                        </div>
+                        <div id="editar" class="col s2"></div>
+                        <div id="editar" class="col s2">
+                            @Html.EditorFor(model => model.codArea, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.codArea, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        
+        <div class="row center">
+                <input type="submit" value="Salvar" class="btn btn-default" />
+        </div>
+    </form>
 }
-
-<div>
-    @Html.ActionLink("Voltar a Lista", "Index")
-</div>
-
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

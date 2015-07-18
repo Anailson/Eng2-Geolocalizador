@@ -3,8 +3,6 @@
     <span class="card-title">Editar dados da área</span>
 </nav>
 
-
-
 @using (Html.BeginForm("Atualizar", "Area"))
 {
     @Html.AntiForgeryToken()
@@ -28,11 +26,12 @@
                 @Html.HiddenFor(model => model.codigo)
                 
                 <div class="row">
-                    <div id="editar" class="input-field col s1">
+                    <div class="input-field col s1">
                         @Html.DisplayNameFor(model => model.codigo)
                         @Html.DisplayFor(model => model.codigo)
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="input-field col s12">
                         <fieldset>

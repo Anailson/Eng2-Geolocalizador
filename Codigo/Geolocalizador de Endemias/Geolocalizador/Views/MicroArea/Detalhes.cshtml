@@ -1,33 +1,46 @@
 ﻿@model Dominio.Classes.MicroArea
+<nav>
+    <span class="card-title">Detalhes da micro área</span>
+</nav>
 
-@{
-    ViewBag.Title = "Detalhes";
-}
-
-<h2>Detalhes</h2>
-
-<div>
-    <h4>MicroArea</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.codigo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.codigo)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.codArea)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.codArea)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Editar", "Editar", new { id = Model.id }) |
+<div class="row">
+    <br /><br />
     @Html.ActionLink("Voltar a Lista", "Index")
-</p>
+</div>
+
+<div class="row">
+    <div class="input-field col s12">
+        <ul class="tabs">
+            <li class="tab"><a href="#detalhes">Detalhes da micro área</a></li>
+            <li class="tab disabled"></li>
+        </ul>
+        <br /><br />
+        <div class="row">
+            <div id="detalhes" class="col s12">
+                <div class="row">
+                    <fieldset>
+                        <legend>Micro área</legend>
+                        <div class="row">
+                            <div id="detalhes" class="col s2">
+                                @Html.DisplayNameFor(model => model.codigo)
+                            </div>
+                            <div id="detalhes" class="col s2"></div>
+                            <div id="detalhes" class="col s2">
+                                @Html.DisplayNameFor(model => model.codArea)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div id="detalhes" class="col s2">
+                                @Html.DisplayFor(model => model.codigo)
+                            </div>
+                            <div id="detalhes" class="col s2"></div>
+                            <div id="detalhes" class="col s2">
+                                @Html.DisplayFor(model => model.codArea)
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
