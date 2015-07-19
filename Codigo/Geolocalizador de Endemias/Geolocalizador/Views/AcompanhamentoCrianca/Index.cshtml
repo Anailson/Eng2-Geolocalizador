@@ -1,81 +1,66 @@
 ﻿@model IEnumerable<Dominio.Classes.AcompanhamentoCrianca>
+<nav>
+    <span class="card-title">Lista de acompanhamentos infantis</span>
+</nav>
 
-@{
-    ViewBag.Title = "Index";
-}
+<div class="row">
+    <form class="col s12">
+        <p>
+            <div class="row">
+                <!-- Radio Button -->
+                <div class="input-field col s2">
+                    <input name="pesquisa-acomp-crianca" class="with-gap" type="radio" id="acomp-crianca-sus" checked />
+                    <label for="acomp-crianca-sus">N° do sus da criança</label>
+                </div>
+                <!-- Caixa de texto -->
+                <div class="input-field col s3">
+                    <i class="material-icons prefix">search</i>
+                    <input id="pesquisa" type="text" placeholder="Pesquisar" />
+                </div>
+                <!-- Botão Novo -->
+                <div class="input-field col s3">
+                    <label for="pesquisa">@Html.ActionLink("Adicionar Novo", "Inserir")</label>
+                </div>
+            </div>
+        </p>
+    </form>
+</div>
 
-<h2>Index</h2>
+<table class="striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Visita.dataVisita)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.codVisita)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.numSus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
 
-<p>
-    @Html.ActionLink("Adicionar Novo", "Inserir")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.numSus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.codVisita)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.desnutricao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.pneumonia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.diarreia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.vacinacaoEmDia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.inflamacaoRep)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.alimentacaoPeito)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.peso)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.numSus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.codVisita)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.desnutricao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.pneumonia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.diarreia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.vacinacaoEmDia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.inflamacaoRep)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.alimentacaoPeito)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.peso)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Editar", new { id=item.id }) |
-            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.id }) |
-            @Html.ActionLink("Remover", "Remover", new { id=item.id })
-        </td>
-    </tr>
-}
-
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Visita.dataVisita)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.codVisita)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numSus)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.id }) |
+                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.id }) |
+                    @Html.ActionLink("Remover", "Remover", new { id = item.id })
+                </td>
+            </tr>
+        </tbody>
+    }
 </table>

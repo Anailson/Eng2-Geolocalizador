@@ -12,7 +12,7 @@ namespace Dominio.Classes
         public int id { set; get; }
         public int numSus { set; get; }
         public int codVisita {get; set;}
-        public string prenatalMensal { set; get; }
+        public string prenatalMensal { set; get; } // Alterar de String para Booleano
         public int semanasGestacao{ set; get; }
 
         public virtual Visita Visita { get; set;}

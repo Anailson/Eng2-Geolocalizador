@@ -1,69 +1,67 @@
 ﻿@model IEnumerable<Dominio.Classes.AcompanhamentoEnfermo>
+<nav>
+    <span class="card-title">Lista de acompanhamentos de efermos</span>
+</nav>
 
-@{
-    ViewBag.Title = "Index";
-}
+<div class="row">
+    <form class="col s12">
+        <p>
+            <div class="row">
+                <!-- Radio Button -->
+                <div class="input-field col s2">
+                    <input name="pesquisa-acomp-enfermo" class="with-gap" type="radio" id="acomp-enfermo-sus" checked />
+                    <label for="acomp-enfermo-sus">N° do sus do enfermo</label>
+                </div>
+                <!-- Caixa de texto -->
+                <div class="input-field col s3">
+                    <i class="material-icons prefix">search</i>
+                    <input id="pesquisa" type="text" placeholder="Pesquisar" />
+                </div>
+                <!-- Botão Novo -->
+                <div class="input-field col s3">
+                    <label for="pesquisa">@Html.ActionLink("Adicionar Novo", "Inserir")</label>
+                </div>
+            </div>
+        </p>
+    </form>
+</div>
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Adicionar Novo", "AcompanhamentoEnfermo")
-</p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.numSus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.codVisita)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idEnfermidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.acompanhamentoMedico)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.acompanhamentoPsico)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.medicacao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.procedimentoCirurgico)
-        </th>
-        <th></th>
-    </tr>
+    <thead class="striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Visita.dataVisita)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.codVisita)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.numSus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.numSus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.codVisita)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.idEnfermidade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.acompanhamentoMedico)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.acompanhamentoPsico)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.medicacao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.procedimentoCirurgico)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Editar", new { id=item.id }) |
-            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.id }) |
-            @Html.ActionLink("Remover", "Remover", new { id=item.id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Visita.dataVisita)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.codVisita)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numSus)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.id }) |
+                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.id }) |
+                    @Html.ActionLink("Remover", "Remover", new { id = item.id })
+                </td>
+            </tr>
+        </tbody>
+    }
 
 </table>

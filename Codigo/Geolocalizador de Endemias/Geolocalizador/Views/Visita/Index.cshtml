@@ -39,6 +39,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.codDomicilio)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Domicilio.susResponsavel)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -55,6 +58,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.codDomicilio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Domicilio.susResponsavel)
                 </td>
                 <td>
                     @Html.ActionLink("Editar", "Editar", new { id = item.id }) |

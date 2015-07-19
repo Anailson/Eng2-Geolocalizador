@@ -12,10 +12,10 @@ namespace Dominio.Classes
         public int numSus { set; get;}
         public int codVisita {get; set;}
         public int idEnfermidade {get; set;}
-        public string acompanhamentoMedico { get; set; }
-        public string acompanhamentoPsico { get; set; }
-        public string medicacao { get; set; }
-        public string procedimentoCirurgico { get; set; }
+        public string acompanhamentoMedico { get; set; } // Alterar de String para Booleano
+        public string acompanhamentoPsico { get; set; } // Alterar de String para Booleano
+        public string medicacao { get; set; } // Alterar de String para Booleano
+        public string procedimentoCirurgico { get; set; } // Alterar de String para Booleano
 
         public virtual Visita Visita { get; set;}
         public virtual Individuo Individuo { get; set; }
