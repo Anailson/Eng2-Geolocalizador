@@ -11,6 +11,7 @@
     <br /><br />
     @Html.ActionLink("Voltar a Lista", "Index")
     <div class="row">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <form>
             <div class="col s12">
                 <!--Declaração dos títulos das abas -->
@@ -23,7 +24,6 @@
             <div id="cadastro-domicilio" class="col s12">
                 <!-- Aba referente ao cadastro domiciliar-->
                 <br /><br />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="row">
                     <fieldset>
                         <legend>Informações gerais</legend>
@@ -159,7 +159,6 @@
 
             <div id="informacoes-domicilio" class="col s12">
                 <br /><br />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <!-- Aba referente as informações de moradia-->
                 <div class="row col s12">
                     <fieldset>

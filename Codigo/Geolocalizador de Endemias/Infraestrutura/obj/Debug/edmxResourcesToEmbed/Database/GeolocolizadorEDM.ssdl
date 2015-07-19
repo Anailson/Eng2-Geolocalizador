@@ -79,12 +79,19 @@
     <Property Name="susResponsavel" Type="int" Nullable="false" />
     <Property Name="nascimentoResponsavel" Type="date" Nullable="false" />
     <Property Name="rendaFamiliar" Type="int" Nullable="false" />
-    <Property Name="numMembro" Type="int" />
+    <Property Name="numMembro" Type="int" Nullable="false" />
     <Property Name="quantComodos" Type="int" Nullable="false" />
     <Property Name="quantMoradores" Type="int" Nullable="false" />
     <Property Name="energiaEletrica" Type="nvarchar" MaxLength="10" Nullable="false" />
-    <Property Name="abastecimentoAgua" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="abastecimentoAgua" Type="nvarchar" MaxLength="40" Nullable="false" />
     <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="localizacao" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="condicaoRural" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="acessoDomicilio" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="material" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="tratamentoAgua" Type="nvarchar" MaxLength="45" Nullable="false" />
+    <Property Name="escoamentoBanheiro" Type="nvarchar" MaxLength="35" Nullable="false" />
+    <Property Name="lixo" Type="nvarchar" MaxLength="35" Nullable="false" />
   </EntityType>
   <EntityType Name="Equipe">
     <Key>
@@ -243,18 +250,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Domicilio_ToMicroArea">
-    <End Role="MicroArea" Type="Self.MicroArea" Multiplicity="1" />
-    <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MicroArea">
-        <PropertyRef Name="codigo" />
-      </Principal>
-      <Dependent Role="Domicilio">
-        <PropertyRef Name="microArea" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Equipe_ToMicroArea">
     <End Role="MicroArea" Type="Self.MicroArea" Multiplicity="0..1" />
     <End Role="Equipe" Type="Self.Equipe" Multiplicity="*" />
@@ -368,10 +363,6 @@
     </AssociationSet>
     <AssociationSet Name="FK_Domicilio_ToEquipe" Association="Self.FK_Domicilio_ToEquipe">
       <End Role="Equipe" EntitySet="Equipe" />
-      <End Role="Domicilio" EntitySet="Domicilio" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Domicilio_ToMicroArea" Association="Self.FK_Domicilio_ToMicroArea">
-      <End Role="MicroArea" EntitySet="MicroArea" />
       <End Role="Domicilio" EntitySet="Domicilio" />
     </AssociationSet>
     <AssociationSet Name="FK_Equipe_ToMicroArea" Association="Self.FK_Equipe_ToMicroArea">

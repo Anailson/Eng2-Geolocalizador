@@ -84,12 +84,19 @@
           <Property Name="susResponsavel" Type="int" Nullable="false" />
           <Property Name="nascimentoResponsavel" Type="date" Nullable="false" />
           <Property Name="rendaFamiliar" Type="int" Nullable="false" />
-          <Property Name="numMembro" Type="int" />
+          <Property Name="numMembro" Type="int" Nullable="false" />
           <Property Name="quantComodos" Type="int" Nullable="false" />
           <Property Name="quantMoradores" Type="int" Nullable="false" />
           <Property Name="energiaEletrica" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="abastecimentoAgua" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="abastecimentoAgua" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="codigo" Type="int" Nullable="false" />
+          <Property Name="localizacao" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="condicaoRural" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="acessoDomicilio" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="material" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="tratamentoAgua" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="escoamentoBanheiro" Type="nvarchar" MaxLength="35" Nullable="false" />
+          <Property Name="lixo" Type="nvarchar" MaxLength="35" Nullable="false" />
         </EntityType>
         <EntityType Name="Equipe">
           <Key>
@@ -248,18 +255,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Domicilio_ToMicroArea">
-          <End Role="MicroArea" Type="Self.MicroArea" Multiplicity="1" />
-          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MicroArea">
-              <PropertyRef Name="codigo" />
-            </Principal>
-            <Dependent Role="Domicilio">
-              <PropertyRef Name="microArea" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Equipe_ToMicroArea">
           <End Role="MicroArea" Type="Self.MicroArea" Multiplicity="0..1" />
           <End Role="Equipe" Type="Self.Equipe" Multiplicity="*" />
@@ -375,10 +370,6 @@
             <End Role="Equipe" EntitySet="Equipe" />
             <End Role="Domicilio" EntitySet="Domicilio" />
           </AssociationSet>
-          <AssociationSet Name="FK_Domicilio_ToMicroArea" Association="Self.FK_Domicilio_ToMicroArea">
-            <End Role="MicroArea" EntitySet="MicroArea" />
-            <End Role="Domicilio" EntitySet="Domicilio" />
-          </AssociationSet>
           <AssociationSet Name="FK_Equipe_ToMicroArea" Association="Self.FK_Equipe_ToMicroArea">
             <End Role="MicroArea" EntitySet="MicroArea" />
             <End Role="Equipe" EntitySet="Equipe" />
@@ -453,10 +444,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_Domicilio_ToEquipe" Association="GeolocalizadorModel.FK_Domicilio_ToEquipe">
             <End Role="Equipe" EntitySet="Equipe" />
-            <End Role="Domicilio" EntitySet="Domicilio" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Domicilio_ToMicroArea" Association="GeolocalizadorModel.FK_Domicilio_ToMicroArea">
-            <End Role="MicroArea" EntitySet="MicroArea" />
             <End Role="Domicilio" EntitySet="Domicilio" />
           </AssociationSet>
           <AssociationSet Name="FK_Individuo_ToDomicilio" Association="GeolocalizadorModel.FK_Individuo_ToDomicilio">
@@ -567,17 +554,23 @@
           <Property Name="susResponsavel" Type="Int32" Nullable="false" />
           <Property Name="nascimentoResponsavel" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="rendaFamiliar" Type="Int32" Nullable="false" />
-          <Property Name="numMembro" Type="Int32" />
+          <Property Name="numMembro" Type="Int32" Nullable="false" />
           <Property Name="quantComodos" Type="Int32" Nullable="false" />
           <Property Name="quantMoradores" Type="Int32" Nullable="false" />
           <Property Name="energiaEletrica" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="abastecimentoAgua" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="abastecimentoAgua" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="codigo" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Cronograma" Relationship="GeolocalizadorModel.FK_Cronograma_ToDomicilio" FromRole="Domicilio" ToRole="Cronograma" />
           <NavigationProperty Name="Equipe" Relationship="GeolocalizadorModel.FK_Domicilio_ToEquipe" FromRole="Domicilio" ToRole="Equipe" />
-          <NavigationProperty Name="MicroArea" Relationship="GeolocalizadorModel.FK_Domicilio_ToMicroArea" FromRole="Domicilio" ToRole="MicroArea" />
           <NavigationProperty Name="Individuo" Relationship="GeolocalizadorModel.FK_Individuo_ToDomicilio" FromRole="Domicilio" ToRole="Individuo" />
           <NavigationProperty Name="Visita" Relationship="GeolocalizadorModel.FK_Visita_ToDomicilio" FromRole="Domicilio" ToRole="Visita" />
+          <Property Name="localizacao" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="condicaoRural" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="acessoDomicilio" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="material" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="tratamentoAgua" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="escoamentoBanheiro" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="lixo" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Equipe">
           <Key>
@@ -637,7 +630,6 @@
           <Property Name="codigo" Type="Int32" Nullable="false" />
           <Property Name="codArea" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Area" Relationship="GeolocalizadorModel.FK_MicroArea_ToArea" FromRole="MicroArea" ToRole="Area" />
-          <NavigationProperty Name="Domicilio" Relationship="GeolocalizadorModel.FK_Domicilio_ToMicroArea" FromRole="MicroArea" ToRole="Domicilio" />
           <NavigationProperty Name="Equipe" Relationship="GeolocalizadorModel.FK_Equipe_ToMicroArea" FromRole="MicroArea" ToRole="Equipe" />
           <NavigationProperty Name="Individuo" Relationship="GeolocalizadorModel.FK_Individuo_ToMicroArea" FromRole="MicroArea" ToRole="Individuo" />
         </EntityType>
@@ -762,18 +754,6 @@
             </Principal>
             <Dependent Role="Domicilio">
               <PropertyRef Name="susProfissional" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Domicilio_ToMicroArea">
-          <End Type="GeolocalizadorModel.MicroArea" Role="MicroArea" Multiplicity="1" />
-          <End Type="GeolocalizadorModel.Domicilio" Role="Domicilio" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MicroArea">
-              <PropertyRef Name="codigo" />
-            </Principal>
-            <Dependent Role="Domicilio">
-              <PropertyRef Name="microArea" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -912,6 +892,13 @@
           <EntitySetMapping Name="Domicilio">
             <EntityTypeMapping TypeName="GeolocalizadorModel.Domicilio">
               <MappingFragment StoreEntitySet="Domicilio">
+                <ScalarProperty Name="lixo" ColumnName="lixo" />
+                <ScalarProperty Name="escoamentoBanheiro" ColumnName="escoamentoBanheiro" />
+                <ScalarProperty Name="tratamentoAgua" ColumnName="tratamentoAgua" />
+                <ScalarProperty Name="material" ColumnName="material" />
+                <ScalarProperty Name="acessoDomicilio" ColumnName="acessoDomicilio" />
+                <ScalarProperty Name="condicaoRural" ColumnName="condicaoRural" />
+                <ScalarProperty Name="localizacao" ColumnName="localizacao" />
                 <ScalarProperty Name="codigo" ColumnName="codigo" />
                 <ScalarProperty Name="abastecimentoAgua" ColumnName="abastecimentoAgua" />
                 <ScalarProperty Name="energiaEletrica" ColumnName="energiaEletrica" />

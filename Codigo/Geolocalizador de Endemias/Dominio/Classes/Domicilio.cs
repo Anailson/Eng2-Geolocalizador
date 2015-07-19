@@ -37,7 +37,7 @@ namespace Dominio.Classes
         public string lixo { set; get; } //Falta inserir no banco
 
         public virtual Equipe Equipe { get; set; }
-        public virtual MicroArea MicroArea { get; set; }
+        //public virtual MicroArea MicroArea { get; set; }
         public virtual ICollection<Individuo> Individuo { get; set; }
         public virtual ICollection<Cronograma> Cronograma { get; set; }
         public virtual ICollection<Visita> Visita { get; set; }

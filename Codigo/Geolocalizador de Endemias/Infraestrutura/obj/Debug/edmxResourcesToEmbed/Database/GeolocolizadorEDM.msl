@@ -70,6 +70,13 @@
     <EntitySetMapping Name="Domicilio">
       <EntityTypeMapping TypeName="GeolocalizadorModel.Domicilio">
         <MappingFragment StoreEntitySet="Domicilio">
+          <ScalarProperty Name="lixo" ColumnName="lixo" />
+          <ScalarProperty Name="escoamentoBanheiro" ColumnName="escoamentoBanheiro" />
+          <ScalarProperty Name="tratamentoAgua" ColumnName="tratamentoAgua" />
+          <ScalarProperty Name="material" ColumnName="material" />
+          <ScalarProperty Name="acessoDomicilio" ColumnName="acessoDomicilio" />
+          <ScalarProperty Name="condicaoRural" ColumnName="condicaoRural" />
+          <ScalarProperty Name="localizacao" ColumnName="localizacao" />
           <ScalarProperty Name="codigo" ColumnName="codigo" />
           <ScalarProperty Name="abastecimentoAgua" ColumnName="abastecimentoAgua" />
           <ScalarProperty Name="energiaEletrica" ColumnName="energiaEletrica" />
