@@ -25,36 +25,6 @@ C:\Users\Luiz Fonseca\Documents\Visual Studio 2013\Projects\Geolocalizador de En
 C:\Users\Luiz Fonseca\Documents\Visual Studio 2013\Projects\Geolocalizador de Endemias\Geolocalizador\bin\EntityFramework.xml
 C:\Users\Luiz Fonseca\Documents\Visual Studio 2013\Projects\Geolocalizador de Endemias\Geolocalizador\bin\EntityFramework.SqlServer.dll
 C:\Users\Luiz Fonseca\Documents\Visual Studio 2013\Projects\Geolocalizador de Endemias\Geolocalizador\bin\EntityFramework.SqlServer.xml
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\Geolocalizador.dll.config
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\Geolocalizador.dll
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\Geolocalizador.pdb
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\Dominio.dll
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\EntityFramework.dll
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\EntityFramework.SqlServer.dll
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\Infraestrutura.dll
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\System.Web.Helpers.dll
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\System.Web.Mvc.dll
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\System.Web.Razor.dll
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\System.Web.Webpages.Deployment.dll
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\System.Web.Webpages.dll
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\System.Web.Webpages.Razor.dll
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\Dominio.pdb
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\Infraestrutura.pdb
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\EntityFramework.xml
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\EntityFramework.SqlServer.xml
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\System.Web.Razor.xml
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\System.Web.Webpages.xml
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\System.Web.Webpages.Deployment.xml
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\System.Web.Webpages.Razor.xml
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\System.Web.Helpers.xml
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\System.Web.Mvc.xml
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\obj\Debug\Geolocalizador.csprojResolveAssemblyReference.cache
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\obj\Debug\Geolocalizador.dll
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\obj\Debug\Geolocalizador.pdb
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\Microsoft.ReportViewer.WebForms.DLL
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\ReportViewerForMvc.dll
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\obj\Debug\RdlCompile.cache
-C:\Users\Luiz Fonseca\SkyDrive\Documentos\UFS\2015.1\Engenharia de Software II\GetHub\Eng2-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\obj\Debug\RdlCompile.compiled
 D:\Dropbox\UFS\2015.1_ENGII\EngII-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\Geolocalizador.dll.config
 D:\Dropbox\UFS\2015.1_ENGII\EngII-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\Geolocalizador.dll
 D:\Dropbox\UFS\2015.1_ENGII\EngII-Geolocalizador\Codigo\Geolocalizador de Endemias\Geolocalizador\bin\Geolocalizador.pdb

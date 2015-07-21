@@ -8,8 +8,9 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="row">
-        @Html.ActionLink("Voltar a Lista", "Index")
+    <div class="row">  
+        @Html.ActionLink("Home", "Index", "Home") |
+        @Html.ActionLink("Voltar a Lista", "Index") 
     </div>
     <div class="row">
         <!--Declaração dos títulos das abas -->
@@ -19,13 +20,13 @@
                 <li class="tab col s3"><a href="#informacoes-individuo">Informações sócio demográficas</a></li>
             </ul>
         </div><!--Fim da declaração dos títulos das abas -->
+        @Html.ValidationSummary(true)
         <form>
             <div class="row">
                 <!-- Aba referente ao cadastro individual-->
                 <div id="cadastro-individuo" class="col s12">
                     <!-- Aba referente ao cadastro individual-->
                     <br /><br />
-                    @Html.ValidationSummary(true)
                     <div class="row">
                         <!-- Informações da equipe/área-->
                         <fieldset>
@@ -73,9 +74,9 @@
                                     <legend>Responsável familiar?</legend>
                                     <div class="input-field col s3">
 
-                                        @Html.RadioButtonFor(model => model.responsavel, true, new { id = "responsavel-sim" })
+                                        @Html.RadioButtonFor(model => model.responsavel, "Sim", new { id = "responsavel-sim" })
                                         @Html.Label("responsavel-sim", "Sim")
-                                        @Html.RadioButtonFor(model => model.responsavel, false, new { id = "responsavel-nao" })
+                                        @Html.RadioButtonFor(model => model.responsavel, "Não", new { id = "responsavel-nao" })
                                         @Html.Label("responsavel-nao", "Não")
                                     </div>
                                     <div class="input-field col s3">
@@ -99,7 +100,7 @@
                                 </div>
                                 <div class="input-field col s3">
                                     @Html.LabelFor(model => model.dataNascimento, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    @Html.TextBoxFor(model => model.dataNascimento)
+                                    @Html.TextBoxFor(model => model.dataNascimento, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(model => model.dataNascimento)
                                 </div>
                             </div>
@@ -193,14 +194,16 @@
                                     @Html.Label("meses-12-60", "Entre 1 ano e 5 anos")
                                     @Html.RadioButtonFor(model => model.tempoSituacaoRua, 61, new { id = "meses-60" })
                                     @Html.Label("meses-60", "Mais de 5 anos")
+                             
+
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s3">
                                     <h6>É acompanhado por outra instituição?</h6>
-                                    @Html.RadioButtonFor(model => model.acompanhamento, true, new { id = "acompanhamento-sim" })
+                                    @Html.RadioButtonFor(model => model.acompanhamento, "Sim", new { id = "acompanhamento-sim" })
                                     @Html.Label("acompanhamento-sim", "Sim")
-                                    @Html.RadioButtonFor(model => model.acompanhamento, false, new { id = "acompanhamento-nao" })
+                                    @Html.RadioButtonFor(model => model.acompanhamento, "Não", new { id = "acompanhamento-nao" })
                                     @Html.Label("acompanhamento-nao", "Não")
                                 </div>
                                 <div class="input-field col s9">
@@ -212,25 +215,25 @@
                             <div class="row">
                                 <div class="input-field col s3">
                                     <h6>Recebe algum benefício?</h6>
-                                    @Html.RadioButtonFor(model => model.beneficiario, true, new { id = "beneficiario-sim" })
+                                    @Html.RadioButtonFor(model => model.beneficiario, "Sim", new { id = "beneficiario-sim" })
                                     @Html.Label("beneficiario-sim", "Sim")
-                                    @Html.RadioButtonFor(model => model.beneficiario, false, new { id = "beneficiario-nao" })
+                                    @Html.RadioButtonFor(model => model.beneficiario, "Não", new { id = "beneficiario-nao" })
                                     @Html.Label("beneficiario-nao", "Não")
                                 </div>
                                 <div class="input-field col s3">
                                     <h6>Possui referência familiar?</h6>
-                                    @Html.RadioButtonFor(model => model.referenciaFamiliar, true, new { id = "referencia-sim" })
+                                    @Html.RadioButtonFor(model => model.referenciaFamiliar, "Sim", new { id = "referencia-sim" })
                                     @Html.Label("referencia-sim", "Sim")
-                                    @Html.RadioButtonFor(model => model.referenciaFamiliar, false, new { id = "referencia-nao" })
+                                    @Html.RadioButtonFor(model => model.referenciaFamiliar, "Não", new { id = "referencia-nao" })
                                     @Html.Label("referencia-nao", "Não")
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s3">
                                     <h6>Visita algum familiar com frequência?</h6>
-                                    @Html.RadioButtonFor(model => model.visitaFamiliar, true, new { id = "visita-sim" })
+                                    @Html.RadioButtonFor(model => model.visitaFamiliar, "Sim", new { id = "visita-sim" })
                                     @Html.Label("visita-sim", "Sim")
-                                    @Html.RadioButtonFor(model => model.visitaFamiliar, false, new { id = "visita-nao" })
+                                    @Html.RadioButtonFor(model => model.visitaFamiliar, "Não", new { id = "visita-nao" })
                                     @Html.Label("visita-nao", "Não")
                                 </div>
                                 <div class="input-field col s6">
@@ -246,7 +249,6 @@
                 <!-- Aba referente as informações sócio demográficas-->
                 <div id="informacoes-individuo" class="col s12">
                     <br /><br />
-                    @Html.ValidationSummary(true)
                     <div class="row">
 
                         <fieldset>
@@ -340,7 +342,7 @@
                             </div>
                             <div class="row col s12">
                                 <div class="intput-field col s3">
-                                    @Html.RadioButtonFor(model => model.maiorCurso, "Suerior, aperfeiçoamento, especialização, mestrado, doutorado", new { id = "curso-superior" })
+                                    @Html.RadioButtonFor(model => model.maiorCurso, "Superior, aperfeiçoamento, especialização, mestrado, doutorado", new { id = "curso-superior" })
                                     @Html.Label("curso-superior", "Superior, aperfeiçoamento, especialização, mestrado, doutorado")
                                 </div>
                                 <div class="intput-field col s3">
@@ -386,22 +388,23 @@
                             <div class="row col s12">
                                 <div class="intput-field col s4">
                                     <h6>Frequenta curandeiro(a) / benzendeiro(a)?</h6>
-                                    @Html.RadioButtonFor(model => model.curandeiro, true, new { id = "curandeiro-sim" })
+                                    @Html.RadioButtonFor(model => model.curandeiro, "Sim", new { id = "curandeiro-sim" })
                                     @Html.Label("curandeiro-sim", "Sim")
-                                    @Html.RadioButtonFor(model => model.curandeiro, false, new { id = "curandeiro-nao" })
+                                    @Html.RadioButtonFor(model => model.curandeiro, "Não", new { id = "curandeiro-nao" })
                                     @Html.Label("curandeiro-nao", "Não")
                                 </div>
                                 <div class="intput-field col s4">
-                                    @Html.RadioButtonFor(model => model.grupoComunitario, true, new { id = "grupo-sim" })
+                                    <h6>Frequenta grupo comunitario?</h6>
+                                    @Html.RadioButtonFor(model => model.grupoComunitario, "Sim", new { id = "grupo-sim" })
                                     @Html.Label("grupo-sim", "Sim")
-                                    @Html.RadioButtonFor(model => model.grupoComunitario, false, new { id = "grupo-nao" })
+                                    @Html.RadioButtonFor(model => model.grupoComunitario, "Não", new { id = "grupo-nao" })
                                     @Html.Label("grupo-nao", "Não")
                                 </div>
                                 <div class="intput-field col s4">
                                     <h6>Possui plano de saúde privado?</h6>
-                                    @Html.RadioButtonFor(model => model.planoSaude, true, new { id = "plano-sim" })
+                                    @Html.RadioButtonFor(model => model.planoSaude, "Sim", new { id = "plano-sim" })
                                     @Html.Label("plano-sim", "Sim")
-                                    @Html.RadioButtonFor(model => model.planoSaude, false, new { id = "plano-nao" })
+                                    @Html.RadioButtonFor(model => model.planoSaude, "Não", new { id = "plano-nao" })
                                     @Html.Label("plano-nao", "Não")
                                 </div>
                             </div>
@@ -409,9 +412,9 @@
 
                                 <div class="intput-field col s4">
                                     <h6>É membro de povo ou comunidade tradicional?</h6>
-                                    @Html.RadioButtonFor(model => model.comunidadeTradicional, true, new { id = "comunidade-sim" })
+                                    @Html.RadioButtonFor(model => model.comunidadeTradicional, "Sim", new { id = "comunidade-sim" })
                                     @Html.Label("comunidade-sim", "Sim")
-                                    @Html.RadioButtonFor(model => model.comunidadeTradicional, false, new { id = "comunidade-nao" })
+                                    @Html.RadioButtonFor(model => model.comunidadeTradicional, "Não", new { id = "comunidade-nao" })
                                     @Html.Label("comunidade-nao", "Não")
                                 </div>
                                 <div class="intput-field col s6">
@@ -427,9 +430,9 @@
                             <div class="row col s12">
                                 <div class="intput-field col s6">
                                     <h6>Deseja informar sua orientação sexual / identidade de gênero?</h6>
-                                    @Html.RadioButtonFor(model => model.informarOrientacao, true, new { id = "informar-sim" })
+                                    @Html.RadioButtonFor(model => model.informarOrientacao, "Sim", new { id = "informar-sim" })
                                     @Html.Label("informar-sim", "Sim")
-                                    @Html.RadioButtonFor(model => model.informarOrientacao, false, new { id = "informar-nao" })
+                                    @Html.RadioButtonFor(model => model.informarOrientacao, "Não", new { id = "informar-nao" })
                                     @Html.Label("informar-nao", "Não")
                                 </div>
                             </div>
@@ -475,6 +478,3 @@
     </div>
 }
 
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

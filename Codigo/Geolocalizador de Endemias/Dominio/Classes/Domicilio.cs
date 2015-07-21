@@ -19,10 +19,10 @@ namespace Dominio.Classes
         public string bairro { get; set; }
         public string situacaoMoradia { set; get; }
         public string tipoMoradia { set; get; }
-        public string localizacao { set; get; } //Falta inserir no banco
-        public string condicaoRural { set; get; } //Falta inserir no banco
-        public string acessoDomicilio { set; get; } //Falta inserir no banco
-        public string material { set; get; } //Falta inserir no banco
+        public string localizacao { set; get; } 
+        public string condicaoRural { set; get; } 
+        public string acessoDomicilio { set; get; } 
+        public string material { set; get; } 
         public int numProntuario { get; set; }
         public int susResponsavel { get; set; }
         public DateTime nascimentoResponsavel { get; set; }
@@ -32,9 +32,9 @@ namespace Dominio.Classes
         public int quantMoradores { set; get; }
         public string energiaEletrica { set; get; }
         public string abastecimentoAgua { set; get; }
-        public string tratamentoAgua { set; get; } //Falta inserir no banco
-        public string escoamentoBanheiro { set; get; } //Falta inserir no banco
-        public string lixo { set; get; } //Falta inserir no banco
+        public string tratamentoAgua { set; get; } 
+        public string escoamentoBanheiro { set; get; } 
+        public string lixo { set; get; } 
 
         public virtual Equipe Equipe { get; set; }
         //public virtual MicroArea MicroArea { get; set; }

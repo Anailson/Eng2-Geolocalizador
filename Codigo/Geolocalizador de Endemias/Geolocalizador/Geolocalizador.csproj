@@ -165,12 +165,10 @@
     <Content Include="Content\font\roboto\Roboto-Thin.woff2" />
     <Content Include="Views\Domicilio\Index.cshtml" />
     <Content Include="Views\Domicilio\Inserir.cshtml" />
-    <Content Include="Views\Individuo\Inserir.cshtml" />
     <Content Include="Views\Domicilio\Editar.cshtml" />
     <Content Include="Views\Individuo\Index.cshtml" />
     <Content Include="Views\Domicilio\Remover.cshtml" />
     <Content Include="Views\Domicilio\Detalhes.cshtml" />
-    <Content Include="Views\Individuo\Editar.cshtml" />
     <Content Include="Views\Individuo\Remover.cshtml" />
     <Content Include="Views\Individuo\Detalhes.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -230,6 +228,9 @@
     <Content Include="Views\Relatorios\relatorioAcompanhamentoCrianca.cshtml" />
     <Content Include="Views\Relatorios\relatorioAcompanhamentoGestante.cshtml" />
     <Content Include="Views\Relatorios\relatorioAcompanhamentoEnfermo.cshtml" />
+    <Content Include="Views\Relatorios\Index.cshtml" />
+    <Content Include="Views\Individuo\Inserir.cshtml" />
+    <Content Include="Views\Individuo\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

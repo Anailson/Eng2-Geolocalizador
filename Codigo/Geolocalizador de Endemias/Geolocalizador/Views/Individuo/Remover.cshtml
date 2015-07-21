@@ -14,7 +14,7 @@
 
     <h4>Individuo</h4>
     <hr />
-    @Html.HiddenFor(model => model.codigo)
+    @Html.HiddenFor(model => model.numSus)
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.codDomicilio)
@@ -174,14 +174,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.nivelEscolar)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.nivelEscolar)
         </dd>
 
         <dt>
