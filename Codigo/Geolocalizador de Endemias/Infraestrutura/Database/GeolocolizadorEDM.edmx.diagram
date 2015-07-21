@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ed633dc4fbb4444aa168c653629fa366" Name="Diagram1" ZoomLevel="102">
+      <Diagram DiagramId="ed633dc4fbb4444aa168c653629fa366" Name="Diagram1" ZoomLevel="64">
         <EntityTypeShape EntityType="GeolocalizadorModel.AcompanhamentoCrianca" Width="1.5" PointX="12" PointY="7" />
         <EntityTypeShape EntityType="GeolocalizadorModel.AcompanhamentoEnfermo" Width="1.5" PointX="15" PointY="6.25" />
         <EntityTypeShape EntityType="GeolocalizadorModel.AcompanhamentoGestante" Width="1.5" PointX="15" PointY="10.5" />

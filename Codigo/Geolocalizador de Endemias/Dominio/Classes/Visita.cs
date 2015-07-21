@@ -13,7 +13,7 @@ namespace Dominio.Classes
         public int codDomicilio { get; set; }
         public DateTime dataVisita { get; set; }
         public DateTime dataProxVisita { get; set; }
-        public string melhorHorario { get; set; } // Falta adicionar no banco
+        public string melhorHorario { get; set; }
         public string resumo { get; set; }
         public string detalhes { get; set; }
 

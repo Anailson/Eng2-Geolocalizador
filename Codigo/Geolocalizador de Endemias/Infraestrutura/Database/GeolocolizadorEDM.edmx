@@ -173,6 +173,7 @@
           <Property Name="resumo" Type="nvarchar" MaxLength="50" />
           <Property Name="detalhes" Type="nvarchar" MaxLength="500" />
           <Property Name="codigo" Type="int" Nullable="false" />
+          <Property Name="melhorHorario" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <Association Name="FK_AcompanhamentoCrianca_ToIndividuo">
           <End Role="Individuo" Type="Self.Individuo" Multiplicity="1" />
@@ -634,6 +635,7 @@
           <NavigationProperty Name="AcompanhamentoEnfermo" Relationship="GeolocalizadorModel.FK_AcompanhamentoEnfermo_ToVisita" FromRole="Visita" ToRole="AcompanhamentoEnfermo" />
           <NavigationProperty Name="AcompanhamentoGestante" Relationship="GeolocalizadorModel.FK_AcompanhamentoGestante_ToVisita" FromRole="Visita" ToRole="AcompanhamentoGestante" />
           <NavigationProperty Name="Domicilio" Relationship="GeolocalizadorModel.FK_Visita_ToDomicilio" FromRole="Visita" ToRole="Domicilio" />
+          <Property Name="melhorHorario" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_AcompanhamentoCrianca_ToIndividuo">
           <End Type="GeolocalizadorModel.Individuo" Role="Individuo" Multiplicity="1" />
@@ -954,6 +956,7 @@
           <EntitySetMapping Name="Visita">
             <EntityTypeMapping TypeName="GeolocalizadorModel.Visita">
               <MappingFragment StoreEntitySet="Visita">
+                <ScalarProperty Name="melhorHorario" ColumnName="melhorHorario" />
                 <ScalarProperty Name="codigo" ColumnName="codigo" />
                 <ScalarProperty Name="detalhes" ColumnName="detalhes" />
                 <ScalarProperty Name="resumo" ColumnName="resumo" />
