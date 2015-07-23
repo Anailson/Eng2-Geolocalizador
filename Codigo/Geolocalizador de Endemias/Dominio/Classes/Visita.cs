@@ -3,18 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dominio.Classes
 {
     public class Visita
     {
         public int id { get; set; }
+
+        [Display(Name = "Nº da visita")]
         public int codigo { get; set; }
+
+        [Display(Name = "Nº do domicilio")]
         public int codDomicilio { get; set; }
+
+        [Display(Name = "Data da visita")]
         public DateTime dataVisita { get; set; }
+
+        [Display(Name = "Próxima visita")]
         public DateTime dataProxVisita { get; set; }
+
+        [Display(Name = "Melhor horário")]
         public string melhorHorario { get; set; }
+
+        [Display(Name = "Resumo")]
         public string resumo { get; set; }
+
+        [Display(Name = "Descrição")]
         public string detalhes { get; set; }
 
 

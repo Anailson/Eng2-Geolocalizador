@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dominio.Classes
 {
     public class Equipe
     {
         public int id { get; set; }
+
+        [Display(Name = "Nº da equipe")]
         public int codigo {get; set;}
+
+        [Display(Name = "Nº do SUS")]
         public int numSus {get; set;}
+
+        [Display(Name = "Nº da micro área")]
         public int codMicroArea { get; set; }
+
+        [Display(Name = "Função")]
         public string funcao { get; set; }
 
         public virtual ICollection<Domicilio> Domicilio { get; set; }
