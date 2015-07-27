@@ -1,66 +1,75 @@
 ﻿@model Dominio.Classes.Visita
-
-@{
-    ViewBag.Title = "Detalhes";
-}
-
-<h2>Detalhes</h2>
-
-<div>
-    <h4>Visita</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.codigo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.codigo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.codDomicilio)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.codDomicilio)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.dataVisita)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.dataVisita)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.dataProxVisita)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.dataProxVisita)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.resumo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.resumo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.detalhes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.detalhes)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Editar", "Editar", new { id = Model.id }) |
+<nav>
+    <span class="card-title">Detalhes da visita domiciliar</span>
+</nav>
+<div class="row">
+    <br /><br />
+    @Html.ActionLink("Home", "Index", "Home") >
     @Html.ActionLink("Voltar a Lista", "Index")
-</p>
+</div>
+<div class="row">
+    <div class="col s12">
+        <ul class="tabs">
+            <li class="tab"><a href="#detalhes-visita">Detalhes da visita domiciliar</a></li>
+            <li class="tab disabled"></li>
+        </ul>
+    </div>
+    <div id="detalhes-visita" class="col s12">
+        <div class="row">
+            <br /><br />
+            <fieldset>
+                <legend>Horário da visita</legend>
+                <div class="row">
+                    <div class="input-field col s3">
+                        @Html.DisplayNameFor(model => model.codDomicilio)
+                    </div>
+                    <div class="input-field col s3">
+
+                        @Html.DisplayNameFor(model => model.dataVisita)
+                    </div>
+                    <div class="input-field col s3">
+                        @Html.DisplayNameFor(model => model.dataProxVisita)
+                    </div>
+                    <div class="input-field col s3">
+                        @Html.DisplayNameFor(model => model.melhorHorario)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s3">
+                        @Html.DisplayFor(model => model.codDomicilio)
+                    </div>
+                    <div class="input-field col s3">
+                        @Html.DisplayFor(model => model.dataVisita)
+                    </div>
+                    <div class="input-field col s3">
+                        @Html.DisplayFor(model => model.dataProxVisita)
+                    </div>
+                    <div class="input-field col s3">
+                        @Html.DisplayFor(model => model.melhorHorario)
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="row">
+            <fieldset>
+                <legend>Observações</legend>
+                <div class="row">
+                    <div class="input-field col s8">
+                        @Html.DisplayNameFor(model => model.resumo)
+                    </div>
+                    <div class="input-field col s8">
+                        @Html.DisplayFor(model => model.resumo)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s8">
+                        @Html.DisplayNameFor(model => model.detalhes)
+                    </div>
+                    <div class="input-field col s8">
+                        @Html.DisplayFor(model => model.detalhes)
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>

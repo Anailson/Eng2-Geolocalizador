@@ -1,17 +1,16 @@
 ﻿@model Dominio.Classes.Visita
 <nav>
-    <span class="card-title">Cadastrar indivíduo</span>
+    <span class="card-title">Cadastrar visita domiciliar</span>
 </nav>
 
 @using (Html.BeginForm("Cadastrar", "Visita"))
 {
     @Html.AntiForgeryToken()
 
-    <div>
+    <div class="row">
         <br /><br />
-        @Html.ActionLink("Home", "Index", "Home") |
+        @Html.ActionLink("Home", "Index", "Home") >
         @Html.ActionLink("Voltar a Lista", "Index")
-        <br /><br />
     </div>
 
     <div class="row">
