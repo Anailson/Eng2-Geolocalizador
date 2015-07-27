@@ -27,7 +27,22 @@
 
             </li>
             <li>@Html.ActionLink("Relatórios", "Index", "Relatorios")</li>
-            <li style="padding-left:20px; padding-right:20px;">[LOGIN]</li>
+            <li>
+                <a class="dropdown-button" href="#" data-activates="dropdown-perfil">Perfil<i class="material-icons right">arrow_drop_down</i></a>
+                <ul id="dropdown-perfil" class="dropdown-content">
+                    <li>@Html.ActionLink("Editar", "ChanegeProfile", "Account")</li>
+                    <li>@Html.ActionLink("Senha", "ChanePassword", "Account")</li>
+                    <li class="divider"></li>
+                    <li>@using (Html.BeginForm("LogOut", "Account"))
+                    {
+                        @Html.AntiForgeryToken()
+                             <input type="submit" value="Sair" class="btn-flat" />
+                    }</li>
+                </ul>
+
+            </li>
+
+            
         </ul>
     </div>
 </nav>
