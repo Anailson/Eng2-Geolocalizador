@@ -6,9 +6,9 @@
 @using (Html.BeginForm("Cadastrar", "AcompanhamentoGestante"))
 {
     @Html.AntiForgeryToken()
-
     <div class="row">
         <br /><br />
+        @Html.ActionLink("Home", "Index", "Home") >
         @Html.ActionLink("Voltar a Lista", "Index")
     </div>
 

@@ -4,13 +4,20 @@
     ViewBag.Title = "Editar";
 }
 
+
+
 <h2>Editar</h2>
 
 
 @using (Html.BeginForm("Atualizar", "AcompanhamentoCrianca"))
 {
     @Html.AntiForgeryToken()
-    
+    <div class="row">
+        <br /><br />
+        @Html.ActionLink("Home", "Index", "Home") >
+        @Html.ActionLink("Voltar a Lista", "Index")
+    </div>
+
     <div class="form-horizontal">
         <h4>AcompanhamentoCrianca</h4>
         <hr />

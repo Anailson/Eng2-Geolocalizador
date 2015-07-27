@@ -10,7 +10,12 @@
 @using (Html.BeginForm("Atualizar", "AcompanhamentoGestante"))
 {
     @Html.AntiForgeryToken()
-    
+    <div class="row">
+        <br /><br />
+        @Html.ActionLink("Home", "Index", "Home") >
+        @Html.ActionLink("Voltar a Lista", "Index")
+    </div>
+
     <div class="form-horizontal">
         <h4>AcompanhamentoGestante</h4>
         <hr />

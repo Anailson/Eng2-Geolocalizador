@@ -1,234 +1,245 @@
 ﻿@model Dominio.Classes.Domicilio
 
-@{
-    ViewBag.Title = "Remover";
-}
+<nav>
+    <span class="card-title">Excluir domicílio</span>
+</nav>
 
-<h2>Remover</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
+<div class="row">
+    <br /><br />
+    @Html.ActionLink("Home", "Index", "Home") >
+    @Html.ActionLink("Voltar a Lista", "Index")
+</div>
+<p>
+    <h5>Você tem certeza que deseja excluir esse domicílio?</h5>
+</p>
 @using (Html.BeginForm("Excluir","Domicilio"))
 {
     @Html.AntiForgeryToken()
 
-    <h4>Domicilio</h4>
-    <hr />
-    @Html.HiddenFor(model => model.codigo)
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.codigo)
-        </dt>
+    <div class="row">
+        <div class="input-field col s12">
+            <ul class="tabs">
+                <li class="tab"><a href="#detalhes-cadastro">Domicílio</a></li>
+                <li class="tab"><a href="#detalhes-condicoes">Condições de moradia</a></li>
+            </ul>
+            <br /><br />
+            <div class="row">
+                <div id="detalhes-cadastro" class="col s12">
+                    <div class="row">
+                        <fieldset>
+                            <legend>Informações gerais</legend>
 
-        <dd>
-            @Html.DisplayFor(model => model.codigo)
-        </dd>
+                            <div class="row">
+                                <div class="input-field col s3">
+                                    @Html.DisplayNameFor(model => model.susProfissional)
+                                </div>
+                                <div class="input-field col s3">
+                                    @Html.DisplayNameFor(model => model.codCNES)
+                                </div>
+                                <div class="input-field col s2">
+                                    @Html.DisplayNameFor(model => model.codEquipe)
+                                </div>
+                                <div class="input-field col s2">
+                                    @Html.DisplayNameFor(model => model.microArea)
+                                </div>
+                                <div class="input-field col s2">
+                                    @Html.DisplayNameFor(model => model.codigo)
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s3">
+                                    @Html.DisplayFor(model => model.susProfissional)
+                                </div>
+                                <div class="input-field col s3">
+                                    @Html.DisplayFor(model => model.codCNES)
+                                </div>
+                                <div class="input-field col s2">
+                                    @Html.DisplayFor(model => model.codEquipe)
+                                </div>
+                                <div class="input-field col s2">
+                                    @Html.DisplayFor(model => model.microArea)
+                                </div>
+                                <div class="input-field col s2">
+                                    @Html.DisplayFor(model => model.codigo)
+                                </div>
+                            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.susProfissional)
-        </dt>
+                        </fieldset>
+                    </div>
+                    <div class="row">
+                        <fieldset>
+                            <legend>Endereço / Local de permanência</legend>
+                            <div class="row">
+                                <div class="input-field col s7">
+                                    @Html.DisplayNameFor(model => model.rua)
+                                </div>
+                                <div class="input-field col s1">
+                                    @Html.DisplayNameFor(model => model.numero)
+                                </div>
+                                <div class="input-field col s4">
+                                    @Html.DisplayNameFor(model => model.bairro)
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s7">
+                                    @Html.DisplayFor(model => model.rua)
+                                </div>
+                                <div class="input-field col s1">
+                                    @Html.DisplayFor(model => model.numero)
+                                </div>
+                                <div class="input-field col s4">
+                                    @Html.DisplayFor(model => model.bairro)
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="row">
+                        <fieldset>
+                            <legend>Telefone para contato</legend>
+                            <div class="input-field col s12">
 
-        <dd>
-            @Html.DisplayFor(model => model.susProfissional)
-        </dd>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="row">
+                        <fieldset>
+                            <legend>Famílias</legend>
+                        </fieldset>
+                    </div>
+                </div>
+                <div id="detalhes-condicoes">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.codCNES)
-        </dt>
+                    <div class="row">
+                        <div class="col s6">
+                            <fieldset>
+                                <legend>Situação de moradia / Posse de terra</legend>
+                                <div class="col s12">
+                                    @Html.DisplayFor(model => model.situacaoMoradia)
+                                </div>
+                            </fieldset>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.codCNES)
-        </dd>
+                        <div class="col s6">
+                            <fieldset>
+                                <legend>Localização</legend>
+                                <div class="col s12">
+                                    @Html.DisplayFor(model => model.localizacao)
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.codEquipe)
-        </dt>
+                    <div class="row">
+                        <div class="col s6">
+                            <fieldset>
+                                <legend>Tipo de domicílio</legend>
+                                <div class="col s12">
+                                    @Html.DisplayFor(model => model.tipoMoradia)
+                                </div>
+                            </fieldset>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.codEquipe)
-        </dd>
+                        <div class="col s6">
+                            <fieldset>
+                                <legend>Em caso de zona rural, condição de posse da terra</legend>
+                                <div class="col s12">
+                                    @Html.DisplayFor(model => model.condicaoRural)
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="row">
+                                <div class="col s6">
+                                    @Html.DisplayNameFor(model => model.quantComodos)
+                                </div>
+                                <div class="col s6">
+                                    @Html.DisplayNameFor(model => model.quantMoradores)
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s6">
+                                    @Html.DisplayFor(model => model.quantComodos)
+                                </div>
+                                <div class="col s6">
+                                    @Html.DisplayFor(model => model.quantMoradores)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="row">
+                                <fieldset>
+                                    <legend>Tipo de acesso ao domicilio</legend>
+                                    <div class="col s12">
+                                        @Html.DisplayFor(model => model.acessoDomicilio)
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.microArea)
-        </dt>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <fieldset>
+                                <legend>Material predominante na construção das paredes externas</legend>
+                                <div class="col s6">
+                                    @Html.DisplayFor(model => model.material)
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <h6>Disponibilidade de energia elétrica?</h6>
+                            <div class="col s6">
+                                @Html.DisplayFor(model => model.energiaEletrica)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <fieldset>
+                                <legend>Abastecimento de água</legend>
+                                <div class="col s6">
+                                    @Html.DisplayFor(model => model.abastecimentoAgua)
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="input-field col s6">
+                            <fieldset>
+                                <legend>Tratamento de água no domicílio</legend>
+                                <div class="col s6">
+                                    @Html.DisplayFor(model => model.tratamentoAgua)
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.microArea)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.rua)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.rua)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.numero)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.numero)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.bairro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.bairro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.situacaoMoradia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.situacaoMoradia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tipoMoradia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tipoMoradia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.localizacao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.localizacao)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.condicaoRural)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.condicaoRural)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.acessoDomicilio)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.acessoDomicilio)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.material)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.material)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.numProntuario)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.numProntuario)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.susResponsavel)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.susResponsavel)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.nascimentoResponsavel)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.nascimentoResponsavel)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.rendaFamiliar)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.rendaFamiliar)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.numMembro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.numMembro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.quantComodos)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.quantComodos)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.quantMoradores)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.quantMoradores)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.energiaEletrica)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.energiaEletrica)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.abastecimentoAgua)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.abastecimentoAgua)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tratamentoAgua)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tratamentoAgua)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.escoamentoBanheiro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.escoamentoBanheiro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.lixo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.lixo)
-        </dd>
-
-    </dl>
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Remover" class="btn btn-default" /> |
-            @Html.ActionLink("Voltar a Lista", "Index")
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <fieldset>
+                                <legend>Escoamento do banheiro sanitário</legend>
+                                <div class="col s6">
+                                    @Html.DisplayFor(model => model.escoamentoBanheiro)
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="input-field col s6">
+                            <fieldset>
+                                <legend>Destino do lixo</legend>
+                                <div class="col s6">
+                                    @Html.DisplayFor(model => model.lixo)
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                <div class="row center">
+                    <input type="submit" value="Remover" class="btn btn-default" />
+                </div>
+            </div>
         </div>
-    }
-</div>
+    </div>
+}
+

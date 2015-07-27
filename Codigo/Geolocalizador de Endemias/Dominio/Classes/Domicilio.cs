@@ -26,7 +26,7 @@ namespace Dominio.Classes
         [Display(Name = "Micro área")]
         public int microArea { get; set; }
 
-        [Display(Name = "Endereço")]
+        [Display(Name = "Rua")]
         public string rua { get; set; }
 
         [Display(Name = "Número")]

@@ -9,7 +9,13 @@
 @using (Html.BeginForm("Atualizar","Individuo"))
 {
     @Html.AntiForgeryToken()
-    
+
+    <div class="row">
+        <br /><br />
+        @Html.ActionLink("Home", "Index", "Home") >
+        @Html.ActionLink("Voltar a Lista", "Index")
+    </div>
+
     <div class="form-horizontal">
         <h4>Individuo</h4>
         <hr />

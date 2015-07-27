@@ -1,242 +1,436 @@
 ﻿@model Dominio.Classes.Domicilio
-
-@{
-    ViewBag.Title = "Editar";
-}
-
-<h2>Editar</h2>
-
+<nav>
+    <span class="card-title">Editar dados do domicílio</span>
+</nav>
 
 @using (Html.BeginForm("Atualizar","Domicilio"))
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Domicilio</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.codigo)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.codigo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.codigo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.codigo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.susProfissional, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.susProfissional, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.susProfissional, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.codCNES, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.codCNES, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.codCNES, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.codEquipe, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.codEquipe, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.codEquipe, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.microArea, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.microArea, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.microArea, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.rua, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.rua, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.rua, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.numero, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.numero, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.numero, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.bairro, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.bairro, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.bairro, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.situacaoMoradia, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.situacaoMoradia, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.situacaoMoradia, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.tipoMoradia, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.tipoMoradia, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.tipoMoradia, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.localizacao, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.localizacao, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.localizacao, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.condicaoRural, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.condicaoRural, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.condicaoRural, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.acessoDomicilio, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.acessoDomicilio, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.acessoDomicilio, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.material, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.material, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.material, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.numProntuario, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.numProntuario, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.numProntuario, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.susResponsavel, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.susResponsavel, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.susResponsavel, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.nascimentoResponsavel, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nascimentoResponsavel, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nascimentoResponsavel, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.rendaFamiliar, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.rendaFamiliar, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.rendaFamiliar, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.numMembro, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.numMembro, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.numMembro, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.quantComodos, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.quantComodos, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.quantComodos, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.quantMoradores, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.quantMoradores, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.quantMoradores, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.energiaEletrica, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.energiaEletrica, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.energiaEletrica, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.abastecimentoAgua, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.abastecimentoAgua, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.abastecimentoAgua, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.tratamentoAgua, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.tratamentoAgua, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.tratamentoAgua, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.escoamentoBanheiro, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.escoamentoBanheiro, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.escoamentoBanheiro, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.lixo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.lixo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.lixo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Salvar" class="btn btn-default" />
-            </div>
+    <div class="row">
+        <br /><br />
+        @Html.ActionLink("Home", "Index", "Home") >
+        @Html.ActionLink("Voltar a Lista", "Index")
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab"><a href="#editar-domicilio">Editar dados do domicílio</a></li>
+                <li class="tab"><a href="#editar-condicoes">Editar condições de moradia</a></li>
+            </ul>
         </div>
     </div>
+    <br /><br />
+    <form>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.codigo)
+        <div class="row">
+            <div id="editar-domicilio" class="col s12">
+                <div class="row">
+                    <fieldset>
+                        <legend>Informações gerais</legend>
+                        <div class="input-field col s3">
+                            @Html.LabelFor(model => model.susProfissional, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.susProfissional, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.susProfissional, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="input-field col s3">
+                            @Html.LabelFor(model => model.codCNES, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.codCNES, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.codCNES, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="input-field col s2">
+                            @Html.LabelFor(model => model.codEquipe, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.codEquipe, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.codEquipe, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="input-field col s2">
+                            @Html.LabelFor(model => model.microArea, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.microArea, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.microArea, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="input-field col s2">
+                            @Html.LabelFor(model => model.codigo, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.codigo, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.codigo, "", new { @class = "text-danger" })
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="row">
+                    <fieldset>
+                        <legend>Endereço / Local de permanência</legend>
+                        <div class="input-field col s7">
+                            @Html.LabelFor(model => model.rua, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.rua, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.rua, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="input-field col s1">
+                            @Html.LabelFor(model => model.numero, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.numero, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.numero, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="input-field col s4">
+                            @Html.LabelFor(model => model.bairro, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.bairro, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.bairro, "", new { @class = "text-danger" })
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="row">
+                    <fieldset>
+                        <legend>Telefone para contato</legend>
+                    </fieldset>
+                </div>
+                <div class="row">
+                    <fieldset>
+                        <legend>famílias</legend>
+                    </fieldset>
+                </div>
+    
+            </div>
+
+            <div id="editar-condicoes" class="col s12">
+                <div class="row">
+                    
+                    <fieldset>
+                        <legend>Situação de moradia / Posse de terra</legend>
+                        <div class="input-field col s4">
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.situacaoMoradia, "propria", new { id = "situacao-moradia-propria", @class = "with - gath" })
+                                @Html.Label("situacao-moradia-propria", "Própria")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.situacaoMoradia, "cedida", new { id = "situacao-moradia-cedida", @class = "with - gath" })
+                                @Html.Label("situacao-moradia-cedida", "Cedida")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.situacaoMoradia, "alugada", new { id = "situacao-moradia-alugada", @class = "with - gath" })
+                                @Html.Label("situacao-moradia-alugada", "Alugada")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.situacaoMoradia, "arrendoada", new { id = "situacao-moradia-arrendoada", @class = "with - gath" })
+                                @Html.Label("situacao-moradia-arrendoada", "Arrendoada")
+                            </div>
+
+                        </div>
+                        <div class="input-field col s4">
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.situacaoMoradia, "financiada", new { id = "situacao-moradia-financiada", @class = "with - gath" })
+                                @Html.Label("situacao-moradia-financiada", "Financiada")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.situacaoMoradia, "ocupada", new { id = "situacao-moradia-ocupada", @class = "with - gath" })
+                                @Html.Label("situacao-moradia-ocupada", "Ocupada")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.situacaoMoradia, "situacao de rua", new { id = "situacao-moradia-situacao-rua", @class = "with - gath" })
+                                @Html.Label("situacao-moradia-situacao-rua", "Situação de rua")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.situacaoMoradia, "outro", new { id = "situacao-moradia-outro", @class = "with - gath" })
+                                @Html.Label("situacao-moradia-outro", "Outro")
+                            </div>
+                        </div>
+                        <div class="input-field col s4">
+                            <fieldset>
+                                <legend>Localização</legend>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.localizacao, "rural", new { id = "localizacao-rural", @class = "with - gath" })
+                                    @Html.Label("localizacao-rural", "Rural")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.localizacao, "urbana", new { id = "localizacao-urbana", @class = "with - gath" })
+                                    @Html.Label("localizacao-urbana", "Urbana")
+                                </div>
+                            </fieldset>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="row">
+                    <div class="col s4">
+                        <fieldset>
+                            <legend>Tipo de domicílio</legend>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.tipoMoradia, "casa", new { id = "domicilio-casa", @class = "with - gath" })
+                                @Html.Label("domicilio-casa", "Casa")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.tipoMoradia, "apartamento", new { id = "domicilio-apartamento", @class = "with - gath" })
+                                @Html.Label("domicilio-apartamento", "Apartamento")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.tipoMoradia, "comodo", new { id = "domicilio-comodo", @class = "with - gath" })
+                                @Html.Label("domicilio-comodo", "Cômodo")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.tipoMoradia, "outro", new { id = "domicilio-outro", @class = "with - gath" })
+                                @Html.Label("domicilio-outro", "Outro")
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col s8">
+                        <fieldset>
+                            <legend>Em caso de zona rural, condição de posse da terra</legend>
+
+                            <div class="input-field col s4">
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.condicaoRural, "proprietario (a)", new { id = "condicao-proprietario", @class = "with - gath" })
+                                    @Html.Label("condicao-proprietario", "Proprietário (a)")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.condicaoRural, "assentado (a)", new { id = "condicao-assentado", @class = "with - gath" })
+                                    @Html.Label("condicao-assentado", "Assentado (a)")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.condicaoRural, "parceiro (a) / meeiro (a)", new { id = "condicao-parceiro", @class = "with - gath" })
+                                    @Html.Label("condicao-parceiro", "Parceiro (a) / Meeiro (a)")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.condicaoRural, "Beneficiário (a) do Banco da Terra", new { id = "condicao-beneficiario", @class = "with - gath" })
+                                    @Html.Label("condicao-beneficiario", "Beneficiário (a) do Banco da Terra")
+                                </div>
+                            </div>
+                            <div class="input-field col s4">
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.condicaoRural, "Arredatário (a)", new { id = "condicao-arredatario", @class = "with - gath" })
+                                    @Html.Label("condicao-arredatario", "Arredatário (a)")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.condicaoRural, "Posseiro (a)", new { id = "condicao-posseiro", @class = "with - gath" })
+                                    @Html.Label("condicao-posseiro", "Posseiro (a)")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.condicaoRural, "Comodatário (a)", new { id = "condicao-comodatario", @class = "with - gath" })
+                                    @Html.Label("condicao-comodatario", "Comodatário (a)")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.condicaoRural, "Não se aplica", new { id = "condicao-outro", @class = "with - gath" })
+                                    @Html.Label("condicao-outro", "Não se aplica")
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s4">
+
+                        <div class="input-field col s6">
+                            @Html.LabelFor(model => model.quantComodos, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.quantComodos, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.quantComodos, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="input-field col s6">
+                            @Html.LabelFor(model => model.quantMoradores, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.quantMoradores, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.quantMoradores, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="col s8">
+
+                        <fieldset>
+                            <legend>Tipo de acesso ao domicilio</legend>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.acessoDomicilio, "Asfalto", new { id = "acesso-asfalto", @class = "with - gath" })
+                                @Html.Label("acesso-asfalto", "Asfalto")
+                                @Html.RadioButtonFor(model => model.acessoDomicilio, "Chão batido", new { id = "acesso-chao", @class = "with - gath" })
+                                @Html.Label("acesso-chao", "Chão batido")
+                                @Html.RadioButtonFor(model => model.acessoDomicilio, "Fluvial", new { id = "acesso-fluvial", @class = "with - gath" })
+                                @Html.Label("acesso-fluvial", "Fluvial")
+                                @Html.RadioButtonFor(model => model.acessoDomicilio, "Outro", new { id = "acesso-outro", @class = "with - gath" })
+                                @Html.Label("acesso-outro", "Outro")
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row">
+                    <fieldset>
+                        <legend>Material predominante na construção das paredes externas</legend>
+                        <div class="input-field col s3">
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.material, "Alvenaria / Tijolo com revestimento", new { id = "material-tijolo-sim", @class = "with - gath" })
+                                @Html.Label("material-tijolo-sim", "Alvenaria / Tijolo com revestimento")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.material, "Alvenaria / Tijolo sem revestimento", new { id = "material-tijolo-nao", @class = "with - gath" })
+                                @Html.Label("material-tijolo-nao", "Alvenaria / Tijolo sem revestimento")
+                            </div>
+                        </div>
+
+                        <div class="input-field col s3">
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.material, "Taipa com revestimento", new { id = "material-taipa-sim", @class = "with - gath" })
+                                @Html.Label("material-taipa-sim", "Taipa com revestimento")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.material, "Sem revestimento", new { id = "material-taipa-nao", @class = "with - gath" })
+                                @Html.Label("material-taipa-nao", "Taipa sem revestimento")
+                            </div>
+                        </div>
+
+                        <div class="input-field col s3">
+
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.material, "Material aproveitado", new { id = "material-aproveitado", @class = "with - gath" })
+                                @Html.Label("material-aproveitado", "Material aproveitado")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.material, "Palha", new { id = "material-palha", @class = "with - gath" })
+                                @Html.Label("material-palha", "Palha")
+                            </div>
+
+                        </div>
+                        <div class="input-field col s3">
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.material, "Material aparelhada", new { id = "material-aparelhada", @class = "with - gath" })
+                                @Html.Label("material-aparelhada", "Material aparelhada")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.material, "Outros", new { id = "material-outros", @class = "with - gath" })
+                                @Html.Label("material-outros", "Outros")
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <h6>Disponibilidade de energia elétrica?</h6>
+                        @Html.RadioButtonFor(model => model.energiaEletrica, "Sim", new { id = "energia-eletrica-sim", @class = "with - gath" })
+                        @Html.Label("energia-eletrica-sim", "Sim")
+                        @Html.RadioButtonFor(model => model.energiaEletrica, "Não", new { id = "energia-eletrica-nao", @class = "with - gath" })
+                        @Html.Label("energia-eletrica-nao", "Não")
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <fieldset>
+                            <legend>Abastecimento de água</legend>
+                            <div class="input-field col s6">
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.abastecimentoAgua, "Rede encanada até o domicílio", new { id = "abastecimento-rede-encanada", @class = "with - gath" })
+                                    @Html.Label("abastecimento-rede-encanada", "Rede encanada até o domicílio")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.abastecimentoAgua, "Poço / Nascente no domicílio", new { id = "abastecimento-poco-nascente", @class = "with - gath" })
+                                    @Html.Label("abastecimento-poco-nascente", "Poço / Nascente no domicílio")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.abastecimentoAgua, "Outro", new { id = "abastecimento-outro", @class = "with - gath" })
+                                    @Html.Label("abastecimento-outro", "Outro")
+                                </div>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.abastecimentoAgua, "Cisterna", new { id = "abastecimento-cisterna", @class = "with - gath" })
+                                    @Html.Label("abastecimento-cisterna", "Cisterna")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.abastecimentoAgua, "Carro-pipa", new { id = "abastecimento-carro-pipa", @class = "with - gath" })
+                                    @Html.Label("abastecimento-carro-pipa", "Carro-pipa")
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="input-field col s6">
+                        <fieldset>
+                            <legend>Tratamento de água no domicílio</legend>
+                            <div class="input-field col s6">
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.tratamentoAgua, "Filtração", new { id = "tratamento-filtracao", @class = "with - gath" })
+                                    @Html.Label("tratamento-filtracao", "Filtração")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.tratamentoAgua, "Filtração", new { id = "tratamento-cloracao", @class = "with - gath" })
+                                    @Html.Label("tratamento-cloracao", "Cloração")
+                                </div>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.tratamentoAgua, "Fervura", new { id = "tratamento-fervura", @class = "with - gath" })
+                                    @Html.Label("tratamento-fervura", "Fervura")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.tratamentoAgua, "Sem Fervura", new { id = "tratamento-sem-fervura", @class = "with - gath" })
+                                    @Html.Label("tratamento-sem-fervura", "Sem Fervura")
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <fieldset>
+                            <legend>Escoamento do banheiro sanitário</legend>
+                            <div class="input-field col s6">
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.escoamentoBanheiro, "Rede coletora de esgoto ou plural", new { id = "banheiro-rede-coletora", @class = "with - gath" })
+                                    @Html.Label("banheiro-rede-coletora", "Rede coletora de esgoto ou plural")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.escoamentoBanheiro, "Direto ao rio, lago ou mar", new { id = "banheiro-rio", @class = "with - gath" })
+                                    @Html.Label("banheiro-rio", "Direto ao rio, lago ou mar")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.escoamentoBanheiro, "Céu aberto", new { id = "banheiro-ceu", @class = "with - gath" })
+                                    @Html.Label("banheiro-ceu", "Céu aberto")
+                                </div>
+                            </div>
+                            <div class="input-field col s6">
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.escoamentoBanheiro, "Fossa séptica", new { id = "banheiro-fossa-septica", @class = "with - gath" })
+                                    @Html.Label("banheiro-fossa-septica", "Fossa séptica")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.escoamentoBanheiro, "Fossa rudimentar", new { id = "banheiro-fossa-rudimentar", @class = "with - gath" })
+                                    @Html.Label("banheiro-fossa-rudimentar", "Fossa rudimentar")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.escoamentoBanheiro, "Outro", new { id = "banheiro-outro", @class = "with - gath" })
+                                    @Html.Label("banheiro-outro", "Outro")
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="input-field col s6">
+                        <fieldset>
+                            <legend>Destino do lixo</legend>
+                            <div class="input-field col s6">
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.lixo, "Coletado", new { id = "lixo-coletado", @class = "with - gath" })
+                                    @Html.Label("lixo-coletado", "Coletado")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.lixo, "Queimado - Enterrado", new { id = "lixo-queimado", @class = "with - gath" })
+                                    @Html.Label("lixo-queimado", "Queimado / Enterrado")
+                                </div>
+                            </div>
+                            <div class="input-field col s6">
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.lixo, "Céu aberto", new { id = "lixo-ceu", @class = "with - gath" })
+                                    @Html.Label("lixo-ceu", "Céu aberto")
+                                </div>
+                                <div class="row">
+                                    @Html.RadioButtonFor(model => model.lixo, "Outro", new { id = "lixo-outro", @class = "with - gath" })
+                                    @Html.Label("lixo-outro", "Outro")
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row center">
+            <input type="submit" value="Salvar" class="btn btn-default" />
+        </div>
+    </form>
 }
-
-<div>
-    @Html.ActionLink("Voltar a Lista", "Index")
-</div>
-
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

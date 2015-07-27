@@ -9,7 +9,8 @@
     @Html.AntiForgeryToken()
 
     <div class="row">
-        @Html.ActionLink("Home", "Index", "Home") |
+        <br /><br />
+        @Html.ActionLink("Home", "Index", "Home") > 
         @Html.ActionLink("Voltar a Lista", "Index")
     </div>
     <div class="row">
@@ -315,67 +316,59 @@
                     <fieldset>
                         <legend>Material predominante na construção das paredes externas</legend>
                         <div class="input-field col s3">
-                            <fieldset>
-                                <legend>Alvenaria / Tijolo</legend>
-                                <div class="row">
-                                    @Html.RadioButtonFor(model => model.material, "Com revestimento", new { id = "material-tijolo-sim", @class = "with - gath" })
-                                    @Html.Label("material-tijolo-sim", "Com revestimento")
-                                </div>
-                                <div class="row">
-                                    @Html.RadioButtonFor(model => model.material, "Sem revestimento", new { id = "material-tijolo-nao", @class = "with - gath" })
-                                    @Html.Label("material-tijolo-nao", "Sem revestimento")
-                                </div>
-                            </fieldset>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.material, "Alvenaria / Tijolo com revestimento", new { id = "material-tijolo-sim", @class = "with - gath" })
+                                @Html.Label("material-tijolo-sim", "Alvenaria / Tijolo com revestimento")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.material, "Alvenaria / Tijolo sem revestimento", new { id = "material-tijolo-nao", @class = "with - gath" })
+                                @Html.Label("material-tijolo-nao", "Alvenaria / Tijolo sem revestimento")
+                            </div>
                         </div>
 
                         <div class="input-field col s3">
-                            <fieldset>
-                                <legend>Taipa</legend>
-                                <div class="row">
-                                    @Html.RadioButtonFor(model => model.material, "Com revestimento", new { id = "material-taipa-sim", @class = "with - gath" })
-                                    @Html.Label("material-taipa-sim", "Com revestimento")
-                                </div>
-                                <div class="row">
-                                    @Html.RadioButtonFor(model => model.material, "Sem revestimento", new { id = "material-taipa-nao", @class = "with - gath" })
-                                    @Html.Label("material-taipa-nao", "Sem revestimento")
-                                </div>
-                            </fieldset>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.material, "Taipa com revestimento", new { id = "material-taipa-sim", @class = "with - gath" })
+                                @Html.Label("material-taipa-sim", "Taipa com revestimento")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.material, "Sem revestimento", new { id = "material-taipa-nao", @class = "with - gath" })
+                                @Html.Label("material-taipa-nao", "Taipa sem revestimento")
+                            </div>
                         </div>
 
-                        <div class="input-field col s6">
-                            <fieldset>
-                                <legend>Outros</legend>
-                                <div class="input-field col s6">
-                                    <div class="row">
-                                        @Html.RadioButtonFor(model => model.material, "Material aproveitado", new { id = "material-aproveitado", @class = "with - gath" })
-                                        @Html.Label("material-aproveitado", "Material aproveitado")
-                                    </div>
-                                    <div class="row">
-                                        @Html.RadioButtonFor(model => model.material, "Palha", new { id = "material-palha", @class = "with - gath" })
-                                        @Html.Label("material-palha", "Palha")
-                                    </div>
-                                </div>
-
-                                <div class="input-field col s6">
-                                    <div class="row">
-                                        @Html.RadioButtonFor(model => model.material, "Material aparelhada", new { id = "material-aparelhada", @class = "with - gath" })
-                                        @Html.Label("material-aparelhada", "Material aparelhada")
-                                    </div>
-                                    <div class="row">
-                                        @Html.RadioButtonFor(model => model.material, "Outros", new { id = "material-outros", @class = "with - gath" })
-                                        @Html.Label("material-outros", "Outros")
-                                    </div>
-                                </div>
-                            </fieldset>
+                        <div class="input-field col s3">
+                            
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.material, "Material aproveitado", new { id = "material-aproveitado", @class = "with - gath" })
+                                @Html.Label("material-aproveitado", "Material aproveitado")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.material, "Palha", new { id = "material-palha", @class = "with - gath" })
+                                @Html.Label("material-palha", "Palha")
+                            </div>
+                            
+                        </div>
+                        <div class="input-field col s3">
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.material, "Material aparelhada", new { id = "material-aparelhada", @class = "with - gath" })
+                                @Html.Label("material-aparelhada", "Material aparelhada")
+                            </div>
+                            <div class="row">
+                                @Html.RadioButtonFor(model => model.material, "Outros", new { id = "material-outros", @class = "with - gath" })
+                                @Html.Label("material-outros", "Outros")
+                            </div>
                         </div>
                     </fieldset>
                 </div>
-                <div class="row col s12">
-                    <h6>Disponibilidade de energia elétrica?</h6>
-                    @Html.RadioButtonFor(model => model.energiaEletrica, "Sim", new { id = "energia-eletrica-sim", @class = "with - gath" })
-                    @Html.Label("energia-eletrica-sim", "Sim")
-                    @Html.RadioButtonFor(model => model.energiaEletrica, "Não", new { id = "energia-eletrica-nao", @class = "with - gath" })
-                    @Html.Label("energia-eletrica-nao", "Não")
+                <div class="row" >
+                    <div class="input-field col s12">
+                        <h6>Disponibilidade de energia elétrica?</h6>
+                        @Html.RadioButtonFor(model => model.energiaEletrica, "Sim", new { id = "energia-eletrica-sim", @class = "with - gath" })
+                        @Html.Label("energia-eletrica-sim", "Sim")
+                        @Html.RadioButtonFor(model => model.energiaEletrica, "Não", new { id = "energia-eletrica-nao", @class = "with - gath" })
+                        @Html.Label("energia-eletrica-nao", "Não")
+                    </div>
                 </div>
                 <div class="row col s12">
 
