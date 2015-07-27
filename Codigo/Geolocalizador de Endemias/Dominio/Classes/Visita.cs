@@ -11,9 +11,11 @@ namespace Dominio.Classes
     {
         public int id { get; set; }
 
+        [Required]
         [Display(Name = "Nº da visita")]
         public int codigo { get; set; }
 
+        [Required]
         [Display(Name = "Nº do domicilio")]
         public int codDomicilio { get; set; }
 

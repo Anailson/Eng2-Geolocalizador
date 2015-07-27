@@ -11,9 +11,11 @@ namespace Dominio.Classes
     {
         public int id { get; set; }
 
+        [Required]
         [Display(Name = "Nº da micro área")]
         public int codigo {get; set;}
 
+        [Required]
         [Display(Name = "Nº da área")]
         public int codArea { get; set; }
 

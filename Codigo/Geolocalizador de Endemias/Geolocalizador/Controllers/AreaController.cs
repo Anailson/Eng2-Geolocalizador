@@ -16,33 +16,27 @@ namespace Geolocalizador.Controllers
 
         //
         // GET: /Domicilio/
+        [Authorize(Roles = "Administrator")]
         public ActionResult Index()
         {
             List<Area> a = areas.Listar().ToList<Area>();
             return View(a);
         }
 
+        [Authorize(Roles = "Administrator")]
         public ActionResult Inserir()
         {
             return View();
         }
 
-        public ActionResult Inserir3()
-        {
-            return View();
-        }
-        public ActionResult Inserir2()
-        {
-            return View();
-        }
-
+        [Authorize(Roles = "Administrator")]
         public ActionResult Detalhes(int id)
         {
             Area area = areas.ResultadoUnico(id);
             return View(area);
         }
 
-
+        [Authorize(Roles = "Administrator")]
         public ActionResult Editar(int id)
         {
             Area area = areas.ResultadoUnico(id);
@@ -61,6 +55,7 @@ namespace Geolocalizador.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "Administrator")]
         public ActionResult Remover(int id)
         {
             Area area = areas.ResultadoUnico(id);

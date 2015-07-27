@@ -11,27 +11,35 @@ namespace Dominio.Classes
     {
         public int id { get; set; }
 
+        [Required]
         [Display(Name = "Nº do Domicilio")]
         public int codDomicilio { get; set; }
 
+        [Required]
         [Display(Name = "Cartão do SUS do profissional")]
         public int susProfissional { get; set; }
 
+        [Required]
         [Display(Name = "Cód. CNES Unidade")]
         public int codCNES { get; set; }
 
+        [Required]
         [Display(Name = "Cód. da equipe")]
         public int codEquipe { get; set; }
 
+        [Required]
         [Display(Name = "Micro área")]
         public int microArea { get; set; }
 
+        [Required]
         [Display(Name = "Nome completo")]
         public string nome { get; set; }
 
+        [Required]
         [Display(Name = "Cartão do SUS")]
         public int numSus { get; set; }
 
+        [Required]
         [Display(Name = "Responsavel")]
         public string responsavel { get; set; }
 
@@ -44,6 +52,7 @@ namespace Dominio.Classes
         [Display(Name = "NIS (PIS / PASEP)")]
         public string nisPis { set; get; }
 
+        [Required]
         [Display(Name = "Data de nascimento")]
         public DateTime dataNascimento { get; set; }
 
@@ -53,24 +62,30 @@ namespace Dominio.Classes
         [Display(Name = "Raça / Cor")]
         public string racaCor { set; get; }
 
+        [Required]
         [Display(Name = "Nome completo da mãe")]
         public string nomeDaMae { set; get; }
 
+        [Required]
         [Display(Name = "Nacionalidade")]
         public string nacionalidade { set; get; }
 
+        [Required]
         [Display(Name = "País de nascimento")]
         public string pais { set; get; }
 
         [Display(Name = "Telefone celular")]
         public string telefone { set; get; }
 
+        [Required]
         [Display(Name = "Municipio")]
         public string municipio { set; get; }
 
+        [Required]
         [Display(Name = "UF de nascimento")]
         public string uf { set; get; }
 
+        [EmailAddress]
         [Display(Name = "E-mail")]
         public string email { set; get; }
 
