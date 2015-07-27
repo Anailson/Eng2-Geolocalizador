@@ -11,24 +11,31 @@ namespace Dominio.Classes
     {
         public int id { get; set; }
 
+        [Required]
         [Display(Name = "Nº do Cartão do SUS")]
         public int numSus { set; get;}
 
+        [Required]
         [Display(Name = "Nº da visita")]
         public int codVisita {get; set;}
 
+        [Required]
         [Display(Name = "Cód da Enfermidade")]
         public int idEnfermidade {get; set;}
 
+        [Required]
         [Display(Name = "Acompanhamento médico")]
         public string acompanhamentoMedico { get; set; } // Alterar de String para Booleano
 
+        [Required]
         [Display(Name = "Acompanhamento psicológico")]
         public string acompanhamentoPsico { get; set; } // Alterar de String para Booleano
 
+        [Required]
         [Display(Name = "Necessidade de medicação")]
         public string medicacao { get; set; } // Alterar de String para Booleano
 
+        [Required]
         [Display(Name = "Procedimento cirúrgico")]
         public string procedimentoCirurgico { get; set; } // Alterar de String para Booleano
 

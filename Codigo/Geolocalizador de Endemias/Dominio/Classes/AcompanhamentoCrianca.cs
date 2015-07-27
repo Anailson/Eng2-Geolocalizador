@@ -11,30 +11,39 @@ namespace Dominio.Classes
     {
         public int id { set; get;}
 
+        [Required]
         [Display(Name = "Nº do Cartão do SUS")]
         public int numSus { set; get;}
 
+        [Required]
         [Display(Name = "Nº da visita")]
         public int codVisita {get; set;}
 
+        [Required]
         [Display(Name = "Desnutrição")]
         public string desnutricao { set; get; } // Alterar de String para Booleano
 
+        [Required]
         [Display(Name = "Pneumonia")]
         public string pneumonia { set; get; } // Alterar de String para Booleano
 
+        [Required]
         [Display(Name = "Diarreia")]
         public string diarreia { set; get; } // Alterar de String para Booleano
 
+        [Required]
         [Display(Name = "Vascinação em dia")]
         public string vacinacaoEmDia { set; get; } // Alterar de String para Booleano
 
+        [Required]
         [Display(Name = "Inflamação respiratória")]
         public string inflamacaoRep { set; get; } // Alterar de String para Booleano
 
+        [Required]
         [Display(Name = "Alimentação")]
         public string alimentacaoPeito { set; get; } // Alterar de String para Booleano
 
+        [Required]
         [Display(Name = "Peso")]
         public int peso { set; get; }
 

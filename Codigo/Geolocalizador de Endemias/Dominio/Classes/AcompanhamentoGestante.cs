@@ -12,15 +12,19 @@ namespace Dominio.Classes
 
         public int id { set; get; }
 
+        [Required]
         [Display(Name = "Nº do Cartão do SUS")]
         public int numSus { set; get; }
 
+        [Required]
         [Display(Name = "Nº da visita")]
         public int codVisita {get; set;}
 
+        [Required]
         [Display(Name = "Pré natal")]
         public string prenatalMensal { set; get; } // Alterar de String para Booleano
 
+        [Required]
         [Display(Name = "Semanas de gestação")]
         public int semanasGestacao{ set; get; }
 

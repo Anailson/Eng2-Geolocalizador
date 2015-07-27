@@ -19,6 +19,7 @@ namespace Dominio.Classes
         [Display(Name = "Nº do domicilio")]
         public int codDomicilio { get; set; }
 
+        [Required]
         [Display(Name = "Data da visita")]
         public DateTime dataVisita { get; set; }
 
@@ -28,9 +29,11 @@ namespace Dominio.Classes
         [Display(Name = "Melhor horário")]
         public string melhorHorario { get; set; }
 
+        [Required]
         [Display(Name = "Resumo")]
         public string resumo { get; set; }
 
+        [Required]
         [Display(Name = "Descrição")]
         public string detalhes { get; set; }
 

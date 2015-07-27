@@ -56,9 +56,11 @@ namespace Dominio.Classes
         [Display(Name = "Data de nascimento")]
         public DateTime dataNascimento { get; set; }
 
+        [Required]
         [Display(Name = "Sexo")]
         public string sexo { set; get; }
 
+        [Required]
         [Display(Name = "Raça / Cor")]
         public string racaCor { set; get; }
 
@@ -89,57 +91,71 @@ namespace Dominio.Classes
         [Display(Name = "E-mail")]
         public string email { set; get; }
 
+        [Required]
         [Display(Name = "Situação de rua")]
         public string situacaoDeRua { set; get; }
 
         [Display(Name = "Tempo em situação de rua")]
         public int tempoSituacaoRua { get; set; }
 
+        [Required]
         [Display(Name = "Acompanhamento por instituição")]
         public string acompanhamento { get; set; }
 
         [Display(Name = "Nome da instituição")]
         public string nomeInstituicao { get; set; }
 
+        [Required]
         [Display(Name = "Benificiário")]
         public string beneficiario { get; set; }
 
+        [Required]
         [Display(Name = "Referência familiar")]
         public string referenciaFamiliar { get; set; }
 
+        [Required]
         [Display(Name = "Visita familiar")]
         public string visitaFamiliar { get; set; }
 
         [Display(Name = "Frequência da visita")]
         public string frequenciaVisita { set; get; }
 
+        [Required]
         [Display(Name = "Situação conjugal")]
         public string situacaoConj { set; get; }
 
+        [Required]
         [Display(Name = "Ocupação")]
         public string ocupacao { set; get; }
 
+        [Required]
         [Display(Name = "Nivel escolar")]
         public string maiorCurso { set; get; }
 
+        [Required]
         [Display(Name = "Responsavel pela criança")]
         public string criancaResponsavel { set; get; }
 
+        [Required]
         [Display(Name = "Curandeiro")]
         public string curandeiro { set; get; }
 
+        [Required]
         [Display(Name = "Grupo comunitario")]
         public string grupoComunitario { set; get; }
 
+        [Required]
         [Display(Name = "Plano de saúde")]
         public string planoSaude { set; get; }
 
+        [Required]
         [Display(Name = "Comunidade tradicional")]
         public string comunidadeTradicional { set; get; }
 
         [Display(Name = "Nome da comunidade")]
         public string nomeComunidade { set; get; }
 
+        [Required]
         [Display(Name = "Informar orientação sexual")]
         public string informarOrientacao { set; get; }
 

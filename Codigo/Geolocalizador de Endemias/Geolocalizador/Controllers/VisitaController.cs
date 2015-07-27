@@ -17,6 +17,7 @@ namespace Geolocalizador.Controllers
         //
         // GET: /Domicilio/
         [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Operator")]
         public ActionResult Index()
         {
             List<Visita> v = visitas.Listar().ToList<Visita>();

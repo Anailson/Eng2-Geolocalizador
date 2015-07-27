@@ -11,15 +11,19 @@ namespace Dominio.Classes
     {
         public int id { get; set; }
 
+        [Required]
         [Display(Name = "Nº da equipe")]
         public int codigo {get; set;}
 
+        [Required]
         [Display(Name = "Nº do SUS")]
         public int numSus {get; set;}
 
+        [Required]
         [Display(Name = "Nº da micro área")]
         public int codMicroArea { get; set; }
 
+        [Required]
         [Display(Name = "Função")]
         public string funcao { get; set; }
 

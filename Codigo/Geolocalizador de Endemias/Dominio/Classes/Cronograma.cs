@@ -11,15 +11,18 @@ namespace Dominio.Classes
     {
         public int id { get; set; }
 
+        [Required]
         [Display(Name = "Nº do domicilio")]
         public int codDomicilio { get; set; }
 
+        [Required]
         [Display(Name = "Data inicial")]
         public DateTime dataInicio{ get; set; }
 
         [Display(Name = "Data final")]
         public DateTime dataFim { get; set; }
 
+        [Required]
         [Display(Name = "Endereço")]
         public string endereco { get; set; }
       
