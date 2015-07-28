@@ -19,6 +19,7 @@ namespace Dominio.Classes
         [Display(Name = "Data inicial")]
         public DateTime dataInicio{ get; set; }
 
+        [Required]
         [Display(Name = "Data final")]
         public DateTime dataFim { get; set; }
 

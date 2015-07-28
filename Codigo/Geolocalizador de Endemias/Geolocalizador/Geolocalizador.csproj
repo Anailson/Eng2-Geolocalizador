@@ -156,7 +156,10 @@
     <Content Include="Content\font\material-design-icons\Material-Design-Icons.svg" />
     <Content Include="Content\js\jquery-2.1.4.js" />
     <Content Include="Content\js\jquery-2.1.4.min.js" />
+    <None Include="Content\js\jquery.validate-vsdoc.js" />
+    <Content Include="Content\js\jquery.validate.js" />
     <Content Include="Content\js\jquery.validate.min.js" />
+    <Content Include="Content\js\jquery.validate.unobtrusive.js" />
     <Content Include="Content\js\jquery.validate.unobtrusive.min.js" />
     <Content Include="Content\js\materialize.js" />
     <Content Include="Content\js\materialize.min.js" />

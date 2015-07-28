@@ -5,16 +5,16 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ed633dc4fbb4444aa168c653629fa366" Name="Diagram1" ZoomLevel="64">
-        <EntityTypeShape EntityType="GeolocalizadorModel.AcompanhamentoCrianca" Width="1.5" PointX="12" PointY="7" />
-        <EntityTypeShape EntityType="GeolocalizadorModel.AcompanhamentoEnfermo" Width="1.5" PointX="15" PointY="6.25" />
-        <EntityTypeShape EntityType="GeolocalizadorModel.AcompanhamentoGestante" Width="1.5" PointX="15" PointY="10.5" />
-        <EntityTypeShape EntityType="GeolocalizadorModel.Area" Width="1.5" PointX="0.75" PointY="8.75" />
-        <EntityTypeShape EntityType="GeolocalizadorModel.Cronograma" Width="1.5" PointX="9.75" PointY="16.25" />
-        <EntityTypeShape EntityType="GeolocalizadorModel.Domicilio" Width="1.5" PointX="7.5" PointY="6.625" />
-        <EntityTypeShape EntityType="GeolocalizadorModel.Equipe" Width="1.5" PointX="5.25" PointY="9" />
-        <EntityTypeShape EntityType="GeolocalizadorModel.Individuo" Width="1.5" PointX="9.75" PointY="5.75" />
-        <EntityTypeShape EntityType="GeolocalizadorModel.MicroArea" Width="1.5" PointX="3" PointY="9.125" />
-        <EntityTypeShape EntityType="GeolocalizadorModel.Visita" Width="1.5" PointX="9.75" PointY="1.875" />
+        <EntityTypeShape EntityType="GeolocalizadorModel.AcompanhamentoCrianca" Width="1.5" PointX="12" PointY="7.125" />
+        <EntityTypeShape EntityType="GeolocalizadorModel.AcompanhamentoEnfermo" Width="1.5" PointX="15" PointY="8.375" />
+        <EntityTypeShape EntityType="GeolocalizadorModel.AcompanhamentoGestante" Width="1.5" PointX="15" PointY="4.625" />
+        <EntityTypeShape EntityType="GeolocalizadorModel.Area" Width="1.5" PointX="0.75" PointY="8.875" />
+        <EntityTypeShape EntityType="GeolocalizadorModel.Cronograma" Width="1.5" PointX="9.75" PointY="16.375" />
+        <EntityTypeShape EntityType="GeolocalizadorModel.Domicilio" Width="1.5" PointX="7.5" PointY="6.75" />
+        <EntityTypeShape EntityType="GeolocalizadorModel.Equipe" Width="1.5" PointX="5.25" PointY="9.125" />
+        <EntityTypeShape EntityType="GeolocalizadorModel.Individuo" Width="1.5" PointX="9.75" PointY="1.875" />
+        <EntityTypeShape EntityType="GeolocalizadorModel.MicroArea" Width="1.5" PointX="3" PointY="9.25" />
+        <EntityTypeShape EntityType="GeolocalizadorModel.Visita" Width="1.5" PointX="9.75" PointY="12.375" />
         <AssociationConnector Association="GeolocalizadorModel.FK_AcompanhamentoCrianca_ToIndividuo" />
         <AssociationConnector Association="GeolocalizadorModel.FK_AcompanhamentoCrianca_ToVisita" />
         <AssociationConnector Association="GeolocalizadorModel.FK_AcompanhamentoEnfermo_ToIndividuo" />

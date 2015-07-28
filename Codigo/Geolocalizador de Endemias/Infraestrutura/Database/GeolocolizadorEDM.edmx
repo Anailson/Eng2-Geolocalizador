@@ -53,7 +53,7 @@
           <Property Name="endereco" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="numero" Type="nvarchar" MaxLength="4" Nullable="false" />
           <Property Name="bairro" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="telefone" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="telefone" Type="nvarchar" MaxLength="13" />
           <Property Name="quantMicroAreas" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Cronograma">
@@ -121,35 +121,35 @@
           <Property Name="nome" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="numSus" Type="int" Nullable="false" />
           <Property Name="susResponsavel" Type="int" />
-          <Property Name="apelido" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="nisPis" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="apelido" Type="nvarchar" MaxLength="20" />
+          <Property Name="nisPis" Type="nvarchar" MaxLength="15" />
           <Property Name="sexo" Type="nvarchar" MaxLength="1" Nullable="false" />
           <Property Name="racaCor" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="nomeDaMae" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="nacionalidade" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="pais" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="telefone" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="telefone" Type="nvarchar" MaxLength="15" />
           <Property Name="municipio" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="uf" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
           <Property Name="situacaoDeRua" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="situacaoConj" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ocupacao" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="orientacaoSexual" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="orientacaoSexual" Type="nvarchar" MaxLength="30" />
           <Property Name="dataNascimento" Type="date" Nullable="false" />
-          <Property Name="tempoSituacaoRua" Type="int" Nullable="false" />
+          <Property Name="tempoSituacaoRua" Type="int" />
           <Property Name="acompanhamento" Type="nvarchar" MaxLength="4" Nullable="false" />
-          <Property Name="nomeInstituicao" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="nomeInstituicao" Type="nvarchar" MaxLength="30" />
           <Property Name="beneficiario" Type="nvarchar" MaxLength="4" Nullable="false" />
           <Property Name="referenciaFamiliar" Type="nvarchar" MaxLength="4" Nullable="false" />
           <Property Name="visitaFamiliar" Type="nvarchar" MaxLength="4" Nullable="false" />
-          <Property Name="frequenciaVisita" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="frequenciaVisita" Type="nvarchar" MaxLength="20" />
           <Property Name="maiorCurso" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="curandeiro" Type="nvarchar" MaxLength="4" Nullable="false" />
           <Property Name="grupoComunitario" Type="nvarchar" MaxLength="4" Nullable="false" />
           <Property Name="planoSaude" Type="nvarchar" MaxLength="4" Nullable="false" />
           <Property Name="comunidadeTradicional" Type="nvarchar" MaxLength="4" Nullable="false" />
-          <Property Name="nomeComunidade" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="nomeComunidade" Type="nvarchar" MaxLength="30" />
           <Property Name="informarOrientacao" Type="nvarchar" MaxLength="4" Nullable="false" />
           <Property Name="responsavel" Type="nvarchar" MaxLength="4" Nullable="false" />
           <Property Name="criancaResponsavel" Type="nvarchar" MaxLength="30" Nullable="false" />
@@ -170,8 +170,8 @@
           <Property Name="codDomicilio" Type="int" Nullable="false" />
           <Property Name="dataVisita" Type="datetime" Nullable="false" />
           <Property Name="dataProxVisita" Type="datetime" />
-          <Property Name="resumo" Type="nvarchar" MaxLength="50" />
-          <Property Name="detalhes" Type="nvarchar" MaxLength="500" />
+          <Property Name="resumo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="detalhes" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="codigo" Type="int" Nullable="false" />
           <Property Name="melhorHorario" Type="nvarchar" MaxLength="20" />
         </EntityType>
@@ -497,7 +497,7 @@
           <Property Name="endereco" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="numero" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
           <Property Name="bairro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="telefone" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="telefone" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
           <Property Name="quantMicroAreas" Type="Int32" Nullable="false" />
           <NavigationProperty Name="MicroArea" Relationship="GeolocalizadorModel.FK_MicroArea_ToArea" FromRole="Area" ToRole="MicroArea" />
         </EntityType>
@@ -573,35 +573,35 @@
           <Property Name="nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="numSus" Type="Int32" Nullable="false" />
           <Property Name="susResponsavel" Type="Int32" />
-          <Property Name="apelido" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="nisPis" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="apelido" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="nisPis" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
           <Property Name="racaCor" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="nomeDaMae" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="nacionalidade" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="pais" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="telefone" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="telefone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="municipio" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="uf" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="situacaoDeRua" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="situacaoConj" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ocupacao" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="orientacaoSexual" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="orientacaoSexual" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="dataNascimento" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="tempoSituacaoRua" Type="Int32" Nullable="false" />
+          <Property Name="tempoSituacaoRua" Type="Int32" />
           <Property Name="acompanhamento" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
-          <Property Name="nomeInstituicao" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="nomeInstituicao" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="beneficiario" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
           <Property Name="referenciaFamiliar" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
           <Property Name="visitaFamiliar" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
-          <Property Name="frequenciaVisita" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="frequenciaVisita" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="maiorCurso" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="curandeiro" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
           <Property Name="grupoComunitario" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
           <Property Name="planoSaude" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
           <Property Name="comunidadeTradicional" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
-          <Property Name="nomeComunidade" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="nomeComunidade" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="informarOrientacao" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
           <Property Name="responsavel" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
           <Property Name="criancaResponsavel" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
@@ -628,14 +628,14 @@
           <Property Name="codDomicilio" Type="Int32" Nullable="false" />
           <Property Name="dataVisita" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="dataProxVisita" Type="DateTime" Precision="3" />
-          <Property Name="resumo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="detalhes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="resumo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="detalhes" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="codigo" Type="Int32" Nullable="false" />
+          <Property Name="melhorHorario" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AcompanhamentoCrianca" Relationship="GeolocalizadorModel.FK_AcompanhamentoCrianca_ToVisita" FromRole="Visita" ToRole="AcompanhamentoCrianca" />
           <NavigationProperty Name="AcompanhamentoEnfermo" Relationship="GeolocalizadorModel.FK_AcompanhamentoEnfermo_ToVisita" FromRole="Visita" ToRole="AcompanhamentoEnfermo" />
           <NavigationProperty Name="AcompanhamentoGestante" Relationship="GeolocalizadorModel.FK_AcompanhamentoGestante_ToVisita" FromRole="Visita" ToRole="AcompanhamentoGestante" />
           <NavigationProperty Name="Domicilio" Relationship="GeolocalizadorModel.FK_Visita_ToDomicilio" FromRole="Visita" ToRole="Domicilio" />
-          <Property Name="melhorHorario" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_AcompanhamentoCrianca_ToIndividuo">
           <End Type="GeolocalizadorModel.Individuo" Role="Individuo" Multiplicity="1" />
