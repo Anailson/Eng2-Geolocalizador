@@ -23,7 +23,7 @@ namespace Dominio.Classes
         [Display(Name = "Nº da micro área")]
         public int codMicroArea { get; set; }
 
-        [Required]
+        [Required, StringLength(10)]
         [Display(Name = "Função")]
         public string funcao { get; set; }
 

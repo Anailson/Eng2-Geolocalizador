@@ -20,7 +20,7 @@ namespace Dominio.Classes
         [Display(Name = "Nº da visita")]
         public int codVisita {get; set;}
 
-        [Required]
+        [Required, StringLength(4)]
         [Display(Name = "Pré natal")]
         public string prenatalMensal { set; get; } // Alterar de String para Booleano
 

@@ -61,7 +61,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="codDomicilio" Type="int" />
+          <Property Name="codDomicilio" Type="int" Nullable="false" />
           <Property Name="dataInicio" Type="datetime" Nullable="false" />
           <Property Name="dataFim" Type="datetime" Nullable="false" />
           <Property Name="endereco" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -75,9 +75,9 @@
           <Property Name="codCNES" Type="int" Nullable="false" />
           <Property Name="codEquipe" Type="int" Nullable="false" />
           <Property Name="microArea" Type="int" Nullable="false" />
-          <Property Name="rua" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="rua" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="numero" Type="nvarchar" MaxLength="5" Nullable="false" />
-          <Property Name="bairro" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="bairro" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="situacaoMoradia" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="tipoMoradia" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="numProntuario" Type="int" Nullable="false" />
@@ -104,7 +104,7 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="codigo" Type="int" Nullable="false" />
-          <Property Name="codMicroArea" Type="int" />
+          <Property Name="codMicroArea" Type="int" Nullable="false" />
           <Property Name="numSus" Type="int" Nullable="false" />
           <Property Name="funcao" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
@@ -248,7 +248,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Cronograma_ToDomicilio">
-          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="0..1" />
+          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="1" />
           <End Role="Cronograma" Type="Self.Cronograma" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Domicilio">
@@ -272,7 +272,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Equipe_ToMicroArea">
-          <End Role="MicroArea" Type="Self.MicroArea" Multiplicity="0..1" />
+          <End Role="MicroArea" Type="Self.MicroArea" Multiplicity="1" />
           <End Role="Equipe" Type="Self.Equipe" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MicroArea">
@@ -506,7 +506,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="codDomicilio" Type="Int32" />
+          <Property Name="codDomicilio" Type="Int32" Nullable="false" />
           <Property Name="dataInicio" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="dataFim" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="endereco" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -521,9 +521,9 @@
           <Property Name="codCNES" Type="Int32" Nullable="false" />
           <Property Name="codEquipe" Type="Int32" Nullable="false" />
           <Property Name="microArea" Type="Int32" Nullable="false" />
-          <Property Name="rua" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="rua" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="numero" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
-          <Property Name="bairro" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="bairro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="situacaoMoradia" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="tipoMoradia" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="numProntuario" Type="Int32" Nullable="false" />
@@ -554,7 +554,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="codigo" Type="Int32" Nullable="false" />
-          <Property Name="codMicroArea" Type="Int32" />
+          <Property Name="codMicroArea" Type="Int32" Nullable="false" />
           <Property Name="numSus" Type="Int32" Nullable="false" />
           <Property Name="funcao" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Domicilio" Relationship="GeolocalizadorModel.FK_Domicilio_ToEquipe" FromRole="Equipe" ToRole="Domicilio" />
@@ -722,7 +722,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Cronograma_ToDomicilio">
-          <End Type="GeolocalizadorModel.Domicilio" Role="Domicilio" Multiplicity="0..1" />
+          <End Type="GeolocalizadorModel.Domicilio" Role="Domicilio" Multiplicity="1" />
           <End Type="GeolocalizadorModel.Cronograma" Role="Cronograma" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Domicilio">
@@ -770,7 +770,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Equipe_ToMicroArea">
-          <End Type="GeolocalizadorModel.MicroArea" Role="MicroArea" Multiplicity="0..1" />
+          <End Type="GeolocalizadorModel.MicroArea" Role="MicroArea" Multiplicity="1" />
           <End Type="GeolocalizadorModel.Equipe" Role="Equipe" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MicroArea">

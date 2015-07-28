@@ -23,7 +23,7 @@ namespace Dominio.Classes
         [Display(Name = "Data final")]
         public DateTime dataFim { get; set; }
 
-        [Required]
+        [Required, StringLength(50)]
         [Display(Name = "Endereço")]
         public string endereco { get; set; }
       

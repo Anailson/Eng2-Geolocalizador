@@ -26,14 +26,15 @@ namespace Dominio.Classes
         [Display(Name = "Próxima visita")]
         public DateTime dataProxVisita { get; set; }
 
+        [StringLength(20)]
         [Display(Name = "Melhor horário")]
         public string melhorHorario { get; set; }
 
-        [Required]
+        [Required, StringLength(50)]
         [Display(Name = "Resumo")]
         public string resumo { get; set; }
 
-        [Required]
+        [Required, StringLength(500)]
         [Display(Name = "Descrição")]
         public string detalhes { get; set; }
 

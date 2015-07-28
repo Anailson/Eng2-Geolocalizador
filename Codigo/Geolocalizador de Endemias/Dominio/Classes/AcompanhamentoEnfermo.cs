@@ -23,19 +23,19 @@ namespace Dominio.Classes
         [Display(Name = "Cód da Enfermidade")]
         public int idEnfermidade {get; set;}
 
-        [Required]
+        [Required, StringLength(4)]
         [Display(Name = "Acompanhamento médico")]
         public string acompanhamentoMedico { get; set; } // Alterar de String para Booleano
 
-        [Required]
+        [Required, StringLength(4)]
         [Display(Name = "Acompanhamento psicológico")]
         public string acompanhamentoPsico { get; set; } // Alterar de String para Booleano
 
-        [Required]
+        [Required, StringLength(4)]
         [Display(Name = "Necessidade de medicação")]
         public string medicacao { get; set; } // Alterar de String para Booleano
 
-        [Required]
+        [Required, StringLength(4)]
         [Display(Name = "Procedimento cirúrgico")]
         public string procedimentoCirurgico { get; set; } // Alterar de String para Booleano
 

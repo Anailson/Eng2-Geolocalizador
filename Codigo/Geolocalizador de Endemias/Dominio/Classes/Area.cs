@@ -15,22 +15,23 @@ namespace Dominio.Classes
         [Display(Name="Nº da área")]
         public int codigo { get; set; }
 
-        [Required]
+        [Required, StringLength(50)]
         [Display(Name = "Nome")]
         public string nome { get; set; }
 
-        [Required]
+        [Required, StringLength(50)]
         [Display(Name = "Endereço")]
         public string endereco { get; set; }
 
-        [Required]
+        [Required, StringLength(4)]
         [Display(Name = "Número")]
         public string numero { get; set; }
 
-        [Required]
+        [Required, StringLength(50)]
         [Display(Name = "Bairro")]
         public string bairro { get; set; }
 
+        [StringLength(13)]
         [Display(Name = "Telefone")]
         public string telefone { get; set; }
 

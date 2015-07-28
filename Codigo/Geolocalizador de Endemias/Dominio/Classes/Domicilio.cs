@@ -31,39 +31,39 @@ namespace Dominio.Classes
         [Display(Name = "Micro área")]
         public int microArea { get; set; }
 
-        [Required]
+        [Required, StringLength(50)]
         [Display(Name = "Rua")]
         public string rua { get; set; }
 
-        [Required]
+        [Required, StringLength(5)]
         [Display(Name = "Número")]
         public string numero { get; set; }
 
-        [Required]
+        [Required, StringLength(50)]
         [Display(Name = "Bairro")]
         public string bairro { get; set; }
 
-        [Required]
+        [Required, StringLength(20)]
         [Display(Name = "Situação de moradia")]
         public string situacaoMoradia { set; get; }
 
-        [Required]
+        [Required, StringLength(20)]
         [Display(Name = "Tipo de moradia")]
         public string tipoMoradia { set; get; }
 
-        [Required]
+        [Required, StringLength(15)]
         [Display(Name = "Localização")]
         public string localizacao { set; get; }
 
-        [Required]
+        [Required, StringLength(40)]
         [Display(Name = "Condição rural")]
         public string condicaoRural { set; get; }
 
-        [Required]
+        [Required, StringLength(30)]
         [Display(Name = "Acesso ao domicilio")]
         public string acessoDomicilio { set; get; }
 
-        [Required]
+        [Required, StringLength(30)]
         [Display(Name = "Material do domicilio")]
         public string material { set; get; }
 
@@ -95,23 +95,23 @@ namespace Dominio.Classes
         [Display(Name = "Nº de moradores")]
         public int quantMoradores { set; get; }
 
-        [Required]
+        [Required, StringLength(10)]
         [Display(Name = "Energia elétrica")]
         public string energiaEletrica { set; get; }
 
-        [Required]
+        [Required, StringLength(40)]
         [Display(Name = "Abastecimento de água")]
         public string abastecimentoAgua { set; get; }
 
-        [Required]
+        [Required, StringLength(45)]
         [Display(Name = "Tratamento de água")]
         public string tratamentoAgua { set; get; }
 
-        [Required]
+        [Required, StringLength(35)]
         [Display(Name = "Escoamento do banheiro")]
         public string escoamentoBanheiro { set; get; }
 
-        [Required]
+        [Required, StringLength(35)]
         [Display(Name = "Lixo")]
         public string lixo { set; get; } 
 

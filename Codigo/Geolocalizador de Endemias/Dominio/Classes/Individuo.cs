@@ -31,7 +31,7 @@ namespace Dominio.Classes
         [Display(Name = "Micro área")]
         public int microArea { get; set; }
 
-        [Required]
+        [Required, StringLength(50)]
         [Display(Name = "Nome completo")]
         public string nome { get; set; }
 
@@ -39,16 +39,18 @@ namespace Dominio.Classes
         [Display(Name = "Cartão do SUS")]
         public int numSus { get; set; }
 
-        [Required]
+        [Required, StringLength(4)]
         [Display(Name = "Responsavel")]
         public string responsavel { get; set; }
 
         [Display(Name = "Cartão do SUS")]
         public int susResponsavel { get; set; }
 
+        [StringLength(20)]
         [Display(Name = "Apelido / Nome social")]
         public string apelido { get; set; }
 
+        [StringLength(15)]
         [Display(Name = "NIS (PIS / PASEP)")]
         public string nisPis { set; get; }
 
@@ -56,109 +58,114 @@ namespace Dominio.Classes
         [Display(Name = "Data de nascimento")]
         public DateTime dataNascimento { get; set; }
 
-        [Required]
+        [Required, StringLength(1)]
         [Display(Name = "Sexo")]
         public string sexo { set; get; }
 
-        [Required]
+        [Required, StringLength(15)]
         [Display(Name = "Raça / Cor")]
         public string racaCor { set; get; }
 
-        [Required]
+        [Required, StringLength(50)]
         [Display(Name = "Nome completo da mãe")]
         public string nomeDaMae { set; get; }
 
-        [Required]
+        [Required, StringLength(20)]
         [Display(Name = "Nacionalidade")]
         public string nacionalidade { set; get; }
 
-        [Required]
+        [Required, StringLength(20)]
         [Display(Name = "País de nascimento")]
         public string pais { set; get; }
 
+        [StringLength(15)]
         [Display(Name = "Telefone celular")]
         public string telefone { set; get; }
 
-        [Required]
+        [Required, StringLength(20)]
         [Display(Name = "Municipio")]
         public string municipio { set; get; }
 
-        [Required]
+        [Required, StringLength(20)]
         [Display(Name = "UF de nascimento")]
         public string uf { set; get; }
 
-        [EmailAddress]
+        [EmailAddress, StringLength(50)]
         [Display(Name = "E-mail")]
         public string email { set; get; }
 
-        [Required]
+        [Required, StringLength(30)]
         [Display(Name = "Situação de rua")]
         public string situacaoDeRua { set; get; }
 
         [Display(Name = "Tempo em situação de rua")]
         public int tempoSituacaoRua { get; set; }
 
-        [Required]
+        [Required, StringLength(4)]
         [Display(Name = "Acompanhamento por instituição")]
         public string acompanhamento { get; set; }
 
+        [StringLength(30)]
         [Display(Name = "Nome da instituição")]
         public string nomeInstituicao { get; set; }
 
-        [Required]
+        [Required, StringLength(4)]
         [Display(Name = "Benificiário")]
         public string beneficiario { get; set; }
 
-        [Required]
+        [Required, StringLength(4)]
         [Display(Name = "Referência familiar")]
         public string referenciaFamiliar { get; set; }
 
-        [Required]
+        [Required, StringLength(4)]
         [Display(Name = "Visita familiar")]
         public string visitaFamiliar { get; set; }
 
+        [StringLength(20)]
         [Display(Name = "Frequência da visita")]
         public string frequenciaVisita { set; get; }
 
-        [Required]
+        [Required, StringLength(50)]
         [Display(Name = "Situação conjugal")]
         public string situacaoConj { set; get; }
 
-        [Required]
+        [Required, StringLength(30)]
         [Display(Name = "Ocupação")]
         public string ocupacao { set; get; }
 
-        [Required]
+        [Required, StringLength(100)]
         [Display(Name = "Nivel escolar")]
         public string maiorCurso { set; get; }
 
-        [Required]
+        [Required, StringLength(30)]
         [Display(Name = "Responsavel pela criança")]
         public string criancaResponsavel { set; get; }
 
-        [Required]
+        [Required, StringLength(4)]
         [Display(Name = "Curandeiro")]
         public string curandeiro { set; get; }
 
-        [Required]
+        [Required, StringLength(4)]
         [Display(Name = "Grupo comunitario")]
         public string grupoComunitario { set; get; }
 
-        [Required]
+        [Required, StringLength(4)]
         [Display(Name = "Plano de saúde")]
         public string planoSaude { set; get; }
 
-        [Required]
+        [Required, StringLength(4)]
         [Display(Name = "Comunidade tradicional")]
         public string comunidadeTradicional { set; get; }
 
+        [StringLength(30)]
         [Display(Name = "Nome da comunidade")]
         public string nomeComunidade { set; get; }
 
-        [Required]
+        [Required, StringLength(4)]
         [Display(Name = "Informar orientação sexual")]
         public string informarOrientacao { set; get; }
 
+        [StringLength(30)]
         [Display(Name = "Orientação sexual")]
         public string orientacaoSexual { set; get; }
 
