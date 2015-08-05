@@ -16,7 +16,7 @@ namespace Geolocalizador.Controllers
 
         //
         // GET: /Domicilio/
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Index()
         {
             List<Equipe> e = equipes.Listar().ToList<Equipe>();
@@ -29,7 +29,7 @@ namespace Geolocalizador.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Detalhes(int id)
         {
             Equipe equipe = equipes.ResultadoUnico(id);

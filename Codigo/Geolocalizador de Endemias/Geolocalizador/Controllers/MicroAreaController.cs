@@ -17,7 +17,7 @@ namespace Geolocalizador.Controllers
 
         //
         // GET: /Domicilio/
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Index()
         {
             List<MicroArea> m = microAreas.Listar().ToList<MicroArea>();
@@ -30,7 +30,7 @@ namespace Geolocalizador.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Detalhes(int id)
         {
             MicroArea microArea = microAreas.ResultadoUnico(id);

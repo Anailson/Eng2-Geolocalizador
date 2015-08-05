@@ -17,13 +17,13 @@ namespace Geolocalizador.Controllers
         public IAcompanhamentoGestantes acompanhamentoEnfermos { get; set; }
 
         // GET: Relatorios
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Index()
         {
             return View();
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult relatorioVisita()
         {
             ReportViewer reporter = new ReportViewer();
@@ -40,7 +40,7 @@ namespace Geolocalizador.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult relatorioAcompanhamentoCrianca()
         {
             ReportViewer reporter = new ReportViewer();
@@ -57,7 +57,7 @@ namespace Geolocalizador.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult relatorioAcompanhamentoGestante()
         {
             ReportViewer reporter = new ReportViewer();
@@ -74,7 +74,7 @@ namespace Geolocalizador.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult relatorioAcompanhamentoEnfermo()
         {
             ReportViewer reporter = new ReportViewer();

@@ -17,21 +17,21 @@ namespace Geolocalizador.Controllers
 
         //
         // GET: /Domicilio/
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Index()
         {
             List<AcompanhamentoGestante> a = acompanhamentoGestantes.Listar().ToList<AcompanhamentoGestante>();
             return View(a);
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Inserir()
         {
             return View();
         }
 
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Detalhes(int id)
         {
             AcompanhamentoGestante acompanhamentoGestante = acompanhamentoGestantes.ResultadoUnico(id);
@@ -39,7 +39,7 @@ namespace Geolocalizador.Controllers
         }
 
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Editar(int id)
         {
             AcompanhamentoGestante acompanhamentoGestante = acompanhamentoGestantes.ResultadoUnico(id);
@@ -58,7 +58,7 @@ namespace Geolocalizador.Controllers
             return RedirectToAction("Index");
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Remover(int id)
         {
             AcompanhamentoGestante acompanhamentoGestante = acompanhamentoGestantes.ResultadoUnico(id);

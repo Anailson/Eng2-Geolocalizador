@@ -16,27 +16,27 @@ namespace Geolocalizador.Controllers
 
         //
         // GET: /Domicilio/
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Index()
         {
             List<Cronograma> c = cronogramas.Listar().ToList<Cronograma>();
             return View(c);
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Inserir()
         {
             return View();
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Detalhes(int id)
         {
             Cronograma cronograma = cronogramas.ResultadoUnico(id);
             return View(cronograma);
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Editar(int id)
         {
             Cronograma cronograma = cronogramas.ResultadoUnico(id);
@@ -55,7 +55,7 @@ namespace Geolocalizador.Controllers
             return RedirectToAction("Index");
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Remover(int id)
         {
             Cronograma cronograma = cronogramas.ResultadoUnico(id);

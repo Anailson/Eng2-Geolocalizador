@@ -16,7 +16,7 @@ namespace Geolocalizador.Controllers
 
         //
         // GET: /Domicilio/
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Index()
         {
             List<AcompanhamentoCrianca> a = acompanhamentoCriancas.Listar().ToList<AcompanhamentoCrianca>();
@@ -24,13 +24,13 @@ namespace Geolocalizador.Controllers
         }
 
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Inserir()
         {
             return View();
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Detalhes(int id)
         {
             AcompanhamentoCrianca acompanhamentoCrianca = acompanhamentoCriancas.ResultadoUnico(id);
@@ -38,7 +38,7 @@ namespace Geolocalizador.Controllers
         }
 
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Editar(int id)
         {
             AcompanhamentoCrianca acompanhamentoCrianca = acompanhamentoCriancas.ResultadoUnico(id);
@@ -58,7 +58,7 @@ namespace Geolocalizador.Controllers
         }
 
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Remover(int id)
         {
             AcompanhamentoCrianca acompanhamentoCrianca = acompanhamentoCriancas.ResultadoUnico(id);

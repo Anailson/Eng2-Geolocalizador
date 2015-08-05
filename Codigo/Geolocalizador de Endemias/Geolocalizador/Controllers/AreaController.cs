@@ -16,7 +16,7 @@ namespace Geolocalizador.Controllers
 
         //
         // GET: /Domicilio/
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Index()
         {
             List<Area> a = areas.Listar().ToList<Area>();
@@ -29,7 +29,7 @@ namespace Geolocalizador.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator, Operator")]
         public ActionResult Detalhes(int id)
         {
             Area area = areas.ResultadoUnico(id);
