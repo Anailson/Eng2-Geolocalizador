@@ -1,49 +1,71 @@
 ﻿@model Dominio.Classes.Equipe
 
-@{
-    ViewBag.Title = "Detalhes";
-}
-
-<h2>Detalhes</h2>
+<nav>
+    <span class="card-title">Detalhes da equipe</span>
+</nav>
 
 <div>
-    <h4>Equipe</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.codigo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.codigo)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.numSus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.numSus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.codMicroArea)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.codMicroArea)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.funcao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.funcao)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Editar", "Editar", new { id = Model.id }) |
+    <br /><br />
+    @Html.ActionLink("Home", "Index", "Home") >
     @Html.ActionLink("Voltar a Lista", "Index")
-</p>
+    <br /><br />
+</div>
+
+<div class="row">
+    <div class="col s12">
+        <ul class="tabs">
+            <li class="tab"><a href="#detalhes-equipe">Detalhes da equipe</a></li>
+            <li class="tab disabled"></li>
+        </ul>
+    </div>
+
+    <div id="detalhes-equipe" class="col s12">
+        <div class="row col s12">
+            <div class="row">
+                <div class="input-field col s2">
+                    @Html.DisplayNameFor(model => model.codigo)
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s2">
+                    @Html.DisplayFor(model => model.codigo)
+                </div>
+            </div>
+        </div>
+        <div class="row col s12">
+
+            <fieldset>
+                <legend>Detalhes da equipe</legend>
+                <div class="row">
+                    <div class="input-field col s2">
+                        @Html.DisplayNameFor(model => model.numSus)
+                    </div>
+
+                    <div class="input-field col s4">
+                        @Html.DisplayNameFor(model => model.funcao)
+                    </div>
+
+                    <div class="input-field col s2">
+                        @Html.DisplayNameFor(model => model.codMicroArea)
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="input-field col s2">
+                        @Html.DisplayFor(model => model.numSus)
+                    </div>
+
+                    <div class="input-field col s4">
+                        @Html.DisplayFor(model => model.funcao)
+                    </div>
+
+                    <div class="input-field col s2">
+                        @Html.DisplayFor(model => model.codMicroArea)
+                    </div>
+                </div>
+
+            </fieldset>
+
+        </div>
+    </div>
+</div>

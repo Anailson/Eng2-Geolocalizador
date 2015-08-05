@@ -1,69 +1,79 @@
 ﻿@model Dominio.Classes.Equipe
 
-@{
-    ViewBag.Title = "Editar";
-}
+<nav>
+    <span class="card-title">Editar equipe</span>
+</nav>
 
-<h2>Editar</h2>
+<div>
+    <br /><br />
+    @Html.ActionLink("Home", "Index", "Home") >
+    @Html.ActionLink("Voltar a Lista", "Index")
+    <br /><br />
+</div>
 
-
-@using (Html.BeginForm("Atualizar","Equipe"))
+@using (Html.BeginForm("Atualizar", "Equipe"))
 {
+
     @Html.AntiForgeryToken()
 
     <div class="row">
-        <br /><br />
-        @Html.ActionLink("Página Inicial", "Index", "Home") >
-        @Html.ActionLink("Voltar a Lista", "Index")
-    </div>
-
-    <div class="form-horizontal">
-        <h4>Equipe</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.numSus)
-
-        <div class="form-group">
-            @Html.DisplayNameFor(model => model.numSus)
-            @Html.DisplayFor(model => model.numSus)
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab"><a href="#editar-equipe">Editar equipe</a></li>
+                <li class="tab disabled"></li>
+            </ul>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.numSus, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.numSus, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.numSus, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        <div id="editar-equipe" class="col s12">
+            <form>
+                <br /><br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.numSus)
+                <div class="row">
+                    <div class="input-field col s2">
+                        @Html.DisplayNameFor(model => model.codigo)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s2">
+                        @Html.DisplayFor(model => model.codigo)
+                    </div>
+                </div>
+                <div class="row">
+                    <fieldset>
+                        <legend>Editar dados da equipe</legend>
+                        <div class="row col s12">
+                            <div class="input-field col s2">
+                                @Html.LabelFor(model => model.numSus, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.numSus, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.numSus, "", new { @class = "text-danger" })
+                            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.codMicroArea, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.codMicroArea, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.codMicroArea, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            <div class="input-field col s4">
+                                @Html.LabelFor(model => model.funcao, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.funcao, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.funcao, "", new { @class = "text-danger" })
+                            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.funcao, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.funcao, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.funcao, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            <div class="input-field col s2">
+                                @Html.LabelFor(model => model.codMicroArea, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.codMicroArea, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.codMicroArea, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Salvar" class="btn btn-default" />
-            </div>
+
+                    </fieldset>
+                </div>
+
+            </form>
+        </div>
+        <div class="row center">
+            <input type="submit" value="Salvar" class="btn btn-default" />
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Voltar a Lista", "Index")
-</div>
-
-<script src="~/Content/js/jquery-2.1.4.min.js"></script>
-<script src="~/Content/js/jquery.validate.min.js"></script>
-<script src="~/Content/js/jquery.validate.unobtrusive.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

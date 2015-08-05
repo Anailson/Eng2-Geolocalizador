@@ -1,18 +1,19 @@
 ﻿@model Dominio.Classes.Equipe
 <nav>
-    <span class="card-title">Cadastrar indivíduo</span>
+    <span class="card-title">Cadastrar equipe</span>
 </nav>
+
+
+<div>
+    <br /><br />
+    @Html.ActionLink("Home", "Index", "Home") >
+    @Html.ActionLink("Voltar a Lista", "Index")
+    <br /><br />
+</div>
 
 @using (Html.BeginForm("Cadastrar", "Equipe"))
 {
     @Html.AntiForgeryToken()
-
-    <div>
-        <br /><br />
-        @Html.ActionLink("Página Inicial","Index","Home") |
-        @Html.ActionLink("Voltar a Lista", "Index")
-        <br /><br />
-    </div>
 
     <div class="row">
         <div class="col s12">
@@ -65,6 +66,6 @@
     </div>
 }
 
-<script src="~/Content/js/jquery-2.1.4.min.js"></script>
-<script src="~/Content/js/jquery.validate.min.js"></script>
-<script src="~/Content/js/jquery.validate.unobtrusive.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
