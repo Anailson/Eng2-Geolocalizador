@@ -3,15 +3,15 @@
     <span class="card-title">Cadastrar área</span>
 </nav>
 
+<div class="row">
+    <br /><br />
+    @Html.ActionLink("Página Inicial", "Index", "Home") >
+    @Html.ActionLink("Voltar a Lista", "Index")
+</div>
+
 @using (Html.BeginForm("Cadastrar", "Area"))
 {
     @Html.AntiForgeryToken()
-
-    <div class="row">
-        <br /><br />
-        @Html.ActionLink("Página Inicial", "Index", "Home") >
-        @Html.ActionLink("Voltar a Lista", "Index")
-    </div>
 
     <div class="row">
         <div class="col s12">

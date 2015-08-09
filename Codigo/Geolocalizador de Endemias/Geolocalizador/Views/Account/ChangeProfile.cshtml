@@ -1,54 +1,60 @@
 ﻿@model Geolocalizador.Models.ChangeProfile
 
-@{
-    ViewBag.Title = "ChangeProfile";
-}
+<nav>
+    <span class="card-title">Alterar perfil</span>
+</nav>
 
-<h2>ChangeProfile</h2>
-
-<h1>@ViewBag.Message</h1>
+<div class="row">
+    <br /><br />
+    @Html.ActionLink("Home", "Index", "Home")
+</div>
 
 @using (Html.BeginForm("ChangeProfile","Account"))
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>ChangeProfile</h4>
-        <hr />
-        @Html.ValidationSummary(true)
-        <div class="form-group">
-            @Html.LabelFor(model => model.FullName, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FullName)
-                @Html.ValidationMessageFor(model => model.FullName)
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.BirthDate, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BirthDate)
-                @Html.ValidationMessageFor(model => model.BirthDate)
-            </div>
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab"><a href="#alterar-perfil">Alterar perfil</a></li>
+                <li class="tab disabled"></li>
+            </ul>
         </div>
+        <div class="row">
+            <form>
+                <div id="alterar-perfil" class="col s12">
+                    <br /><br />
+                    <fieldset>
+                        @Html.ValidationSummary(true)
+                        <div class="row">
+                            <div class="input-field col s10">
+                                @Html.LabelFor(model => model.FullName, new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.FullName)
+                                @Html.ValidationMessageFor(model => model.FullName)
+                            </div>
+                            <div class="input-field col s2">
+                                @Html.LabelFor(model => model.BirthDate, new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.BirthDate)
+                                @Html.ValidationMessageFor(model => model.BirthDate)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                @Html.LabelFor(model => model.Bio, new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.Bio)
+                                @Html.ValidationMessageFor(model => model.Bio)
+                            </div>
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Bio, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Bio)
-                @Html.ValidationMessageFor(model => model.Bio)
-            </div>
+                    </fieldset>
+                </div>
+            </form>
         </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Salvar" class="btn btn-default" />
-            </div>
+        <div class="row center">
+            <input type="submit" value="Salvar" class="btn btn-default" />
         </div>
     </div>
 }
-
-
 <script src="~/Content/js/jquery-2.1.4.min.js"></script>
 <script src="~/Content/js/jquery.validate.min.js"></script>
 <script src="~/Content/js/jquery.validate.unobtrusive.js"></script>

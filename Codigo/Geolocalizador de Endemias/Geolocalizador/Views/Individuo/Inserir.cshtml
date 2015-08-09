@@ -3,6 +3,12 @@
 <nav>
     <span class="card-title">Cadastrar indivíduo</span>
 </nav>
+<div>
+    <br /><br />
+    @Html.ActionLink("Home", "Index", "Home") >
+    @Html.ActionLink("Voltar a Lista", "Index")
+    <br /><br />
+</div>
 
 @using (Html.BeginForm("Cadastrar", "Individuo"))
 {
@@ -14,22 +20,18 @@
         @Html.ActionLink("Voltar a Lista", "Index")
     </div>
     <div class="row">
-        <!--Declaração dos títulos das abas -->
         <div class="col s12">
             <ul class="tabs">
                 <li class="tab col s3"><a href="#cadastro-individuo">Cadastro individual</a></li>
                 <li class="tab col s3"><a href="#informacoes-individuo">Informações sócio demográficas</a></li>
             </ul>
-        </div><!--Fim da declaração dos títulos das abas -->
+        </div>
         @Html.ValidationSummary(true)
         <form>
             <div class="row">
-                <!-- Aba referente ao cadastro individual-->
                 <div id="cadastro-individuo" class="col s12">
-                    <!-- Aba referente ao cadastro individual-->
                     <br /><br />
                     <div class="row">
-                        <!-- Informações da equipe/área-->
                         <fieldset>
                             <legend>Informações gerais</legend>
                             <div class="input-field col s3">
@@ -61,7 +63,7 @@
                                 @Html.ValidationMessageFor(model => model.codDomicilio)
                             </div>
                         </fieldset>
-                    </div><!-- Informações da equipe-->
+                    </div>
                     <div class="row">
                         <fieldset>
                             <legend>Identificação do usuário / cidadão</legend>
@@ -173,7 +175,7 @@
                                 </div>
                             </div>
                         </fieldset>
-                    </div><!-- Informações do indivíduo-->
+                    </div>
                     <div class="row">
                         <fieldset>
                             <legend>Situação de rua</legend>
@@ -244,14 +246,11 @@
                                 </div>
                             </div>
                         </fieldset>
-                    </div><!-- Situação de rua-->
+                    </div>
                 </div>
-                <!-- Fim da aba referente ao cadastro individual-->
-                <!-- Aba referente as informações sócio demográficas-->
                 <div id="informacoes-individuo" class="col s12">
                     <br /><br />
                     <div class="row">
-
                         <fieldset>
                             <legend>Situação conjugal</legend>
                             <div class="row">
@@ -284,7 +283,8 @@
                                 </div>
                             </div>
 
-                        </fieldset><br />
+                        </fieldset>
+                        <br />
                         <fieldset>
                             <legend>Qual o curso mais elevado que frequenta ou já frequentou?</legend>
                             <div class="row col s12">

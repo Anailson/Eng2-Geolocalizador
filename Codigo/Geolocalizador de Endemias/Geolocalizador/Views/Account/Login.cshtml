@@ -1,56 +1,51 @@
 ﻿@model Geolocalizador.Models.Login
 
-@{
-    ViewBag.Title = "Login";
-}
-
-<h2>Login</h2>
-
+<nav>
+    <span class="card-title">Efetue o login para acessar o sistema</span>
+</nav>
 
 @using (Html.BeginForm("Login", "Account")) 
 {
     @Html.AntiForgeryToken()
+
+
     
-    <div class="form-horizontal">
-        <h4>Login</h4>
-        <hr />
-        @Html.ValidationSummary(true)
+    <div class="col s12">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserName, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UserName)
-                @Html.ValidationMessageFor(model => model.UserName)
+        <form>
+            @Html.ValidationSummary(true)
+            <br /><br /><br /><br /><br />
+            <div class="row ">
+                <div class="input-field col s5"></div>
+                <div class="input-field col s2">
+                    @Html.LabelFor(model => model.UserName, new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.UserName)
+                    @Html.ValidationMessageFor(model => model.UserName)
+                </div>
+                <div class="input-field col s5"></div>
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Password)
-                @Html.ValidationMessageFor(model => model.Password)
+            <div class="row">
+                <div class="input-field col s5"></div>
+                <div class="input-field col s2">
+                    @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.Password)
+                    @Html.ValidationMessageFor(model => model.Password)
+                </div>
+                <div class="input-field col s5"></div>
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Rememberme, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Rememberme)
-                @Html.ValidationMessageFor(model => model.Rememberme)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="row center">
+                <br /><br />
                 <input type="submit" value="Entrar" class="btn btn-default" />
+                @Html.ActionLink("Cadastrar novo usuário", "Register")
             </div>
-        </div>
+        </form>
     </div>
+    
 }
 
 <div class="row">
     <br />
-    @Html.ActionLink("Cadastrar novo usuário", "Register")
+    
 </div>
 
     <script src="~/Content/js/jquery-2.1.4.min.js"></script>
