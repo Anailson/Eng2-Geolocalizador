@@ -1,91 +1,104 @@
 ﻿@model Dominio.Classes.AcompanhamentoCrianca
+<nav>
+    <span class="card-title">Editar acompanhamento infantil</span>
+</nav>
 
-@{
-    ViewBag.Title = "Detalhes";
-}
 <div class="row">
     <br /><br />
     @Html.ActionLink("Home", "Index", "Home") >
-    @Html.ActionLink("Voltar a Lista", "Index") >
-    @Html.ActionLink("Editar", "Editar", new { id = Model.id }) 
+    @Html.ActionLink("Voltar a Lista", "Index")
 </div>
-<h2>Detalhes</h2>
 
-<div>
-    <h4>AcompanhamentoCrianca</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.numSus)
-        </dt>
+<div class="row">
+    <div class="col s12">
 
-        <dd>
-            @Html.DisplayFor(model => model.numSus)
-        </dd>
+        <ul class="tabs">
+            <li class="tab"><a href="#editar-acomp-infantil">Editar acompanhamento infantil</a></li>
+            <li class="tab disabled"></li>
+        </ul>
+    </div>
+        <br /><br />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div id="editar-acomp-infantil" class="row">
+            <div class="row">
+                <div class="input-field col s2">
+                    @Html.DisplayNameFor(model => model.Visita.dataVisita)<br /><br />
+                    @Html.DisplayFor(model => model.Visita.dataVisita)
+                </div>
+                <div class="input-field col s1"></div>
+                <div class="input-field col s2">
+                    @Html.DisplayNameFor(model => model.numSus)<br /><br />
+                    @Html.DisplayFor(model => model.numSus)
+                </div>
+                <div class="input-field col s1"></div>
+                <div class="input-field col s2">
+                    @Html.DisplayNameFor(model => model.codVisita)<br /><br />
+                    @Html.DisplayFor(model => model.codVisita)
+                </div>
+            </div>
+            <div class="input-field col s12">
+                <fieldset>
+                    <legend>Informações da criança</legend>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.codVisita)
-        </dt>
+                    <div class="row">
+                        <div class="input-field col s2">
+                            @Html.DisplayNameFor(model => model.peso)<br /><br />
+                            @Html.DisplayFor(model => model.peso)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s2">
+                            <h6>Desnutricao</h6>
+                            <div class="col s2">
+                                <div class="row">
+                                    @Html.DisplayFor(model => model.desnutricao)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-field col s2">
+                            <h6>Pneumonia</h6>
+                            <div class="col s2">
+                                <div class="row">
+                                    @Html.DisplayFor(model => model.pneumonia)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-field col s2">
+                            <h6>Diarreia</h6>
+                            <div class="col s2">
+                                <div class="row">
+                                    @Html.DisplayFor(model => model.diarreia)
+                                </div>
+                            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.codVisita)
-        </dd>
+                        </div>
+                        <div class="input-field col s2">
+                            <h6>Vacinaçao em dia</h6>
+                            <div class="col s2">
+                                <div class="row">
+                                    @Html.DisplayFor(model => model.vacinacaoEmDia)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-field col s2">
+                            <h6>Inflamação respiratória</h6>
+                            <div class="col s2">
+                                <div class="row">
+                                    @Html.DisplayFor(model => model.inflamacaoRep)
+                                </div>
+                            </div>
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.desnutricao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.desnutricao)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.pneumonia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.pneumonia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.diarreia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.diarreia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.vacinacaoEmDia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.vacinacaoEmDia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.inflamacaoRep)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.inflamacaoRep)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.alimentacaoPeito)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.alimentacaoPeito)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.peso)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.peso)
-        </dd>
-
-    </dl>
+                        <div class="input-field col s2">
+                            <h6>Aleitamento exclusivo no peito</h6>
+                            <div class="col s2">
+                                <div class="row">
+                                    @Html.DisplayFor(model => model.alimentacaoPeito)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
 </div>

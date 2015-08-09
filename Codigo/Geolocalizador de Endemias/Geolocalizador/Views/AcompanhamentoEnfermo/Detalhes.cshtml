@@ -1,79 +1,76 @@
 ﻿@model Dominio.Classes.AcompanhamentoEnfermo
+<nav>
+    <span class="card-title">Detalhes do acompanhamento do enfermo</span>
+</nav>
 
-@{
-    ViewBag.Title = "Detalhes";
-}
 <div class="row">
     <br /><br />
     @Html.ActionLink("Home", "Index", "Home") >
     @Html.ActionLink("Voltar a Lista", "Index")
 </div>
+<div class="row">
+    <div class="col s12">
 
-<h2>Detalhes</h2>
+        <ul class="tabs">
+            <li class="tab"><a href="#detalhes-acomp-enfermo">Detalhes do acompanhamento do enfermo</a></li>
+            <li class="tab disabled"></li>
+        </ul>
+    </div>
+    <br /><br />
 
-<div>
-    <h4>AcompanhamentoEnfermo</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.numSus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.numSus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.codVisita)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.codVisita)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.idEnfermidade)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.idEnfermidade)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.acompanhamentoMedico)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.acompanhamentoMedico)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.acompanhamentoPsico)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.acompanhamentoPsico)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.medicacao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.medicacao)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.procedimentoCirurgico)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.procedimentoCirurgico)
-        </dd>
-
-    </dl>
+    <div id="detalhes-acomp-enfermo" class="row">
+        <div class="row">
+            <div class="input-field col s2">
+                @Html.DisplayNameFor(model => model.Visita.dataVisita) <br /><br />
+                @Html.DisplayFor(model => model.Visita.dataVisita)
+            </div>
+            <div class="input-field col s1"></div>
+            <div class="input-field col s2">
+                @Html.DisplayNameFor(model => model.numSus)<br /><br />
+                @Html.DisplayFor(model => model.numSus)
+            </div>
+            <div class="input-field col s1"></div>
+            <div class="input-field col s2">
+                @Html.DisplayNameFor(model => model.codVisita)<br /><br />
+                @Html.DisplayFor(model => model.codVisita)
+            </div>
+        </div>
+        <div class="input-field col s12">
+            <fieldset>
+                <legend>Informações do enfermo</legend>
+                <div class="row">
+                    <div class="input-field col s2">
+                        @Html.DisplayNameFor(model => model.idEnfermidade)<br /><br />
+                        @Html.DisplayFor(model => model.idEnfermidade)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s3">
+                        <div cass="row">
+                            @Html.DisplayNameFor(model => model.acompanhamentoMedico)<br /><br />
+                            @Html.DisplayFor(model => model.acompanhamentoMedico)
+                        </div>
+                    </div>
+                    <div class="col s3">
+                        <div cass="row">
+                            @Html.DisplayNameFor(model => model.acompanhamentoPsico)<br /><br />
+                            @Html.DisplayFor(model => model.acompanhamentoPsico)
+                        </div>
+                    </div>
+                    <div class="col s3">
+                        <div cass="row">
+                            @Html.DisplayNameFor(model => model.medicacao)<br /><br />
+                            @Html.DisplayFor(model => model.medicacao)
+                        </div>
+                    </div>
+                    <div class="col s3">
+                        <div cass="row">
+                            @Html.DisplayNameFor(model => model.procedimentoCirurgico)<br /><br />
+                            @Html.DisplayFor(model => model.procedimentoCirurgico)
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Editar", "Editar", new { id = Model.id }) |
-    @Html.ActionLink("Voltar a Lista", "Index")
-</p>
