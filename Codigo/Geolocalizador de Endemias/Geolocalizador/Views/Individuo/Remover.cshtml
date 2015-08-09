@@ -1,223 +1,267 @@
 ﻿@model Dominio.Classes.Individuo
 
-@{
-    ViewBag.Title = "Remover";
-}
+<nav>
+    <span class="card-title">Detalhes do indivíduo</span>
+</nav>
 
 <div class="row">
     <br /><br />
     @Html.ActionLink("Home", "Index", "Home") >
     @Html.ActionLink("Voltar a Lista", "Index")
 </div>
-<h2>Remover</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
+<p>
+    <h5>Você tem certeza que deseja excluir esse indivíduo?</h5>
+</p>
 @using (Html.BeginForm("Excluir","Individuo"))
 {
     @Html.AntiForgeryToken()
-
-    <h4>Individuo</h4>
-    <hr />
     @Html.HiddenFor(model => model.numSus)
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.codDomicilio)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.codDomicilio)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.susProfissional)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.susProfissional)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.codCNES)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.codCNES)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.codEquipe)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.codEquipe)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.microArea)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.microArea)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.numSus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.numSus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.susResponsavel)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.susResponsavel)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.apelido)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.apelido)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.nisPis)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.nisPis)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.dataNascimento)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.dataNascimento)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.sexo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.sexo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.racaCor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.racaCor)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.nomeDaMae)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.nomeDaMae)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.nacionalidade)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.nacionalidade)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.pais)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.pais)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.telefone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.telefone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.municipio)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.municipio)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.uf)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.uf)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.situacaoDeRua)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.situacaoDeRua)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.situacaoConj)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.situacaoConj)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ocupacao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ocupacao)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.orientacaoSexual)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.orientacaoSexual)
-        </dd>
-
-    </dl>
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Remover" class="btn btn-default" /> |
-            @Html.ActionLink("Voltar a Lista", "Index")
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s3"><a href="#detalhes-individuo">Detalhes do individuo</a></li>
+                <li class="tab col s3"><a href="#informacoes-individuo">Detalhes das informações sócio demográficas</a></li>
+            </ul>
         </div>
-    }
-</div>
+        <div class="row">
+            <div id="detalhes-individuo" class="col s12">
+                <br /><br />
+                <div class="row">
+                    <fieldset>
+                        <legend>Informações gerais</legend>
+                        <div class="input-field col s3">
+                            @Html.DisplayNameFor(model => model.codDomicilio)<br /><br />
+                            @Html.DisplayFor(model => model.codDomicilio)
+                        </div>
+                        <div class="input-field col s3">
+                            @Html.DisplayNameFor(model => model.susProfissional)<br /><br />
+                            @Html.DisplayFor(model => model.susProfissional)
+                        </div>
+                        <div class="input-field col s2">
+                            @Html.DisplayNameFor(model => model.codCNES) <br /><br />
+                            @Html.DisplayFor(model => model.codCNES)
+                        </div>
+                        <div class="input-field col s2">
+                            @Html.DisplayNameFor(model => model.codEquipe)<br /><br />
+                            @Html.DisplayFor(model => model.codEquipe)
+                        </div>
+                        <div class="input-field col s2">
+                            @Html.DisplayNameFor(model => model.microArea)<br /><br />
+                            @Html.DisplayFor(model => model.microArea)
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="row">
+                    <fieldset>
+                        <legend>Identificação do usuário / cidadão</legend>
+                        <div class="row">
+                            <div class="col s3">
+                                <div class="row ">
+                                    <div class="input-field col s12">
+                                        @Html.DisplayNameFor(model => model.numSus)<br /><br />
+                                        @Html.DisplayFor(model => model.numSus)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s9">
+                                <fieldset>
+                                    <legend>Responsável familiar?</legend>
+                                    <div class="row">
+                                        <div class="input-field col s3">
+                                            @Html.DisplayNameFor(model => model.responsavel)<br /><br />
+                                            @Html.DisplayFor(model => model.responsavel)
+
+                                        </div>
+                                        <div class="input-field col s3">
+                                            @Html.DisplayNameFor(model => model.susResponsavel)<br /><br />
+                                            @Html.DisplayFor(model => model.susResponsavel)
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                @Html.DisplayNameFor(model => model.nome)<br /><br />
+                                @Html.DisplayFor(model => model.nome)
+                            </div>
+                            <div class="input-field col s3">
+                                @Html.DisplayNameFor(model => model.apelido)
+                                @Html.DisplayFor(model => model.apelido)<br /><br />
+                            </div>
+                            <div class="input-field col s3">
+                                @Html.DisplayNameFor(model => model.dataNascimento)<br /><br />
+                                @Html.DisplayFor(model => model.dataNascimento)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="row">
+                                <div class="input-field col s3">
+                                    @Html.DisplayNameFor(model => model.sexo)<br /><br />
+                                    @Html.DisplayFor(model => model.sexo)
+                                </div>
+                                <div class="input-field col s6">
+                                    @Html.DisplayNameFor(model => model.racaCor)<br /><br />
+                                    @Html.DisplayFor(model => model.racaCor)
+                                </div>
+                                <div class="input-field col s3">
+                                    @Html.DisplayNameFor(model => model.nisPis)<br /><br />
+                                    @Html.DisplayFor(model => model.nisPis)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s5">
+                                @Html.DisplayNameFor(model => model.nomeDaMae)<br /><br />
+                                @Html.DisplayFor(model => model.nomeDaMae)
+                            </div>
+                            <div class="input-field col s5">
+                                @Html.DisplayNameFor(model => model.email)<br /><br />
+                                @Html.DisplayFor(model => model.email)
+                            </div>
+                            <div class="input-field col s2">
+                                @Html.DisplayNameFor(model => model.telefone)<br /><br />
+                                @Html.DisplayFor(model => model.telefone)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s3">
+                                @Html.DisplayNameFor(model => model.nacionalidade)<br /><br />
+                                @Html.DisplayFor(model => model.nacionalidade)
+                            </div>
+                            <div class="input-field col s3">
+                                @Html.DisplayNameFor(model => model.pais)<br /><br />
+                                @Html.DisplayFor(model => model.pais)
+                            </div>
+                            <div class="input-field col s3">
+                                @Html.DisplayNameFor(model => model.uf)<br /><br />
+                                @Html.DisplayFor(model => model.uf)
+                            </div>
+                            <div class="input-field col s3">
+                                @Html.DisplayNameFor(model => model.municipio)<br /><br />
+                                @Html.DisplayFor(model => model.municipio)
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="row">
+                    <fieldset>
+                        <legend>Situação de rua</legend>
+                        <div class="row">
+                            <div class="input-field col s3">
+                                @Html.DisplayNameFor(model => model.situacaoDeRua)<br /><br />
+                                @Html.DisplayFor(model => model.situacaoDeRua)
+                            </div>
+                            <div class="input-field col s8">
+                                @Html.DisplayNameFor(model => model.tempoSituacaoRua)<br /><br />
+                                @Html.DisplayFor(model => model.tempoSituacaoRua)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s3">
+                                @Html.DisplayNameFor(model => model.acompanhamento)<br /><br />
+                                @Html.DisplayFor(model => model.acompanhamento)
+                            </div>
+                            <div class="input-field col s9">
+                                @Html.DisplayNameFor(model => model.nomeInstituicao)<br /><br />
+                                @Html.DisplayFor(model => model.nomeInstituicao)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s3">
+                                @Html.DisplayNameFor(model => model.beneficiario)<br /><br />
+                                @Html.DisplayFor(model => model.beneficiario)
+                            </div>
+                            <div class="input-field col s3">
+                                @Html.DisplayNameFor(model => model.referenciaFamiliar)<br /><br />
+                                @Html.DisplayFor(model => model.referenciaFamiliar)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s3">
+                                @Html.DisplayNameFor(model => model.visitaFamiliar)<br /><br />
+                                @Html.DisplayFor(model => model.visitaFamiliar)
+                            </div>
+                            <div class="input-field col s6">
+                                @Html.DisplayNameFor(model => model.frequenciaVisita)<br /><br />
+                                @Html.DisplayFor(model => model.frequenciaVisita)
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div id="informacoes-individuo" class="col s12">
+                <br /><br />
+                <div class="row">
+                    <fieldset>
+                        <legend>Situação conjugal</legend>
+                        <div class="row">
+                            <div class="input-field col s2">
+                                @Html.DisplayNameFor(model => model.situacaoConj)<br /><br />
+                                @Html.DisplayFor(model => model.situacaoConj)
+                            </div>
+                            <div class="input-field col s6">
+                                @Html.DisplayNameFor(model => model.ocupacao)<br /><br />
+                                @Html.DisplayFor(model => model.ocupacao)
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+                <div class="row">
+                    <fieldset>
+                        <legend>Qual o curso mais elevado que frequenta ou já frequentou?</legend>
+                        <div class="row col s12">
+                            <div class="intput-field col s3">
+                                @Html.DisplayNameFor(model => model.maiorCurso)<br /><br />
+                                @Html.DisplayFor(model => model.maiorCurso)
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="row">
+                    <fieldset>
+                        <div class="row col s12">
+                            <div class="intput-field col s4">
+                                <h6>Crianças de 0  a 6 anos, com quem ficam?</h6>
+                                @Html.DisplayFor(model => model.criancaResponsavel)
+                            </div>
+
+                            <div class="intput-field col s4">
+                                <h6>Frequenta curandeiro(a) / benzendeiro(a)?</h6>
+                                @Html.DisplayFor(model => model.curandeiro)
+                            </div>
+
+                            <div class="intput-field col s4">
+                                <h6>É membro de povo ou comunidade tradicional?</h6>
+                                @Html.DisplayFor(model => model.comunidadeTradicional)
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="row">
+                    <fieldset>
+                        <legend>Orientação sexual</legend>
+                        <div class="row col s12">
+                            <div class="intput-field col s6">
+                                <h6>Deseja informar sua orientação sexual / identidade de gênero?</h6>
+                                @Html.DisplayNameFor(model => model.informarOrientacao)
+                                @Html.DisplayFor(model => model.informarOrientacao)
+                            </div>
+                            <div class="intput-field col s2">
+                                @Html.DisplayNameFor(model => model.orientacaoSexual)
+                                @Html.DisplayFor(model => model.orientacaoSexual)
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row center">
+        <input type="submit" value="Remover" class="btn btn-default" />
+    </div>
+}
+
