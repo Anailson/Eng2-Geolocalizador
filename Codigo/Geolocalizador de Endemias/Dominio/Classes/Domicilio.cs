@@ -63,7 +63,7 @@ namespace Dominio.Classes
         [Display(Name = "Acesso ao domicilio")]
         public string acessoDomicilio { set; get; }
 
-        [Required, StringLength(30)]
+        [Required, StringLength(45)]
         [Display(Name = "Material do domicilio")]
         public string material { set; get; }
 
