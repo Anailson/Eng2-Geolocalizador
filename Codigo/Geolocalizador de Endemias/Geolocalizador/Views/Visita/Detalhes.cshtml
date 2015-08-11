@@ -20,31 +20,24 @@
             <fieldset>
                 <legend>Horário da visita</legend>
                 <div class="row">
-                    <div class="input-field col s3">
-                        @Html.DisplayNameFor(model => model.codDomicilio)
+                    <div class="input-field col s2">
+                        @Html.DisplayNameFor(model => model.codigo)<br /><br />
+                        @Html.DisplayFor(model => model.codigo)
                     </div>
-                    <div class="input-field col s3">
-
-                        @Html.DisplayNameFor(model => model.dataVisita)
-                    </div>
-                    <div class="input-field col s3">
-                        @Html.DisplayNameFor(model => model.dataProxVisita)
-                    </div>
-                    <div class="input-field col s3">
-                        @Html.DisplayNameFor(model => model.melhorHorario)
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s3">
+                    <div class="input-field col s2">
+                        @Html.DisplayNameFor(model => model.codDomicilio)<br /><br />
                         @Html.DisplayFor(model => model.codDomicilio)
                     </div>
-                    <div class="input-field col s3">
+                    <div class="input-field col s2">
+                        @Html.DisplayNameFor(model => model.dataVisita)<br /><br />
                         @Html.DisplayFor(model => model.dataVisita)
                     </div>
-                    <div class="input-field col s3">
+                    <div class="input-field col s2">
+                        @Html.DisplayNameFor(model => model.dataProxVisita)<br /><br />
                         @Html.DisplayFor(model => model.dataProxVisita)
                     </div>
-                    <div class="input-field col s3">
+                    <div class="input-field col s2">
+                        @Html.DisplayNameFor(model => model.melhorHorario)<br /><br />
                         @Html.DisplayFor(model => model.melhorHorario)
                     </div>
                 </div>
@@ -55,17 +48,11 @@
                 <legend>Observações</legend>
                 <div class="row">
                     <div class="input-field col s8">
-                        @Html.DisplayNameFor(model => model.resumo)
-                    </div>
-                    <div class="input-field col s8">
-                        @Html.DisplayFor(model => model.resumo)
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s8">
+                        @Html.DisplayNameFor(model => model.resumo)<br /><br />
                         @Html.DisplayNameFor(model => model.detalhes)
                     </div>
                     <div class="input-field col s8">
+                        @Html.DisplayFor(model => model.resumo)<br /><br />
                         @Html.DisplayFor(model => model.detalhes)
                     </div>
                 </div>

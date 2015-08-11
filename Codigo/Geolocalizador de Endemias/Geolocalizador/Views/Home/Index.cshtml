@@ -1,7 +1,7 @@
 ﻿
 <nav>
     <div class="nav-wrapper">
-        <a class="brand-logo right">[LOGO]</a>
+        <!--<a class="brand-logo right">[LOGO]</a>-->
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li>
                 <a class="dropdown-button" href="#" data-activates="dropdown-pessoa">Pessoa<i class="material-icons right">arrow_drop_down</i></a>
@@ -24,14 +24,21 @@
                     <li class="divider"></li>
                     <li>@Html.ActionLink("Elaborar cronograma", "Index", "Cronograma")</li>
                 </ul>
-
             </li>
-            <li>@Html.ActionLink("Relatórios", "Index", "Relatorios")</li>
             <li>
-                <a class="dropdown-button" href="#" data-activates="dropdown-perfil">Perfil<i class="material-icons right">arrow_drop_down</i></a>
+                <a class="dropdown-button" href="#" data-activates="dropdown-relatorio">Relatórios<i class="material-icons right">arrow_drop_down</i></a>
+                <ul id="dropdown-relatorio" class="dropdown-content">
+                    <li>@Html.ActionLink("Visita ", "relatorioVisita", "Relatorios")</li>
+                    <li>@Html.ActionLink("Acompanhamento de Criança", "relatorioAcompanhamentoCrianca", "Relatorios")</li>
+                    <li>@Html.ActionLink("Acompanhamento de Gestante ", "relatorioAcompanhamentoGestante", "Relatorios") </li>
+                    <li>@Html.ActionLink("Acompanhamento de Enfermo ", "relatorioAcompanhamentoEnfermo", "Relatorios")</li>
+                </ul>
+            </li>
+            <li>
+                <a class="dropdown-button" href="#" data-activates="dropdown-perfil">Usuário<i class="material-icons right">arrow_drop_down</i></a>
                 <ul id="dropdown-perfil" class="dropdown-content">
-                    <li>@Html.ActionLink("Editar", "ChangeProfile", "Account")</li>
-                    <li>@Html.ActionLink("Senha", "ChangePassword", "Account")</li>
+                    <li>@Html.ActionLink("Editar perfil", "ChangeProfile", "Account")</li>
+                    <li>@Html.ActionLink("Editar senha", "ChangePassword", "Account")</li>
                     <li class="divider"></li>
                     <li>@using (Html.BeginForm("LogOut", "Account"))
                     {

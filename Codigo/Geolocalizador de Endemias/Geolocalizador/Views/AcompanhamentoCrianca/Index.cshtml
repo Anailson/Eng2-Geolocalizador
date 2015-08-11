@@ -2,10 +2,9 @@
 <nav>
     <span class="card-title">Lista de acompanhamentos infantis</span>
 </nav>
-
 <div class="row">
     <br /><br />
-    @Html.ActionLink("Inicio", "Index", "Home")
+    @Html.ActionLink("Página Inicial", "Index", "Home")
 </div>
 <div class="row">
     <form class="col s12">
@@ -23,7 +22,7 @@
                 </div>
                 <!-- Botão Novo -->
                 <div class="input-field col s3">
-                    <label for="pesquisa">@Html.ActionLink("Adicionar Novo", "Inserir")</label>
+                    @Html.ActionLink("Novo", "Inserir", null, new { @class = "btn blue" })
                 </div>
             </div>
         </p>
@@ -60,9 +59,9 @@
                     @Html.DisplayFor(modelItem => item.numSus)
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Editar", new { id = item.id }) |
-                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.id }) |
-                    @Html.ActionLink("Remover", "Remover", new { id = item.id })
+                    @Html.ActionLink("Editar", "Editar", new { id = item.id }, new { @class = "btn blue" })
+                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.id }, new { @class = "btn blue" })
+                    @Html.ActionLink("Remover", "Remover", new { id = item.id }, new { @class = "btn blue" })
                 </td>
             </tr>
         </tbody>

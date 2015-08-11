@@ -24,27 +24,30 @@
             @Html.HiddenFor(model => model.codigo)
             <form>
                 <br /><br />
-                @Html.DisplayNameFor(model => model.codigo)
-                @Html.DisplayFor(model => model.codigo)
                 <div class="row">
                     <fieldset>
                         <legend>Horário da visita</legend>
-                        <div class="input-field col s3">
+                        <div class="input-field col s2">
+                            @Html.LabelFor(model => model.codigo, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.codigo, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.codigo, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="input-field col s2">
                             @Html.LabelFor(model => model.codDomicilio, htmlAttributes: new { @class = "control-label col-md-2" })
                             @Html.EditorFor(model => model.codDomicilio, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.codDomicilio, "", new { @class = "text-danger" })
                         </div>
-                        <div class="input-field col s3">
+                        <div class="input-field col s2">
                             @Html.LabelFor(model => model.dataVisita, htmlAttributes: new { @class = "control-label col-md-2" })
                             @Html.EditorFor(model => model.dataVisita, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.dataVisita, "", new { @class = "text-danger" })
                         </div>
-                        <div class="input-field col s3">
+                        <div class="input-field col s2">
                             @Html.LabelFor(model => model.dataProxVisita, htmlAttributes: new { @class = "control-label col-md-2" })
                             @Html.EditorFor(model => model.dataProxVisita, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.dataProxVisita, "", new { @class = "text-danger" })
                         </div>
-                        <div class="input-field col s3">
+                        <div class="input-field col s2">
                             @Html.LabelFor(model => model.melhorHorario, htmlAttributes: new { @class = "control-label col-md-2" })
                             @Html.EditorFor(model => model.melhorHorario, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.melhorHorario, "", new { @class = "text-danger" })
@@ -69,7 +72,7 @@
             </form>
         </div>
         <div class="row center">
-            <input type="submit" value="Salvar" class="btn btn-default" />
+            <input type="submit" value="Salvar" class="btn blue" />
         </div>
     </div>   
 }

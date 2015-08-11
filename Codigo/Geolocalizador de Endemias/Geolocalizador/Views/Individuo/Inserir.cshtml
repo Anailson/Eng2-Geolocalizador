@@ -1,11 +1,12 @@
 ﻿@model Dominio.Classes.Individuo
 
+
 <nav>
     <span class="card-title">Cadastrar indivíduo</span>
 </nav>
 <div>
     <br /><br />
-    @Html.ActionLink("Home", "Index", "Home") >
+    @Html.ActionLink("Página Inicial", "Index", "Home") >
     @Html.ActionLink("Voltar a Lista", "Index")
     <br /><br />
 </div>
@@ -13,12 +14,6 @@
 @using (Html.BeginForm("Cadastrar", "Individuo"))
 {
     @Html.AntiForgeryToken()
-
-    <div class="row">
-        <br /><br />
-        @Html.ActionLink("Página Inicial", "Index", "Home") >
-        @Html.ActionLink("Voltar a Lista", "Index")
-    </div>
     <div class="row">
         <div class="col s12">
             <ul class="tabs">
@@ -473,7 +468,7 @@
                 <!-- Fim da aba referente as informações sócio demográficas-->
             </div>
             <div class="row center">
-                <input type="submit" value="Cadastrar" class="btn btn-default" />
+                <input type="submit" value="Cadastrar" class="btn blue" />
             </div>
         </form>
     </div>

@@ -28,23 +28,27 @@
                 <div class="row">
                     <fieldset>
                         <legend>Horário da visita</legend>
-
-                        <div class="input-field col s3">
+                        <div class="input-field col s2">
+                            @Html.LabelFor(model => model.codigo, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.codigo)
+                            @Html.ValidationMessageFor(model => model.codigo)
+                        </div>
+                        <div class="input-field col s2">
                             @Html.LabelFor(model => model.codDomicilio, htmlAttributes: new { @class = "control-label col-md-2" })
                             @Html.EditorFor(model => model.codDomicilio)
                             @Html.ValidationMessageFor(model => model.codDomicilio)
                         </div>
-                        <div class="input-field col s3">
+                        <div class="input-field col s2">
                             @Html.LabelFor(model => model.dataVisita, htmlAttributes: new { @class = "control-label col-md-2" })
                             @Html.TextBoxFor(model => model.dataVisita, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.dataVisita)
                         </div>
-                        <div class="input-field col s3">
+                        <div class="input-field col s2">
                             @Html.LabelFor(model => model.dataProxVisita, htmlAttributes: new { @class = "control-label col-md-2" })
                             @Html.TextBoxFor(model => model.dataProxVisita, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.dataProxVisita)
                         </div>
-                        <div class="input-field col s3">
+                        <div class="input-field col s2">
                             @Html.LabelFor(model => model.melhorHorario, htmlAttributes: new { @class = "control-label col-md-2" })
                             @Html.EditorFor(model => model.melhorHorario)
                             @Html.ValidationMessageFor(model => model.melhorHorario)
@@ -72,7 +76,7 @@
                     </fieldset>
                 </div>
                 <div class="col-md-offset-2 col-md-10 center">
-                    <input type="submit" value="Cadastrar" class="btn btn-default" />
+                    <input type="submit" value="Cadastrar" class="btn blue" />
                     <br />
                 </div>
             </form>

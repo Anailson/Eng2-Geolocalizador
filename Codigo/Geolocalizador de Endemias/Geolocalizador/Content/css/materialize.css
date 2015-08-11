@@ -1659,7 +1659,9 @@ html {
  * Remove default margin.
  */
 body {
-  margin: 0; 
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 /* HTML5 display definitions
@@ -1671,7 +1673,7 @@ body {
  * Correct `block` display not defined for `main` in IE 11.
  */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-  display: block; }
+    flex: 1 0 auto;}
 
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
@@ -2178,13 +2180,13 @@ ul.staggered-list li {
 footer.page-footer {
   margin-top: 20px;
   padding-top: 20px;
-  background-color: #ee6e73; }
+  background-color: #0089ec; }
   footer.page-footer .footer-copyright {
     overflow: hidden;
     height: 50px;
     line-height: 50px;
-    color: rgba(255, 255, 255, 0.8);
-    background-color: rgba(51, 51, 51, 0.08); }
+    color: #0089ec;
+    background-color: #0089ec; }
 
 table, th, td {
   border: none; }

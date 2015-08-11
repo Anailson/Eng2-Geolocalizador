@@ -1,12 +1,13 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
+﻿<nav>
+    <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
 
-<h2>Index</h2>
-@Html.ActionLink("Home", "Index", "Home") |
-@Html.ActionLink("Relatório de Visita ", "relatorioVisita", "Relatorios") |
-@Html.ActionLink("Relatório de Acompanhamento de Criança", "relatorioAcompanhamentoCrianca", "Relatorios") |
-@Html.ActionLink("Relatório de Acompanhamento de Gestante ", "relatorioAcompanhamentoGestante", "Relatorios") |
-@Html.ActionLink("Relatório de Acompanhamento de Enfermo ", "relatorioAcompanhamentoEnfermo", "Relatorios") 
+            
+        </ul>
+    </div>
+</nav>
 
+<div class="row">
+    <br /><br />
+    @Html.ActionLink("Página Inicial", "Index", "Home")
+</div>

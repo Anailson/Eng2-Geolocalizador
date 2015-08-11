@@ -5,68 +5,61 @@
 
 <div class="row">
     <br /><br />
-    @Html.ActionLink("Inicio", "Index", "Home")
+    @Html.ActionLink("Página Inicial", "Index", "Home")
 </div>
 <div class="row">
     <form>
         <p>
             <div class="row">
-                <!-- Radio Button -->
                 <div class="input-field col s3">
-
                     <input name="pesquisa-individuo" class="with-gap" type="radio" id="sus" checked />
                     <label for="sus">N° do SUS</label>
                     <input name="pesquisa-individuo" class="with-gap" type="radio" id="nome" />
                     <label for="nome">Nome</label>
                 </div>
-                <!-- Caixa de texto -->
                 <div class="input-field col s3">
                     <i class="material-icons prefix">search</i>
                     <input id="pesquisa" type="text" placeholder="Pesquisar" />
                 </div>
-                <!-- Botão Novo -->
                 <div class="input-field col s3">
-                    <label for="pesquisa">@Html.ActionLink("Adicionar Novo", "Inserir")</label>
+                    @Html.ActionLink("Novo", "Inserir", null, new {@class="btn blue"})
                 </div>
             </div>
         </p>
     </form>
 </div>
 
-<div class="row">
-    <div class="input-field col s8">
-        <table class="striped">
-                <thead>
-                    <tr>
-                        <th data-field="sus">
+<div class="col s12">
+    <table class="striped">
+            <thead>
+                <tr>
+                    <th data-field="sus" >
                             @Html.DisplayNameFor(model => model.susResponsavel)
-                        </th>
-                        <th data-field="nome">
+                    </th>
+                    <th data-field="nome">
                             @Html.DisplayNameFor(model => model.nome)
-                        </th>
-                        <th></th>
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.susResponsavel)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nome)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", "Editar", new { id = item.id }, new { @class = "btn blue" })
+                            @Html.ActionLink("Detalhes", "Detalhes", new { id = item.id }, new { @class = "btn blue" })
+                            @Html.ActionLink("Remover", "Remover", new { id = item.id }, new { @class = "btn blue" })
+                        </td>
                     </tr>
-                </thead>
-
-                @foreach (var item in Model)
-                {
-                    <tbody>
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.susResponsavel)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.nome)
-                            </td>
-                            <td>
-
-                                @Html.ActionLink("Editar", "Editar", new { id = item.id }) |
-                                @Html.ActionLink("Detalhes", "Detalhes", new { id = item.id }) |
-                                @Html.ActionLink("Remover", "Remover", new { id = item.id })
-                            </td>
-                        </tr>
-                    </tbody>
-                }
-</table>
-    </div>
+                </tbody>
+            }
+    </table>
 </div>

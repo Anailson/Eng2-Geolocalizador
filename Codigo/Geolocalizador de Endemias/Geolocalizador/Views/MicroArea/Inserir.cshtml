@@ -3,16 +3,14 @@
     <span class="card-title">Cadastrar micro área</span>
 </nav>
 
+<div class="row">
+    <br /><br />
+    @Html.ActionLink("Página Inicial", "Index", "Home") >
+    @Html.ActionLink("Voltar a Lista", "Index")
+</div>
 @using (Html.BeginForm("Cadastrar", "MicroArea")) 
 {
     @Html.AntiForgeryToken()
-
-    <div class="row">
-        <br /><br />
-        @Html.ActionLink("Página Inicial", "Index", "Home") >
-        @Html.ActionLink("Voltar a Lista", "Index")
-    </div>
-
     <div class="row">
         <div class="col s12">
             <ul class="tabs">
@@ -44,7 +42,7 @@
                 </div>
             </div>
             <div class="row center">
-                <input type="submit" value="Cadastrar" class="btn btn-default" />
+                <input type="submit" value="Cadastrar" class="btn blue" />
             </div>
         </form>
     </div>
