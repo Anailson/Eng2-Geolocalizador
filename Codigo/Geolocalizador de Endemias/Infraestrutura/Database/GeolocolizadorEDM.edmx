@@ -93,7 +93,7 @@
           <Property Name="localizacao" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="condicaoRural" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="acessoDomicilio" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="material" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="material" Type="nvarchar" MaxLength="45" Nullable="false" />
           <Property Name="tratamentoAgua" Type="nvarchar" MaxLength="45" Nullable="false" />
           <Property Name="escoamentoBanheiro" Type="nvarchar" MaxLength="35" Nullable="false" />
           <Property Name="lixo" Type="nvarchar" MaxLength="35" Nullable="false" />
@@ -539,7 +539,7 @@
           <Property Name="localizacao" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="condicaoRural" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="acessoDomicilio" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="material" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="material" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
           <Property Name="tratamentoAgua" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
           <Property Name="escoamentoBanheiro" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
           <Property Name="lixo" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />

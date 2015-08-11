@@ -31,7 +31,7 @@ namespace Dominio.Classes
         [Display(Name = "Micro área")]
         public int microArea { get; set; }
 
-        [Required, StringLength(50)]
+        [Required, StringLength(50, MinimumLength=4)]
         [Display(Name = "Nome completo")]
         public string nome { get; set; }
 
