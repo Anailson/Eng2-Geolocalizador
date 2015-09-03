@@ -50,7 +50,7 @@ namespace Geolocalizador.Controllers
 
                 if (result.Succeeded)
                 {
-                    userManager.AddToRole(user.Id, "Administrator");
+                    userManager.AddToRole(user.Id, "Operator");
                     return RedirectToAction("Login", "Account");
                 }
                 else
