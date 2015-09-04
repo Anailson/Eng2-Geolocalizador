@@ -173,8 +173,6 @@ namespace Dominio.Classes
        
       
         public virtual Domicilio Domicilio { get; set; }
-      //  public virtual Equipe Equipe { get; set; }
-     //public virtual MicroArea MicroArea { get; set; }
         public virtual ICollection<AcompanhamentoCrianca> AcompanhamentoCrianca { get; set; }
         public virtual ICollection<AcompanhamentoGestante> AcompanhamentoGestante { get; set; }
         public virtual ICollection<AcompanhamentoEnfermo> AcompanhamentoEnfermo { get; set; }

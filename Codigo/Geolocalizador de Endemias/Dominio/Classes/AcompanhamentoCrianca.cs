@@ -21,27 +21,27 @@ namespace Dominio.Classes
 
         [Required, StringLength(4)]
         [Display(Name = "Desnutrição")]
-        public string desnutricao { set; get; } // Alterar de String para Booleano
+        public string desnutricao { set; get; }
 
         [Required, StringLength(4)]
         [Display(Name = "Pneumonia")]
-        public string pneumonia { set; get; } // Alterar de String para Booleano
+        public string pneumonia { set; get; }
 
         [Required, StringLength(4)]
         [Display(Name = "Diarreia")]
-        public string diarreia { set; get; } // Alterar de String para Booleano
+        public string diarreia { set; get; } 
 
         [Required, StringLength(4)]
         [Display(Name = "Vascinação em dia")]
-        public string vacinacaoEmDia { set; get; } // Alterar de String para Booleano
+        public string vacinacaoEmDia { set; get; } 
 
         [Required, StringLength(4)]
         [Display(Name = "Inflamação respiratória")]
-        public string inflamacaoRep { set; get; } // Alterar de String para Booleano
+        public string inflamacaoRep { set; get; } 
 
         [Required, StringLength(4)]
         [Display(Name = "Alimentação")]
-        public string alimentacaoPeito { set; get; } // Alterar de String para Booleano
+        public string alimentacaoPeito { set; get; } 
 
         [Required]
         [Display(Name = "Peso")]

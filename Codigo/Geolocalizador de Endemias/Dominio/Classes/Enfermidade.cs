@@ -9,11 +9,7 @@ namespace Dominio.Classes
     public class Enfermidade
     {
         public int id { set; get; }
-        //public int codigo {get; set;} 
-
         public string cid { set; get; }
         public string nome { set; get; }
-
-        //public virtual AcompanhamentoEnfermo AcompanhamentoEnfermo {get; set;}
     }
 }

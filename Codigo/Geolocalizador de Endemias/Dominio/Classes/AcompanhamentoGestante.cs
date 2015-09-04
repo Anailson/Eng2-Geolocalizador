@@ -22,7 +22,7 @@ namespace Dominio.Classes
 
         [Required, StringLength(4)]
         [Display(Name = "Pré natal")]
-        public string prenatalMensal { set; get; } // Alterar de String para Booleano
+        public string prenatalMensal { set; get; } 
 
         [Required]
         [Display(Name = "Semanas de gestação")]

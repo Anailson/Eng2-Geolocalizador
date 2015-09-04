@@ -32,7 +32,8 @@ namespace Teste
             areas.Cadastrar(area);
 
         }
-
+        
+        //todos os atributos requeridos tem que ser inseridos
         [TestMethod()]
         public void inserirInvalido()
         {
@@ -61,6 +62,7 @@ namespace Teste
             areas.Atualizar(area);
         }
 
+        //não pode editar a chave primaria
         [TestMethod()]
         public void editarInvalido()
         {
